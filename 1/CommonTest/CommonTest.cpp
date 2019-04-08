@@ -358,8 +358,24 @@ void debug_log(
 	va_end(arglist);
 }
 //自己的log日志功能
+
+//string和wstring大小写转换功能
+#include <string>
+#include <algorithm>
+//string和wstring大小写转换功能
 int main()
 {
+	//string和wstring大小写转换功能
+	if (1)
+	{
+		std::wstring wstr(L"abs中文-Da");
+		transform(wstr.begin(), wstr.end(), wstr.begin(), ::toupper);
+
+		std::string strA = "你好yasaken@126.com";
+		transform(strA.begin(), strA.end(), strA.begin(), ::toupper);
+	}
+	//string和wstring大小写转换功能
+
 	//自己的log日志功能
 	if (0)
 	{
