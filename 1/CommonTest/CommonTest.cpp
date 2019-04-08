@@ -361,7 +361,7 @@ void debug_log(
 int main()
 {
 	//自己的log日志功能
-	if (1)
+	if (0)
 	{
 		DEBUG_LOG("%s, ranking NO.%d", "You are so smart", 1);
 		system("pause");
