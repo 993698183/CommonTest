@@ -365,14 +365,33 @@ void debug_log(
 //string和wstring大小写转换功能
 int main()
 {
-	//string和wstring大小写转换功能
+	//c++调用cmd指令，启动Windows计算器
 	if (1)
+	{
+		//方法一：
+		system("calc");
+		//方法二：
+		//WinExec("calc", SW_NORMAL);
+	}
+	//c++调用cmd指令，启动Windows计算器
+	//测试new失败的返回值
+	if (0)
+	{
+		int *p = nullptr;
+		p = new int[1000000];
+		system("pause");
+	}
+	//测试new失败的返回值
+
+	//string和wstring大小写转换功能
+	if (0)
 	{
 		std::wstring wstr(L"abs中文-Da");
 		transform(wstr.begin(), wstr.end(), wstr.begin(), ::toupper);
 
 		std::string strA = "你好yasaken@126.com";
 		transform(strA.begin(), strA.end(), strA.begin(), ::toupper);
+		system("pause");
 	}
 	//string和wstring大小写转换功能
 
@@ -399,7 +418,7 @@ int main()
 	//string的c_str()函数和data()函数
 
 	//mystringToi和mystringTofloat
-	if (1)
+	if (0)
 	{
 		char* p1 = "123";
 		std::cout << string2i(p1) << std::endl;
