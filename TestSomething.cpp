@@ -27,27 +27,27 @@ unsigned _stdcall GetSysBaseInfo(LPVOID lParam)//获取计算机IP
 
 	if (0 == nTipsType)//客户端已安装，未注册
 	{
-		strAboveTitle = _T("智华计算机终端敏感信息监控系统 【已安装成功，客户端未注册】");//鼠标悬浮提示语
+		strAboveTitle = _T("**计算机终端****监控系统 【已安装成功，客户端未注册】");//鼠标悬浮提示语
 	}
 	else if (1 == nTipsType)
 	{
-		strAboveTitle = _T("智华计算机终端敏感信息监控系统 【客户端注册成功，等待下发监控任务】");//鼠标悬浮提示语
+		strAboveTitle = _T("**计算机终端****监控系统 【客户端注册成功，等待下发监控任务】");//鼠标悬浮提示语
 	}
 	else if (2 == nTipsType)
 	{
-		strAboveTitle = _T("智华计算机终端敏感信息监控系统 【全盘检查：进行中... 全盘监控：进行中...】");//鼠标悬浮提示语
+		strAboveTitle = _T("**计算机终端****监控系统 【全盘检查：进行中... 全盘监控：进行中...】");//鼠标悬浮提示语
 	}
 	else if (3 == nTipsType)
 	{
-		strAboveTitle = _T("智华计算机终端敏感信息监控系统 【全盘检查：暂停   全盘监控：停止】");//鼠标悬浮提示语
+		strAboveTitle = _T("**计算机终端****监控系统 【全盘检查：暂停   全盘监控：停止】");//鼠标悬浮提示语
 	}
 	else if (4 == nTipsType)
 	{
-		strAboveTitle = _T("智华计算机终端敏感信息监控系统 【全盘检查：已完成   全盘监控：停止】");//鼠标悬浮提示语
+		strAboveTitle = _T("**计算机终端****监控系统 【全盘检查：已完成   全盘监控：停止】");//鼠标悬浮提示语
 	}
 	else if (5 == nTipsType)
 	{
-		strAboveTitle = _T("智华计算机终端敏感信息监控系统 【全盘检查：已完成   全盘监控：进行中...】");//鼠标悬浮提示语
+		strAboveTitle = _T("**计算机终端****监控系统 【全盘检查：已完成   全盘监控：进行中...】");//鼠标悬浮提示语
 	}
 	
 		int mSeverWarnTypeThanHitRate;//关键词命中率大于
@@ -70,8 +70,8 @@ unsigned _stdcall GetSysBaseInfo(LPVOID lParam)//获取计算机IP
 	
 TS_ImportXmlRst:专项检查指令
 
-F:\Program Files\智华计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\\upload\e1fb5f453bfb4bd3b145d3a38bff75c9.zip	
-F:\Program Files\智华计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\\upload\e1fb5f453bfb4bd3b145d3a38bff75c9.xml	
+F:\Program Files\**计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\\upload\e1fb5f453bfb4bd3b145d3a38bff75c9.zip	
+F:\Program Files\**计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\\upload\e1fb5f453bfb4bd3b145d3a38bff75c9.xml	
 
 insert into tb_fasttxtfilecheck_42f36053a54d45d8b6bbfa41e4d7d8bf(f_Filename,f_KeywordHit,f_rate,f_level,f_fileType,f_FilePath,f_isRemovable,f_FileSize,f_CreateDate,f_ModifyDate,f_JudgedMan,f_isSkip,f_memo,f_isInvalid,f_biaomi,f_JudgedDate,f_digest,f_reportId) values (
 'wa138006408_xls.xlsx','秘密(2)','33.33%','0','xlsx文件','C:\\Users\\Administrator\\AppData\\Local\\Temp\\','否','8787','2018-03-21 20:31:22','2018-03-21 20:32:46','','0','    可复现检查工具版本发现人附件名称问题出现时间系统类型操作系统版本号一键检查Win832位W8.1专业版W8.1专业版1.1.11.1.1郭付权常规检查-USB记录-USB存储记录比77版多19条，但在“违规”一项内显示为“正常”。注：<em>秘密</em>级检查常规检查-USB记录-USB其它记录比77版少9条，在“违规”字段时有提示“发现非常规USB设备”这个“违规”项在涉密机上应是如何确定？上网记录为7527，cookies记录为31条。77版为7533，无cookies记录文件痕迹检    ','0','0','','340b023a00360a836d80aab999d2eca1','e1fb5f453bfb4bd3b145d3a38bff75c9'),
@@ -202,9 +202,9 @@ CS_XmlReport
 
 <REQ><ID>123</ID><CMD>TS_ContrlNetwork</CMD><PN>3</PN><P>1</P><P>2</P><P>3</P></REQ>
 
-<REQ><ID>123</ID><CMD>TS_InstantMessage</CMD><PN>2</PN><P>64d34a75902c47e2874c956c88ef417a</P><P>昝续路</P></REQ>
+<REQ><ID>123</ID><CMD>TS_InstantMessage</CMD><PN>2</PN><P>64d34a75902c47e2874c956c88ef417a</P><P>***</P></REQ>
 
-<REQ><ID>8</ID><CMD>SC_InstantMessage</CMD><PN>1</PN><P>昝续路</P></REQ>
+<REQ><ID>8</ID><CMD>SC_InstantMessage</CMD><PN>1</PN><P>***</P></REQ>
 
 #define EXT_DOC						0x0000000000000001L	// doc & docx +
 #define EXT_XLS						0x0000000000000002L	// xml & xmls | -> Microsoft Office	files
@@ -251,13 +251,13 @@ ALTER TABLE tb_fasttxtfilecheck ADD COLUMN f_checkFileType
  INT DEFAULT 1 COMMENT "0是图片，1是文档";
  
  //修改注册信息
- <REQ><ID>27</ID><CMD>ST_ImportOrg</CMD><PN>4</PN><P>智华天成</P><P>C</P><P>刘霖森</P><P>北京-北京市-海淀区</P></REQ>
+ <REQ><ID>27</ID><CMD>ST_ImportOrg</CMD><PN>4</PN><P>****</P><P>C</P><P>**</P><P>北京-北京市-海淀区</P></REQ>
  
  waction.com@4001836606  数据库密码
  
- 公司名称：北京智华天成科技有限公司
- 智华天成默认密码授权工具
- 智华天成默认密码重置工具
+ 公司名称：北京****科技有限公司
+ ****默认密码授权工具
+ ****默认密码重置工具
  
  <REQ><ID>537</ID><CMD>TS_StartFileMonitor</CMD><PN>2</PN><P>99de3e1d6b2a4442ada5a939a1f64f04</P><P>1db705f360b84988bcf3c3c79583299c</P></REQ>
  
@@ -323,7 +323,7 @@ const string & computerId, const string &strValue
 806354945
 
 <REQ><ID>10</ID><CMD>ST_ImportOrg</CMD><PN>4</PN><P>000</P><P></P><P>iiii</P><P>河北-唐山市-路北区</P></REQ>
-<REQ><ID>6</ID><CMD>ST_ImportOrg</CMD><PN>4</PN><P>智华天成</P><P></P><P>6666</P><P>北京-北京市-房山区</P></REQ>
+<REQ><ID>6</ID><CMD>ST_ImportOrg</CMD><PN>4</PN><P>****</P><P></P><P>6666</P><P>北京-北京市-房山区</P></REQ>
 
 ---------------------------
 Microsoft Visual Studio
@@ -388,12 +388,12 @@ C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;
 C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;
 E:\_Dui\duilib-master\duilib-master\bin;%JAVA_HOME%\bin;
 
-<REQ><ID>101</ID><CMD>CS_Register</CMD><PN>30</PN><P>2</P><P>8a4203d71ef646a0a71b6c1c13d448cc</P><P>智华天成</P><P>--</P><P>444</P><P></P><P></P><P>4</P><P></P><P>ZANXULU</P><P></P><P>WD-WCC6Y7FLZVZF</P><P>192.168.8.16</P><P>00-E0-70-5C-69-B8</P><P></P><P></P><P></P><P></P><P>河北</P><P>唐山市</P><P>路南区</P><P>V1.0.106.20180411</P><P>1.0</P><P>106</P><P>2</P><P>1</P><P>1</P><P>0</P><P>Windows 7 Ultimate Service Pack 1</P><P>2016-01-01 02:30:04</P></REQ>
+<REQ><ID>101</ID><CMD>CS_Register</CMD><PN>30</PN><P>2</P><P>8a4203d71ef646a0a71b6c1c13d448cc</P><P>****</P><P>--</P><P>444</P><P></P><P></P><P>4</P><P></P><P>ZANXULU</P><P></P><P>WD-WCC6Y7FLZVZF</P><P>192.168.8.16</P><P>00-E0-70-5C-69-B8</P><P></P><P></P><P></P><P></P><P>河北</P><P>唐山市</P><P>路南区</P><P>V1.0.106.20180411</P><P>1.0</P><P>106</P><P>2</P><P>1</P><P>1</P><P>0</P><P>Windows 7 Ultimate Service Pack 1</P><P>2016-01-01 02:30:04</P></REQ>
 
 <REQ><ID>101</ID><CMD>CS_Register</CMD><PN>30</PN>
 <P>2</P>
 <P>8a4203d71ef646a0a71b6c1c13d448cc</P>
-<P>智华天成</P> 
+<P>****</P> 
 <P>--</P>
 <P>55555</P>
 <P></P>
@@ -449,15 +449,15 @@ git rebase -i 638aae28d024f8e7e3a7fe46be661c849ff1ae5d
 	<PN>3</PN>
 	<P>b7d6048e1a1c4a6b96eca56ef582c266</P>
 	<P><![CDATA[F:\03正确样本.docx]]></P>
-	<P>F:/Program Files/智华计算机终端敏感信息监控系统(非涉密网络版)/WEB/webapps/sims/fileUpload/判定的文件.docx</P></REQ>
+	<P>F:/Program Files/**计算机终端****监控系统(非涉密网络版)/WEB/webapps/sims/fileUpload/判定的文件.docx</P></REQ>
 	
-<REQ><ID>1</ID><CMD>SC_GetFile</CMD><PN>3</PN><P><![CDATA[F:\03正确样本.docx]]></P><P>F:/Program Files/智华计算机终端敏感信息监控系统(非涉密网络版)/WEB/webapps/sims/fileUpload/判定的文件.docx</P><P>2</P></REQ>	
+<REQ><ID>1</ID><CMD>SC_GetFile</CMD><PN>3</PN><P><![CDATA[F:\03正确样本.docx]]></P><P>F:/Program Files/**计算机终端****监控系统(非涉密网络版)/WEB/webapps/sims/fileUpload/判定的文件.docx</P><P>2</P></REQ>	
 
 float="true" pos="580,0,28,19" width="40" maxheight="20"
 
 0ZhUKeyCheckShareMap3329ed7?none
 
-<REQ><ID>110</ID><CMD>CS_KeyInfo</CMD><PN>5</PN><P>非涉密</P><P>2018-10-21</P><P>北京研发中心昝续路</P><P>30</P><P>0</P></REQ>
+<REQ><ID>110</ID><CMD>CS_KeyInfo</CMD><PN>5</PN><P>非涉密</P><P>2018-10-21</P><P>北京研发中心***</P><P>30</P><P>0</P></REQ>
 
 KeyOperationThreadClient
 SendKeyInfoToServer
@@ -503,7 +503,7 @@ CS_InstantMessage
 	<czPCid>730954a74d944deaa3db9007a3751f19</czPCid>
 	<czMessageType>0</czMessageType>
 	<czContent>00000</czContent>
-	<czUserName>昝续路</czUserName>
+	<czUserName>***</czUserName>
 	<czSenderID>1</czSenderID>
 	<czReceiver/>
 	<czReceiverID/>
@@ -551,19 +551,19 @@ UPDATE tb_sensitivefilecheck SET f_JudgedMan = '客户端', f_JudgedType = 1 , f
 
 
 <REQ><ID>501</ID><CMD>TS_DownloadFile</CMD><PN>3</PN><P>07a941de143941b9868fa75d48ed51f3</P><P><
-![CDATA[D:\1_SVN_CODE_不再使用\Sensitive_Info\Project\Code\Src\Client\CheckTools\Documents\测试问题2014-11-24-董妍.txt]]
+![CDATA[D:\1_SVN_CODE_不再使用\Sensitive_Info\Project\Code\Src\Client\CheckTools\Documents\测试问题2014-11-24-***.txt]]
 ></P><P>
-F:/Program Files/智华计算机终端敏感信息监控系统(非涉密网络版)/WEB/webapps/sims/fileUpload////测试问题2014-11-24-董妍.txt
+F:/Program Files/**计算机终端****监控系统(非涉密网络版)/WEB/webapps/sims/fileUpload////测试问题2014-11-24-***.txt
 </P></REQ>
 
 
-<REQ><ID>509</ID><CMD>TS_DownloadFile</CMD><PN>3</PN><P>07a941de143941b9868fa75d48ed51f3</P><P><![CDATA[D:\1_SVN_CODE_不再使用\Sensitive_Info\Project\Code\Src\Client\CheckTools\Documents\测试问题2014-11-24-董妍.txt]]></P><P>F:\Program Files\智华计算机终端敏感信息监控系统(非涉密网络版)\WEB\webapps\sims\fileUpload\3\智华天成\昝续路\测试问题2014-11-24-董妍.txt</P></REQ>
+<REQ><ID>509</ID><CMD>TS_DownloadFile</CMD><PN>3</PN><P>07a941de143941b9868fa75d48ed51f3</P><P><![CDATA[D:\1_SVN_CODE_不再使用\Sensitive_Info\Project\Code\Src\Client\CheckTools\Documents\测试问题2014-11-24-***.txt]]></P><P>F:\Program Files\**计算机终端****监控系统(非涉密网络版)\WEB\webapps\sims\fileUpload\3\****\***\测试问题2014-11-24-***.txt</P></REQ>
 
-<REQ><ID>533</ID><CMD>TS_DownloadFile</CMD><PN>3</PN><P>bc25deae7c7945f5b31e51654d3135d7</P><P><![CDATA[E:\_work\Sensitive_Info_Web\sims\app\src\main\webapp\fileUpload\ss\北京智华天成\检查清除项目组（北京）\王振\新建文本文档 (3) - 副本.txt]]></P><P>E:\_work\Sensitive_Info_Web\sims\app\src\main\webapp\fileUpload\ss\北京智华天成\检查清除项目组（北京）\王振\新建文本文档 (3) - 副本.txt</P></REQ>
+<REQ><ID>533</ID><CMD>TS_DownloadFile</CMD><PN>3</PN><P>bc25deae7c7945f5b31e51654d3135d7</P><P><![CDATA[E:\_work\Sensitive_Info_Web\sims\app\src\main\webapp\fileUpload\ss\北京****\检查清除项目组（北京）\王振\新建文本文档 (3) - 副本.txt]]></P><P>E:\_work\Sensitive_Info_Web\sims\app\src\main\webapp\fileUpload\ss\北京****\检查清除项目组（北京）\王振\新建文本文档 (3) - 副本.txt</P></REQ>
 
-<REQ><ID>537</ID><CMD>TS_DownloadFile</CMD><PN>3</PN><P>bc25deae7c7945f5b31e51654d3135d7</P><P><![CDATA[C:\Users\Administrator\Desktop\新建文本文档 (3) - 副本.txt]]></P><P>E:\_work\Sensitive_Info_Web\sims\app\src\main\webapp\fileUpload\ss\北京智华天成\检查清除项目组（北京）\王振\新建文本文档 (3) - 副本.txt</P></REQ>
+<REQ><ID>537</ID><CMD>TS_DownloadFile</CMD><PN>3</PN><P>bc25deae7c7945f5b31e51654d3135d7</P><P><![CDATA[C:\Users\Administrator\Desktop\新建文本文档 (3) - 副本.txt]]></P><P>E:\_work\Sensitive_Info_Web\sims\app\src\main\webapp\fileUpload\ss\北京****\检查清除项目组（北京）\王振\新建文本文档 (3) - 副本.txt</P></REQ>
 
-<REQ><ID>2</ID><CMD>ST_ImportOrg</CMD><PN>4</PN><P>智华天成</P><P>C++</P><P>昝续路</P><P>北京-北京市-东城区</P></REQ>
+<REQ><ID>2</ID><CMD>ST_ImportOrg</CMD><PN>4</PN><P>****</P><P>C++</P><P>***</P><P>北京-北京市-东城区</P></REQ>
 
 D:\\1_SVN_CODE_不再使用\\CheckSystem\\单机版\\Code\\Documents\\修改意见\\郭总\\违规判断.docx
 E:\\_work\\CheckSystem\\Client\\Documents\\配置管理文档\\02 产品文档\\01 设计文档\\文件检查测试修改意见.doc
@@ -610,7 +610,7 @@ __OUT:
 	{
 		//strRSP.Format("<REQ><ID>%d</ID><CMD>CS_GetFileRsp</CMD><PN>3</PN>"
 		//	"<P>%s</P><P>%s</P><P>%s</P></REQ>", nID, fileName, strfilePathToSave, &AscCharToWChar(fileOpType.c_str()));
-		//2018年6月5日16:15:06，根据最新需求修改获取文件最新逻辑---zxl
+		//2018年6月5日16:15:06，根据最新需求修改获取文件最新逻辑---***
 		strfilePathToSave = strfilePathToSave.Left(strfilePathToSave.ReverseFind('\\'));
 		strRSP.Format("<REQ><ID>%d</ID><CMD>CS_GetFileRsp</CMD><PN>3</PN>"
 			"<P>%s</P><P>%s</P><P>%s</P></REQ>", nID, fileName, strfilePathToSave, &AscCharToWChar(fileOpType.c_str()));
@@ -660,7 +660,7 @@ __OUT:
 			m_ps.push_back(strFileOpenType);
 			
 
-1：解决全盘检查数据量达到四百条时，关机重启后，敏感信息进程奔溃BUG 2：解决获取 文件名中包含多个空格的文件失败BUG	
+1：解决全盘检查数据量达到四百条时，关机重启后，****进程奔溃BUG 2：解决获取 文件名中包含多个空格的文件失败BUG	
 <REQ><ID>501</ID><CMD>TS_ModifyFileMonitor</CMD><PN>2</PN><P>1f95df87d7994e859124f3a28dfc3cdc</P><P>0579601fe6bc409ab3d05536d7c21e57</P></REQ>		
 
 ,<REQ><ID>501</ID><CMD>TS_NoticeServer</CMD><PN>3</PN><P>0</P><P>1</P><P>数据库还原</P></REQ>
@@ -684,7 +684,7 @@ __OUT:
 0x00dff7d8
 0x00dff7d8
 
-<REQ><ID>26</ID><CMD>ST_ImportOrg</CMD><PN>7</PN><P>智华天成</P><P>C++</P><P>张三</P><P>北京-中央机关-</P><P>00-E0-70-5C-69-B8</P><P>WD-WCC6Y7FLZVZF</P><P></P></REQ>
+<REQ><ID>26</ID><CMD>ST_ImportOrg</CMD><PN>7</PN><P>****</P><P>C++</P><P>张三</P><P>北京-中央机关-</P><P>00-E0-70-5C-69-B8</P><P>WD-WCC6Y7FLZVZF</P><P></P></REQ>
 
 INSERT into tb_transpcrange(f_transId,f_pcId) values ('','7BB4DD4A2303486F944D82A9311AF3AF')
 
@@ -699,13 +699,13 @@ INSERT into tb_transpcrange(f_transId,f_pcId) values ('','7BB4DD4A2303486F944D82
 <CMD>TS_DownloadFile</CMD>
 <PN>3</PN>
 <P>ae295f5b92c647b18a6a8be3499cb2fd</P><P><![CDATA[C:\Users\Administrator\Desktop\机密 绝密   秘密 - 副本.txt]]>
-</P><P>D:\Program Files\智华计算机终端敏感信息监控系统(非涉密网络版)\WEB\webapps\sims\fileUpload\机密 绝密   秘密 - 副本.txt</P></REQ>
+</P><P>D:\Program Files\**计算机终端****监控系统(非涉密网络版)\WEB\webapps\sims\fileUpload\机密 绝密   秘密 - 副本.txt</P></REQ>
 
 <REQ><ID>3</ID>
 <CMD>CS_GetFileRsp</CMD>
 <PN>3</PN>
 <PFileName>机密 绝密   秘密 - 副本.txt</PFileName>
-<PFilePathToSave>D:\Program Files\智华计算机终端敏感信息监控系统(非涉密网络版)\WEB\webapps\sims\fileUpload</PFilePathToSave>
+<PFilePathToSave>D:\Program Files\**计算机终端****监控系统(非涉密网络版)\WEB\webapps\sims\fileUpload</PFilePathToSave>
 <PFileOpenType>2</PFileOpenType></REQ>
 
 <REQ><ID>501</ID><CMD>TS_StartFileMonitor</CMD><PN>2</PN><P>4d9f5a254f9443938bdfc28fef87f3fd</P><P>E5FD0C51A31E460B8735EEB69B9A08EA</P></REQ>
@@ -970,7 +970,7 @@ CREATE TABLE `tb_sensitivefilecheck` (
 
 3478	strcpy_s(monitorInfo.szOtherFileType,strlen(g_checkTemplate.OtherFileType)+1,g_checkTemplate.OtherFileType);
 
-1：替换部分图片资源文件（将之前网检的图标统一换成敏感信息的图标）2：将与、或、非关键词随同文件监控结果一同存入到本地db数据库中，解决更换关键词时，点击敏感信息监控进程之前关键词监控的记录，摘要处关键词无法 标红 显示的BUG
+1：替换部分图片资源文件（将之前网检的图标统一换成****的图标）2：将与、或、非关键词随同文件监控结果一同存入到本地db数据库中，解决更换关键词时，点击****监控进程之前关键词监控的记录，摘要处关键词无法 标红 显示的BUG
 
 	//CT::HThread h = CT::RunThread(MakeTFObj(&CRapidFinder::FileScanThread,this));
 	boost::thread t(boost::bind(&CRapidFinder::FileScanThread,this));
@@ -1022,7 +1022,7 @@ boost::recursive_mutex::scoped_lock lock(MONITORFILERECODERMANGER->m_Monitor_Sec
 
 
 	int license = CCommandExecute::m_pCMainFrame->m_KeyOperationInfo.m_KeyInfoRead.licenseCntTotal;
-	//2018年9月4日08:34:53，验证key是否有效不仅仅验证授权数，添加验证其他信息，因为存在有时key信息中授权数为0，其他信息都完好的情况---zxl
+	//2018年9月4日08:34:53，验证key是否有效不仅仅验证授权数，添加验证其他信息，因为存在有时key信息中授权数为0，其他信息都完好的情况---***
 	std::string strRemark(CCommandExecute::m_pCMainFrame->m_KeyOperationInfo.m_KeyInfoRead.szRemark);
 	std::string strvalidDate(CCommandExecute::m_pCMainFrame->m_KeyOperationInfo.m_KeyInfoRead.validDate);
 	std::string strcheckUnit(CCommandExecute::m_pCMainFrame->m_KeyOperationInfo.m_KeyInfoRead.checkUnit);
@@ -1212,8 +1212,8 @@ xcopy $(TargetDir)SHEDump.pdb $(TargetDir)..\..\Release\ /s /e /h /y
 	
 1：屏蔽客户端弹框点击关闭按钮，显示下一条记录功能 2：解决C-Server报警方式混乱BUG 3：添加必要的log日志信息  4：下发开始任务之前，首先关闭当前任务	
 
-智华计算机终端保密检查系统.exe!CDetailXmlReport::CRecordIndex::WriteRecordsToXml(TiXmlElement * pElement_Parent=0x0c501b38, std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::vector<std::vector<std::basic_string<char,std::char_traits<char...
-智华计算机终端保密检查系统.exe!FCBaseResultView::GetReportResultContent(int viewTabIndex=0, int nResTableIndex=1, ReportType eReportType=RT_Xml)  Line 1802 + 0x13 bytes
+**计算机终端保密检查系统.exe!CDetailXmlReport::CRecordIndex::WriteRecordsToXml(TiXmlElement * pElement_Parent=0x0c501b38, std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::vector<std::vector<std::basic_string<char,std::char_traits<char...
+**计算机终端保密检查系统.exe!FCBaseResultView::GetReportResultContent(int viewTabIndex=0, int nResTableIndex=1, ReportType eReportType=RT_Xml)  Line 1802 + 0x13 bytes
 
 
 30.正确样本.BMP
@@ -1290,13 +1290,13 @@ ALTER TABLE tb_deepfilecheck_37c4c95589a642dbb6d9bc5654c94dc2 ADD COLUMN `f_clie
 ALTER TABLE tb_deepfilecheck_37c4c95589a642dbb6d9bc5654c94dc2 ADD COLUMN `f_clientJudgePerson` VARCHAR(30) NOT NULL DEFAULT '0' COMMENT '客户端判定人';
 ALTER TABLE tb_deepfilecheck_37c4c95589a642dbb6d9bc5654c94dc2 ADD COLUMN `f_clientJudgeLevel` TINYINT(2) NOT NULL DEFAULT '0' COMMENT '客户端判定密级：1：公开；2：内部；3：秘密；4：机密；5：绝密；6：待鉴定；7：待删除';
 
-1：解决敏感信息监控结果传输过程中丢失文件记录BUG
+1：解决****监控结果传输过程中丢失文件记录BUG
 2：解决被监控文件名或者路径中存在单引号导致sql语句执行失败BUG
 3：添加必要的LOG日志信息
 4：优化代码
 
-D:\Program Files\智华计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\send\1f3055f07ded434da5b0ae82e2be6e52.xml
-D:\Program Files\智华计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\upload\1f3055f07ded434da5b0ae82e2be6e52.xml
+D:\Program Files\**计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\send\1f3055f07ded434da5b0ae82e2be6e52.xml
+D:\Program Files\**计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\upload\1f3055f07ded434da5b0ae82e2be6e52.xml
 
 				else if ("Reserved3" == attr->value)
 				{
@@ -1323,7 +1323,7 @@ UPDATE tb_computer SET f_pNo =27 ,f_geopos = '009' WHERE f_id = 'a73c531e1ee44a7
 UPDATE tb_computer SET f_pNo =29 ,f_geopos = '011' WHERE f_id = '4eacae0371034ebfac704dc0fc713536'
 UPDATE tb_computer SET f_pNo =30 ,f_geopos = '012' WHERE f_id = 'b9cf4df27752470a8aa789b72099ddc2'
 
-insert into tb_fasttxtfilecheck_958161bbc1bc485d95466d9ddd5f1d3b(f_Filename,f_KeywordHit,f_rate,f_level,f_fileType,f_FilePath,f_isRemovable,f_FileSize,f_CreateDate,f_ModifyDate,f_JudgedMan,f_isSkip,f_memo,f_isInvalid,f_biaomi,f_JudgedDate,f_digest,f_clientJudgeType,f_clientJudgePerson,f_clientJudgeLevel,f_reportId) values ('3(1).pptx','绝密(3)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','63198','2018-12-28 08:53:07','2018-11-06 15:13:20','','0','    降セ鞔舜Ρ嗉赴嫖谋狙降诙兜谌兜谒募兜谖寮兜セ鞔舜Ρ嗉赴嫖谋狙?   ','0','0','','8075df18d1993d785a66dd29f939751e','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('8 - 副本 - 副本 - 副本 (3) - 副本.pps','秘密(2)','33.33%','0','pps文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','62464','2018-12-28 08:53:07','2018-11-06 15:07:10','','0','    智华计算机保密技术检查系统，依据国家保密局BMB17《涉及国家<em>秘密</em>的信息系统分级保护技术要求》、BMB22《涉及国家<em>秘密</em>的信息系统分级保护测评指南》、国家保密局相关对检查工具的最新技术标准等相关标准和国家保密检查规范要求进行研发，是保密技术检查的专用工具，也是各级保密管理部门进行保密检查、深度恢复取证的专业软件。\n\n    ','0','0','','e45451ce6ea659ba7f0653d36f761a20','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('8 - 副本 - 副本.pps','秘密(2)','33.33%','0','pps文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','62464','2018-12-28 08:53:07','2018-11-06 15:07:10','','0','    计算机保密技术检查系统，依据国家保密局BMB17《涉及国家<em>秘密</em>的信息系统分级保护技术要求》、BMB22《涉及国家<em>秘密</em>的信息系统分级保护测评指南》、国家保密局相关对检查工具的最新技术标准等相关标准和国家保密检查规范要求进行研发，是保密技术检查的专用工具，也是各级保密管理部门进行保密检查、深度恢复取证的专业软件。\n\n    ','0','0','','e45451ce6ea659ba7f0653d36f761a20','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('9 - 副本 (2) - 副本.pptx','秘密(2)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','49858','2018-12-28 08:53:07','2018-11-06 15:08:24','','0','    处编辑母版文本样式    ','0','0','','3d39c025dcd2f3848bb38d7d66ea3cdf','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('9 - 副本 - 副本 (5) - 副本.pptx','秘密(2)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','49858','2018-12-28 08:53:07','2018-11-06 15:08:24','','0','    处编辑母版文本样式    ','0','0','','3d39c025dcd2f3848bb38d7d66ea3cdf','0','','0','163067dc4a6a4181b51eff3f9c15417d')
+insert into tb_fasttxtfilecheck_958161bbc1bc485d95466d9ddd5f1d3b(f_Filename,f_KeywordHit,f_rate,f_level,f_fileType,f_FilePath,f_isRemovable,f_FileSize,f_CreateDate,f_ModifyDate,f_JudgedMan,f_isSkip,f_memo,f_isInvalid,f_biaomi,f_JudgedDate,f_digest,f_clientJudgeType,f_clientJudgePerson,f_clientJudgeLevel,f_reportId) values ('3(1).pptx','绝密(3)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','63198','2018-12-28 08:53:07','2018-11-06 15:13:20','','0','    降セ鞔舜Ρ嗉赴嫖谋狙降诙兜谌兜谒募兜谖寮兜セ鞔舜Ρ嗉赴嫖谋狙?   ','0','0','','8075df18d1993d785a66dd29f939751e','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('8 - 副本 - 副本 - 副本 (3) - 副本.pps','秘密(2)','33.33%','0','pps文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','62464','2018-12-28 08:53:07','2018-11-06 15:07:10','','0','    **计算机保密技术检查系统，依据国家保密局BMB17《涉及国家<em>秘密</em>的信息系统分级保护技术要求》、BMB22《涉及国家<em>秘密</em>的信息系统分级保护测评指南》、国家保密局相关对检查工具的最新技术标准等相关标准和国家保密检查规范要求进行研发，是保密技术检查的专用工具，也是各级保密管理部门进行保密检查、深度恢复取证的专业软件。\n\n    ','0','0','','e45451ce6ea659ba7f0653d36f761a20','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('8 - 副本 - 副本.pps','秘密(2)','33.33%','0','pps文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','62464','2018-12-28 08:53:07','2018-11-06 15:07:10','','0','    计算机保密技术检查系统，依据国家保密局BMB17《涉及国家<em>秘密</em>的信息系统分级保护技术要求》、BMB22《涉及国家<em>秘密</em>的信息系统分级保护测评指南》、国家保密局相关对检查工具的最新技术标准等相关标准和国家保密检查规范要求进行研发，是保密技术检查的专用工具，也是各级保密管理部门进行保密检查、深度恢复取证的专业软件。\n\n    ','0','0','','e45451ce6ea659ba7f0653d36f761a20','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('9 - 副本 (2) - 副本.pptx','秘密(2)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','49858','2018-12-28 08:53:07','2018-11-06 15:08:24','','0','    处编辑母版文本样式    ','0','0','','3d39c025dcd2f3848bb38d7d66ea3cdf','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('9 - 副本 - 副本 (5) - 副本.pptx','秘密(2)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','49858','2018-12-28 08:53:07','2018-11-06 15:08:24','','0','    处编辑母版文本样式    ','0','0','','3d39c025dcd2f3848bb38d7d66ea3cdf','0','','0','163067dc4a6a4181b51eff3f9c15417d')
 UPDATE tb_computer SET f_pNo =31 ,f_geopos = '013' WHERE f_id = 'b9cf4df27752470a8aa789b72099ddc2'
 
 ALTER TABLE tb_headrecord ADD COLUMN `f_ComputerPosition` VARCHAR(500)  DEFAULT '' COMMENT '备注信息，地理位置';
@@ -1337,7 +1337,7 @@ CREATE TABLE `tb_funswitchchick` (
 
 INSERT INTO `tb_funswitch3` VALUES ('client_selfcheck', '禁止客户端自检自查', '0');
 
-		//2018年6月5日16:15:06，根据最新需求修改获取文件最新逻辑---zxl	
+		//2018年6月5日16:15:06，根据最新需求修改获取文件最新逻辑---***	
 		
 CREATE TABLE tb_sensitiveimgfile(
 		f_id INT PRIMARY KEY AUTO_INCREMENT COMMENT "自增id",
@@ -1453,7 +1453,7 @@ if (true == pThis->m_StrCurInnerPort.empty() || true == pThis->m_StrCurInnerPort
 				//主机密级发生变化
 				RegisterParaRet.m_strPcLevel = vRecordFieldVal[0][7];
 				
-	//2019年2月27日17:24:00，敏感信息单导版生成的文件名中不存在Guid数据，在此进行过滤---zxl
+	//2019年2月27日17:24:00，****单导版生成的文件名中不存在Guid数据，在此进行过滤---***
 	if (
 		0 == fileType.compare(std::string("xml").c_str())
 		&& -1 == fileName.find("_sql")//排除_sql结尾的文件
