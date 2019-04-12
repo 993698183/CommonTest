@@ -70,8 +70,8 @@ unsigned _stdcall GetSysBaseInfo(LPVOID lParam)//获取计算机IP
 	
 TS_ImportXmlRst:专项检查指令
 
-F:\Program Files\**计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\\upload\e1fb5f453bfb4bd3b145d3a38bff75c9.zip	
-F:\Program Files\**计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\\upload\e1fb5f453bfb4bd3b145d3a38bff75c9.xml	
+F:\Program Files\**计算机终端****系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\\upload\e1fb5f453bfb4bd3b145d3a38bff75c9.zip	
+F:\Program Files\**计算机终端****系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\\upload\e1fb5f453bfb4bd3b145d3a38bff75c9.xml	
 
 insert into tb_fasttxtfilecheck_42f36053a54d45d8b6bbfa41e4d7d8bf(f_Filename,f_KeywordHit,f_rate,f_level,f_fileType,f_FilePath,f_isRemovable,f_FileSize,f_CreateDate,f_ModifyDate,f_JudgedMan,f_isSkip,f_memo,f_isInvalid,f_biaomi,f_JudgedDate,f_digest,f_reportId) values (
 'wa138006408_xls.xlsx','秘密(2)','33.33%','0','xlsx文件','C:\\Users\\Administrator\\AppData\\Local\\Temp\\','否','8787','2018-03-21 20:31:22','2018-03-21 20:32:46','','0','    可复现检查工具版本发现人附件名称问题出现时间系统类型操作系统版本号一键检查Win832位W8.1专业版W8.1专业版1.1.11.1.1郭付权常规检查-USB记录-USB存储记录比77版多19条，但在“违规”一项内显示为“正常”。注：<em>秘密</em>级检查常规检查-USB记录-USB其它记录比77版少9条，在“违规”字段时有提示“发现非常规USB设备”这个“违规”项在涉密机上应是如何确定？上网记录为7527，cookies记录为31条。77版为7533，无cookies记录文件痕迹检    ','0','0','','340b023a00360a836d80aab999d2eca1','e1fb5f453bfb4bd3b145d3a38bff75c9'),
@@ -1212,8 +1212,8 @@ xcopy $(TargetDir)SHEDump.pdb $(TargetDir)..\..\Release\ /s /e /h /y
 	
 1：屏蔽客户端弹框点击关闭按钮，显示下一条记录功能 2：解决C-Server报警方式混乱BUG 3：添加必要的log日志信息  4：下发开始任务之前，首先关闭当前任务	
 
-**计算机终端保密检查系统.exe!CDetailXmlReport::CRecordIndex::WriteRecordsToXml(TiXmlElement * pElement_Parent=0x0c501b38, std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::vector<std::vector<std::basic_string<char,std::char_traits<char...
-**计算机终端保密检查系统.exe!FCBaseResultView::GetReportResultContent(int viewTabIndex=0, int nResTableIndex=1, ReportType eReportType=RT_Xml)  Line 1802 + 0x13 bytes
+**计算机终端****系统.exe!CDetailXmlReport::CRecordIndex::WriteRecordsToXml(TiXmlElement * pElement_Parent=0x0c501b38, std::map<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::vector<std::vector<std::basic_string<char,std::char_traits<char...
+**计算机终端****系统.exe!FCBaseResultView::GetReportResultContent(int viewTabIndex=0, int nResTableIndex=1, ReportType eReportType=RT_Xml)  Line 1802 + 0x13 bytes
 
 
 30.正确样本.BMP
@@ -1295,8 +1295,8 @@ ALTER TABLE tb_deepfilecheck_37c4c95589a642dbb6d9bc5654c94dc2 ADD COLUMN `f_clie
 3：添加必要的LOG日志信息
 4：优化代码
 
-D:\Program Files\**计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\send\1f3055f07ded434da5b0ae82e2be6e52.xml
-D:\Program Files\**计算机终端保密检查系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\upload\1f3055f07ded434da5b0ae82e2be6e52.xml
+D:\Program Files\**计算机终端****系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\send\1f3055f07ded434da5b0ae82e2be6e52.xml
+D:\Program Files\**计算机终端****系统(非涉密网络版)\WEB\webapps\ROOT\ChkSrv_bak\upload\1f3055f07ded434da5b0ae82e2be6e52.xml
 
 				else if ("Reserved3" == attr->value)
 				{
@@ -1323,7 +1323,7 @@ UPDATE tb_computer SET f_pNo =27 ,f_geopos = '009' WHERE f_id = 'a73c531e1ee44a7
 UPDATE tb_computer SET f_pNo =29 ,f_geopos = '011' WHERE f_id = '4eacae0371034ebfac704dc0fc713536'
 UPDATE tb_computer SET f_pNo =30 ,f_geopos = '012' WHERE f_id = 'b9cf4df27752470a8aa789b72099ddc2'
 
-insert into tb_fasttxtfilecheck_958161bbc1bc485d95466d9ddd5f1d3b(f_Filename,f_KeywordHit,f_rate,f_level,f_fileType,f_FilePath,f_isRemovable,f_FileSize,f_CreateDate,f_ModifyDate,f_JudgedMan,f_isSkip,f_memo,f_isInvalid,f_biaomi,f_JudgedDate,f_digest,f_clientJudgeType,f_clientJudgePerson,f_clientJudgeLevel,f_reportId) values ('3(1).pptx','绝密(3)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','63198','2018-12-28 08:53:07','2018-11-06 15:13:20','','0','    降セ鞔舜Ρ嗉赴嫖谋狙降诙兜谌兜谒募兜谖寮兜セ鞔舜Ρ嗉赴嫖谋狙?   ','0','0','','8075df18d1993d785a66dd29f939751e','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('8 - 副本 - 副本 - 副本 (3) - 副本.pps','秘密(2)','33.33%','0','pps文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','62464','2018-12-28 08:53:07','2018-11-06 15:07:10','','0','    **计算机保密技术检查系统，依据国家保密局BMB17《涉及国家<em>秘密</em>的信息系统分级保护技术要求》、BMB22《涉及国家<em>秘密</em>的信息系统分级保护测评指南》、国家保密局相关对检查工具的最新技术标准等相关标准和国家保密检查规范要求进行研发，是保密技术检查的专用工具，也是各级保密管理部门进行保密检查、深度恢复取证的专业软件。\n\n    ','0','0','','e45451ce6ea659ba7f0653d36f761a20','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('8 - 副本 - 副本.pps','秘密(2)','33.33%','0','pps文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','62464','2018-12-28 08:53:07','2018-11-06 15:07:10','','0','    计算机保密技术检查系统，依据国家保密局BMB17《涉及国家<em>秘密</em>的信息系统分级保护技术要求》、BMB22《涉及国家<em>秘密</em>的信息系统分级保护测评指南》、国家保密局相关对检查工具的最新技术标准等相关标准和国家保密检查规范要求进行研发，是保密技术检查的专用工具，也是各级保密管理部门进行保密检查、深度恢复取证的专业软件。\n\n    ','0','0','','e45451ce6ea659ba7f0653d36f761a20','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('9 - 副本 (2) - 副本.pptx','秘密(2)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','49858','2018-12-28 08:53:07','2018-11-06 15:08:24','','0','    处编辑母版文本样式    ','0','0','','3d39c025dcd2f3848bb38d7d66ea3cdf','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('9 - 副本 - 副本 (5) - 副本.pptx','秘密(2)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','49858','2018-12-28 08:53:07','2018-11-06 15:08:24','','0','    处编辑母版文本样式    ','0','0','','3d39c025dcd2f3848bb38d7d66ea3cdf','0','','0','163067dc4a6a4181b51eff3f9c15417d')
+insert into tb_fasttxtfilecheck_958161bbc1bc485d95466d9ddd5f1d3b(f_Filename,f_KeywordHit,f_rate,f_level,f_fileType,f_FilePath,f_isRemovable,f_FileSize,f_CreateDate,f_ModifyDate,f_JudgedMan,f_isSkip,f_memo,f_isInvalid,f_biaomi,f_JudgedDate,f_digest,f_clientJudgeType,f_clientJudgePerson,f_clientJudgeLevel,f_reportId) values ('3(1).pptx','绝密(3)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','63198','2018-12-28 08:53:07','2018-11-06 15:13:20','','0','    降セ鞔舜Ρ嗉赴嫖谋狙降诙兜谌兜谒募兜谖寮兜セ鞔舜Ρ嗉赴嫖谋狙?   ','0','0','','8075df18d1993d785a66dd29f939751e','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('8 - 副本 - 副本 - 副本 (3) - 副本.pps','秘密(2)','33.33%','0','pps文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','62464','2018-12-28 08:53:07','2018-11-06 15:07:10','','0','    **计算机保密技术检查系统，依据国家保密局BMB17《涉及国家<em>秘密</em>的信息系统分级保护技术要求》、BMB22《涉及国家<em>秘密</em>的信息系统分级保护测评指南》、国家保密局相关对检查工具的最新技术标准等相关标准和国家****规范要求进行研发，是保密技术检查的专用工具，也是各级保密管理部门进行****、深度恢复取证的专业软件。\n\n    ','0','0','','e45451ce6ea659ba7f0653d36f761a20','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('8 - 副本 - 副本.pps','秘密(2)','33.33%','0','pps文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','62464','2018-12-28 08:53:07','2018-11-06 15:07:10','','0','    计算机保密技术检查系统，依据国家保密局BMB17《涉及国家<em>秘密</em>的信息系统分级保护技术要求》、BMB22《涉及国家<em>秘密</em>的信息系统分级保护测评指南》、国家保密局相关对检查工具的最新技术标准等相关标准和国家****规范要求进行研发，是保密技术检查的专用工具，也是各级保密管理部门进行****、深度恢复取证的专业软件。\n\n    ','0','0','','e45451ce6ea659ba7f0653d36f761a20','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('9 - 副本 (2) - 副本.pptx','秘密(2)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','49858','2018-12-28 08:53:07','2018-11-06 15:08:24','','0','    处编辑母版文本样式    ','0','0','','3d39c025dcd2f3848bb38d7d66ea3cdf','0','','0','163067dc4a6a4181b51eff3f9c15417d'),('9 - 副本 - 副本 (5) - 副本.pptx','秘密(2)','33.33%','0','pptx文件','C:\\Users\\Administrator\\Desktop\\测试\\','否','49858','2018-12-28 08:53:07','2018-11-06 15:08:24','','0','    处编辑母版文本样式    ','0','0','','3d39c025dcd2f3848bb38d7d66ea3cdf','0','','0','163067dc4a6a4181b51eff3f9c15417d')
 UPDATE tb_computer SET f_pNo =31 ,f_geopos = '013' WHERE f_id = 'b9cf4df27752470a8aa789b72099ddc2'
 
 ALTER TABLE tb_headrecord ADD COLUMN `f_ComputerPosition` VARCHAR(500)  DEFAULT '' COMMENT '备注信息，地理位置';
