@@ -363,10 +363,315 @@ void debug_log(
 #include <string>
 #include <algorithm>
 //string和wstring大小写转换功能
+
+//获取网卡信息
+//#include <WinSock2.h>
+#include <Iphlpapi.h>
+#include <iostream>
+#pragma comment(lib,"Iphlpapi.lib") //需要添加Iphlpapi.lib库
+bool get_netcard_info()
+{
+	//PIP_ADAPTER_INFO结构体指针存储本机网卡信息
+	PIP_ADAPTER_INFO pIpAdapterInfo = new IP_ADAPTER_INFO();
+	//得到结构体大小,用于GetAdaptersInfo参数
+	unsigned long stSize = sizeof(IP_ADAPTER_INFO);
+	//调用GetAdaptersInfo函数,填充pIpAdapterInfo指针变量;其中stSize参数既是一个输入量也是一个输出量
+	int nRel = GetAdaptersInfo(pIpAdapterInfo, &stSize);
+	//记录网卡数量
+	int netCardNum = 0;
+	//记录每张网卡上的IP地址数量
+	int IPnumPerNetCard = 0;
+	if (ERROR_BUFFER_OVERFLOW == nRel)
+	{
+		//如果函数返回的是ERROR_BUFFER_OVERFLOW
+		//则说明GetAdaptersInfo参数传递的内存空间不够,同时其传出stSize,表示需要的空间大小
+		//这也是说明为什么stSize既是一个输入量也是一个输出量
+		//释放原来的内存空间
+		delete pIpAdapterInfo;
+		//重新申请内存空间用来存储所有网卡信息
+		pIpAdapterInfo = (PIP_ADAPTER_INFO)new BYTE[stSize];
+		//再次调用GetAdaptersInfo函数,填充pIpAdapterInfo指针变量
+		nRel = GetAdaptersInfo(pIpAdapterInfo, &stSize);
+	}
+	if (ERROR_SUCCESS == nRel)
+	{
+		//输出网卡信息
+		//可能有多网卡,因此通过循环去判断
+		while (pIpAdapterInfo)
+		{
+			std::cout << "网卡数量：" << ++netCardNum << std::endl;
+			std::cout << "网卡名称：" << pIpAdapterInfo->AdapterName << std::endl;
+			std::cout << "网卡描述：" << pIpAdapterInfo->Description << std::endl;
+			switch (pIpAdapterInfo->Type)
+			{
+			case MIB_IF_TYPE_OTHER:
+				std::cout << "网卡类型：" << "OTHER" << std::endl;
+				break;
+			case MIB_IF_TYPE_ETHERNET:
+				std::cout << "网卡类型：" << "ETHERNET" << std::endl;
+				break;
+			case MIB_IF_TYPE_TOKENRING:
+				std::cout << "网卡类型：" << "TOKENRING" << std::endl;
+				break;
+			case MIB_IF_TYPE_FDDI:
+				std::cout << "网卡类型：" << "FDDI" << std::endl;
+				break;
+			case MIB_IF_TYPE_PPP:
+				printf("PP\n");
+				std::cout << "网卡类型：" << "PPP" << std::endl;
+				break;
+			case MIB_IF_TYPE_LOOPBACK:
+				std::cout << "网卡类型：" << "LOOPBACK" << std::endl;
+				break;
+			case MIB_IF_TYPE_SLIP:
+				std::cout << "网卡类型：" << "SLIP" << std::endl;
+				break;
+			default:
+
+				break;
+			}
+			std::cout << "网卡MAC地址：";
+			for (DWORD i = 0; i < pIpAdapterInfo->AddressLength; i++)
+			{
+				if (i < pIpAdapterInfo->AddressLength - 1)
+				{
+					printf("%02X-", pIpAdapterInfo->Address[i]);
+				}
+				else
+				{
+					printf("%02X\n", pIpAdapterInfo->Address[i]);
+				}
+			}
+			std::cout << "网卡IP地址如下：" << std::endl;
+			//可能网卡有多IP,因此通过循环去判断
+			IP_ADDR_STRING *pIpAddrString = &(pIpAdapterInfo->IpAddressList);
+			do
+			{
+				std::cout << "该网卡上的IP数量：" << ++IPnumPerNetCard << std::endl;
+				std::cout << "IP 地址：" << pIpAddrString->IpAddress.String << std::endl;
+				std::cout << "子网地址：" << pIpAddrString->IpMask.String << std::endl;
+				std::cout << "网关地址：" << pIpAdapterInfo->GatewayList.IpAddress.String << std::endl;
+				pIpAddrString = pIpAddrString->Next;
+			} while (pIpAddrString);
+			pIpAdapterInfo = pIpAdapterInfo->Next;
+			std::cout << "--------------------------------------------------------------------" << std::endl;
+		}
+
+	}
+	//释放内存空间
+	if (pIpAdapterInfo)
+	{
+		delete pIpAdapterInfo;
+	}
+	return true;
+}
+//获取网卡信息
+
+//获取网卡信息，并分辨出来物理网卡，虚拟网卡，无线网卡信息
+typedef struct __netcard_info_
+{
+	bool bIpVaild;
+	std::string strIp;
+	std::string strMac;
+	std::string strDescription;
+	std::string strGateway;
+}NETCARD_INFO, *P_NETCARD_INFO;
+
+bool GetNetCardInfo(std::vector<NETCARD_INFO> & v)
+{
+	bool bRet = false;
+	v.clear();
+	DWORD dwBufLen = 0;
+	DWORD dwStatus = GetAdaptersInfo(NULL, &dwBufLen);
+	PIP_ADAPTER_INFO pIP_ADAPTER_INFO = (PIP_ADAPTER_INFO)malloc(dwBufLen + 8);
+	if (NULL != pIP_ADAPTER_INFO)
+	{
+		if (ERROR_SUCCESS == GetAdaptersInfo(pIP_ADAPTER_INFO, &dwBufLen))
+		{
+			PIP_ADAPTER_INFO pAdapterInfo = pIP_ADAPTER_INFO;
+			do
+			{
+				NETCARD_INFO nci;
+				char szBuf[512] = { 0 };
+				// ip
+				sprintf_s(szBuf, "%s", pAdapterInfo->IpAddressList.IpAddress.String);
+				nci.strIp = szBuf;
+
+				if (strlen(szBuf) == 0 || strstr(szBuf, "0.0.0.0"))
+				{
+					nci.bIpVaild = false;
+				}
+				else
+				{
+					nci.bIpVaild = true;
+				}
+
+				// mac
+				memset(szBuf, 0, sizeof(szBuf));
+				sprintf_s(szBuf, "%02X-%02X-%02X-%02X-%02X-%02X",
+					pAdapterInfo->Address[0], pAdapterInfo->Address[1],
+					pAdapterInfo->Address[2], pAdapterInfo->Address[3],
+					pAdapterInfo->Address[4], pAdapterInfo->Address[5]);
+				nci.strMac = szBuf;
+
+				// gateway
+				nci.strGateway = pAdapterInfo->GatewayList.IpAddress.String;
+
+				// description
+				nci.strDescription = (char*)(BSTR)pAdapterInfo->Description;
+
+				v.push_back(nci);
+				bRet = true;
+
+				pAdapterInfo = pAdapterInfo->Next;    // Progress through linked list
+			} while (pAdapterInfo);
+		}
+
+		free(pIP_ADAPTER_INFO);
+	}
+	return bRet;
+}
+
+//通过socket获取当前使用的ip和mac
+//#include "winsock2.h"  
+//#pragma comment(lib,"ws2_32.lib") 
+void get_current_use_ip_mac()
+{
+	std::vector<char*> ip;
+	//PIP_ADAPTER_INFO结构体指针存储本机网卡信息
+	PIP_ADAPTER_INFO pIpAdapterInfo = new IP_ADAPTER_INFO();
+	//得到结构体大小,用于GetAdaptersInfo参数
+	unsigned long stSize = sizeof(IP_ADAPTER_INFO);
+	//调用GetAdaptersInfo函数,填充pIpAdapterInfo指针变量;其中stSize参数既是一个输入量也是一个输出量
+	int nRel = GetAdaptersInfo(pIpAdapterInfo, &stSize);
+	//记录网卡数量
+	int netCardNum = 0;
+	//记录每张网卡上的IP地址数量
+	int IPnumPerNetCard = 0;
+	if (ERROR_BUFFER_OVERFLOW == nRel)
+	{
+		//如果函数返回的是ERROR_BUFFER_OVERFLOW
+		//则说明GetAdaptersInfo参数传递的内存空间不够,同时其传出stSize,表示需要的空间大小
+		//这也是说明为什么stSize既是一个输入量也是一个输出量
+		//释放原来的内存空间
+		delete pIpAdapterInfo;
+		//重新申请内存空间用来存储所有网卡信息
+		pIpAdapterInfo = (PIP_ADAPTER_INFO)new BYTE[stSize];
+		//再次调用GetAdaptersInfo函数,填充pIpAdapterInfo指针变量
+		nRel = GetAdaptersInfo(pIpAdapterInfo, &stSize);
+	}
+	if (ERROR_SUCCESS == nRel)
+	{
+		//控制无线网卡的多读入
+		int i = 1;
+		//输出网卡信息
+		//可能有多网卡,因此通过循环去判断
+		while (pIpAdapterInfo)
+		{
+			std::cout << "网卡描述：" << pIpAdapterInfo->Description << std::endl;
+			switch (pIpAdapterInfo->Type)
+			{
+			case MIB_IF_TYPE_OTHER:
+				break;
+			case MIB_IF_TYPE_ETHERNET:
+			{
+				//可能网卡有多IP,因此通过循环去判断
+				IP_ADDR_STRING *pIpAddrString = &(pIpAdapterInfo->IpAddressList);
+				do
+				{
+					//IP 地址：
+					while (ip.size() < 2)
+					{
+						ip.push_back("");
+					}
+					if (strcmp(pIpAddrString->IpAddress.String, "0.0.0.0") != 0 
+						&& strstr(pIpAdapterInfo->Description, "PCI")
+						)
+						ip[1] = pIpAddrString->IpAddress.String;
+					//"子网地址："pIpAddrString->IpMask.String
+					//"网关地址："pIpAdapterInfo->GatewayList.IpAddress.String
+					pIpAddrString = pIpAddrString->Next;
+				} while (pIpAddrString);
+			}
+			break;
+			case MIB_IF_TYPE_TOKENRING:
+				break;
+			case MIB_IF_TYPE_FDDI:
+				break;
+			case MIB_IF_TYPE_PPP:
+				break;
+			case MIB_IF_TYPE_LOOPBACK:
+				break;
+			case MIB_IF_TYPE_SLIP:
+				break;
+			default://无线网卡在这里,Unknown type
+			{
+				IP_ADDR_STRING *pIpAddrString = &(pIpAdapterInfo->IpAddressList);
+				do
+				{
+					//IP 地址：
+					if (i++ == 1 && strcmp(pIpAddrString->IpAddress.String, "0.0.0.0") != 0
+						&& strstr(pIpAdapterInfo->Description, "Wireless"))
+					{
+						while (ip.size() < 1) ip.push_back("");
+						ip[0] = pIpAddrString->IpAddress.String;
+					}
+					else if (i != 2 && strcmp(pIpAddrString->IpAddress.String, "0.0.0.0")
+						!= 0 && strstr(pIpAdapterInfo->Description, "Wireless"))
+					{
+						ip.push_back(pIpAddrString->IpAddress.String);
+					}
+					//"子网地址："pIpAddrString->IpMask.String
+					//"网关地址："pIpAdapterInfo->GatewayList.IpAddress.String
+					pIpAddrString = pIpAddrString->Next;
+				} while (pIpAddrString);
+			}
+			break;
+			}
+			/*		cout<<"网卡MAC地址："; pIpAdapterInfo->Address[i]);mac地址。*/
+			pIpAdapterInfo = pIpAdapterInfo->Next;
+		}
+
+	}
+	for (int i = 0; i < ip.size(); i++)
+	{
+		std::cout << ip[i] << std::endl;
+	}
+	//释放内存空间
+	if (pIpAdapterInfo)
+	{
+		delete pIpAdapterInfo;
+	}
+	system("pause");
+}
+//获取网卡信息，并分辨出来物理网卡，虚拟网卡，无线网卡信息
 int main()
 {
-	//c++调用cmd指令，启动Windows计算器
+	
+	//获取网卡信息，并分辨出来物理网卡，虚拟网卡，无线网卡信息
 	if (1)
+	{
+		get_current_use_ip_mac();
+		system("pause");
+	}
+	if (0)
+	{
+		std::vector<NETCARD_INFO> v;
+		GetNetCardInfo(v);
+		system("pause");
+	}
+	//获取网卡信息，并分辨出来物理网卡，虚拟网卡，无线网卡信息
+
+	//获取网卡信息
+	if (0)
+	{
+		get_netcard_info();
+		system("pause");
+	}
+	//获取网卡信息
+
+	//c++调用cmd指令，启动Windows计算器
+	if (0)
 	{
 		//方法一：
 		system("calc");

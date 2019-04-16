@@ -1707,3 +1707,63 @@ pCUIHandlerFileCheck->m_SnapShotWnd=656328,strFilePath=C:\1\01正确样本.doc, 
 Microsoft Office Word 12.0
 
 	m_App->SetMainWindowHWND(m_hWnd);	
+	
+bool GetNetCardInfo(vector<NETCARD_INFO> & v)
+{
+	bool bRet = false;
+	v.clear();
+	DWORD dwBufLen = 0;
+	DWORD dwStatus = GetAdaptersInfo(NULL, &dwBufLen);
+	PIP_ADAPTER_INFO pIP_ADAPTER_INFO = (PIP_ADAPTER_INFO)malloc(dwBufLen + 8);
+	if (NULL != pIP_ADAPTER_INFO) 
+	{
+		if (ERROR_SUCCESS == GetAdaptersInfo(pIP_ADAPTER_INFO, &dwBufLen)) 
+		{
+			PIP_ADAPTER_INFO pAdapterInfo = pIP_ADAPTER_INFO;
+			do 
+			{
+				NETCARD_INFO nci;
+				char szBuf[512] = {0};
+				// ip
+				sprintf(szBuf, "%s", pAdapterInfo->IpAddressList.IpAddress.String);
+				nci.strIp = szBuf;
+
+				if (strlen(szBuf) == 0 || strstr(szBuf,"0.0.0.0")) 
+				{
+					nci.bIpVaild = false;
+				} 
+				else 
+				{
+					nci.bIpVaild = true;
+				}
+
+				// mac
+				memset(szBuf, 0, sizeof(szBuf));
+				sprintf(szBuf, "%02X-%02X-%02X-%02X-%02X-%02X",  
+					pAdapterInfo->Address[0], pAdapterInfo->Address[1], 
+					pAdapterInfo->Address[2], pAdapterInfo->Address[3], 
+					pAdapterInfo->Address[4], pAdapterInfo->Address[5]);
+				nci.strMac = szBuf;
+
+				// gateway
+				nci.strGateway = pAdapterInfo->GatewayList.IpAddress.String;
+
+				// description
+				nci.strDescription = (char*)(BSTR)pAdapterInfo->Description;
+
+				v.push_back(nci);
+				bRet = true;
+
+				pAdapterInfo = pAdapterInfo->Next;    // Progress through linked list
+			} while (pAdapterInfo);
+		}
+
+		free(pIP_ADAPTER_INFO);
+	}
+	return bRet;
+}
+
+Realtek PCIe GBE Family Controller
+VMware Virtual Ethernet Adapter for VMnet1
+VMware Virtual Ethernet Adapter for VMnet8
+Qualcomm Atheros QCA9377 Wireless Network Adapter	
