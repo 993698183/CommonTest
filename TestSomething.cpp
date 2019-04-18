@@ -1771,3 +1771,5 @@ Qualcomm Atheros QCA9377 Wireless Network Adapter
 #include <boost/asio.hpp>
 #include <boost/asio/io_service.hpp>  
 using boost::asio::ip::tcp;
+
+B0-52-16-D0-1C-1F
