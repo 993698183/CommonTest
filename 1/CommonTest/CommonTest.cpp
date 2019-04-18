@@ -820,7 +820,7 @@ int main()
 	if (0)
 	{
 		std::string str("11111_sql.xml");
-		int pos = str.find("_sql_");
+		size_t pos = str.find("_sql_");
 		if (0 == pos)
 		{
 			int i = 0;
