@@ -1767,3 +1767,7 @@ Realtek PCIe GBE Family Controller
 VMware Virtual Ethernet Adapter for VMnet1
 VMware Virtual Ethernet Adapter for VMnet8
 Qualcomm Atheros QCA9377 Wireless Network Adapter	
+
+#include <boost/asio.hpp>
+#include <boost/asio/io_service.hpp>  
+using boost::asio::ip::tcp;

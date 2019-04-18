@@ -3,6 +3,10 @@
 
 #include "stdafx.h"
 
+//根据boost的asio连接，确定本地ip和远端ip
+#include "BoostAsio.h"
+//根据boost的asio连接，确定本地ip和远端ip
+
 //测试boost线程使用方式
 #include "boost/thread.hpp"
 #include <iostream>
@@ -532,9 +536,24 @@ bool GetNetCardInfo(std::vector<NETCARD_INFO> & v)
 	return bRet;
 }
 
+
 //获取网卡信息，并分辨出来物理网卡，虚拟网卡，无线网卡信息
 int main()
 {
+	//根据boost的asio连接，确定本地ip和远端ip
+	if (1)
+	{
+		CBoostAsio  *pboostasio = new CBoostAsio("192.168.3.112", 57603);
+		pboostasio->SetIP();
+		std::cout << "LocalClientIP=" << pboostasio->GetLocalClientIP() << std::endl;
+		std::cout << "RemoteServerIP=" << pboostasio->GetRemoteServerIP() << std::endl;
+
+		delete pboostasio;
+		pboostasio = nullptr;
+		system("pause");
+	}
+	//根据boost的asio连接，确定本地ip和远端ip
+
 	if (0)
 	{
 		std::vector<NETCARD_INFO> v;
