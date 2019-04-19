@@ -535,13 +535,22 @@ bool GetNetCardInfo(std::vector<NETCARD_INFO> & v)
 	}
 	return bRet;
 }
-
-
 //获取网卡信息，并分辨出来物理网卡，虚拟网卡，无线网卡信息
+
+
 int main()
 {
-	//根据boost的asio连接，确定本地ip和远端ip
 	if (1)
+	{
+		int num[3] = {5, 5, 5};
+		for (int i = 0; i < 3; ++i)
+		{
+			num[i] = i;
+		}
+		system("pause");
+	}
+	//根据boost的asio连接，确定本地ip和远端ip
+	if (0)
 	{
 		CBoostAsio  *pboostasio = new CBoostAsio("192.168.3.112", 57603);
 		pboostasio->SetIP();
