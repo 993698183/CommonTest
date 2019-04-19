@@ -542,10 +542,15 @@ int main()
 {
 	if (1)
 	{
-		int num[3] = {5, 5, 5};
-		for (int i = 0; i < 3; ++i)
+		BOOL bRet = TRUE;
+		bool bRet2 = true;
+		if (-1 == bRet)
 		{
-			num[i] = i;
+			int i = 0;
+		}
+		if (-1 == bRet2)
+		{
+			int i = 9;
 		}
 		system("pause");
 	}
