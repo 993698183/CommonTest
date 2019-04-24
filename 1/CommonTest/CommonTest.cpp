@@ -7,6 +7,8 @@
 #include "BoostAsio.h"
 //根据boost的asio连接，确定本地ip和远端ip
 
+#include "BoostTest.h"
+
 //测试boost线程使用方式
 #include "boost/thread.hpp"
 #include <iostream>
@@ -540,7 +542,17 @@ bool GetNetCardInfo(std::vector<NETCARD_INFO> & v)
 
 int main()
 {
+	BoostTest test;
 	if (1)
+	{
+		//test.get_sec();
+		//test.test_timer();
+		//test.test_progress_timer();
+		//test.test_progress_display();
+		test.test_progress_display_restart();
+		system("pause");
+	}
+	if (0)
 	{
 		BOOL bRet = TRUE;
 		bool bRet2 = true;

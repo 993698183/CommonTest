@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoostAsio.h" />
+    <ClInclude Include="BoostTest.h" />
     <ClInclude Include="GetThreadID.h" />
     <ClInclude Include="ObserverPattern.h" />
     <ClInclude Include="stdafx.h" />
@@ -159,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoostAsio.cpp" />
+    <ClCompile Include="BoostTest.cpp" />
     <ClCompile Include="CommonTest.cpp" />
     <ClCompile Include="GetThreadID.cpp" />
     <ClCompile Include="stdafx.cpp">
