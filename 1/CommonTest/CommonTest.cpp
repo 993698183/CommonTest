@@ -549,7 +549,9 @@ int main()
 		//test.test_timer();
 		//test.test_progress_timer();
 		//test.test_progress_display();
-		test.test_progress_display_restart();
+		//test.test_progress_display_restart();
+		std::wstring wstrpath = L"E:\\1_ZXLCode\\1_QT\\1\\CH1\\CH101\\";
+		test.show_file(wstrpath);
 		system("pause");
 	}
 	if (0)

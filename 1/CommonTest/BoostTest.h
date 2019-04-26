@@ -8,6 +8,7 @@
 #include <boost/algorithm/minmax.hpp>
 #include <boost/timer.hpp>
 #include <boost/progress.hpp>
+#include <boost/filesystem.hpp>
 class BoostTest
 {
 public:
@@ -23,5 +24,7 @@ public:
 	void test_progress_timer();
 	void test_progress_display();
 	void test_progress_display_restart();
+
+	void show_file(const boost::filesystem::wpath &path);
 };
 

@@ -54,7 +54,9 @@ void BoostTest::test_progress_timer()
 
 		long long sum = 0;
 		for (int i = 0; i < 10000000; i++)
+		{
 			sum = sum + i;
+		}
 	}
 
 	//pt.elapsed();
@@ -106,4 +108,11 @@ void BoostTest::test_progress_display_restart()
 			pd += (pos - v.begin() + 1);
 		}
 	}
+}
+
+void BoostTest::show_file(const boost::filesystem::wpath &path)
+{
+	std::wstring cmd = L"/select,";
+	cmd += path.c_str();
+	ShellExecuteW(NULL, NULL, L"explorer", cmd.c_str(), NULL, SW_NORMAL);
 }
