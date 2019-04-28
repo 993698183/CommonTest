@@ -1773,3 +1773,10 @@ Qualcomm Atheros QCA9377 Wireless Network Adapter
 using boost::asio::ip::tcp;
 
 B0-52-16-D0-1C-1F
+
+typedef struct Point3D
+{
+    double objx;
+    double objy;
+    double objz;
+} POINT_3D, *PPOINT_3D;
