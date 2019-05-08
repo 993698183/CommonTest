@@ -540,11 +540,46 @@ bool GetNetCardInfo(std::vector<NETCARD_INFO> & v)
 //获取网卡信息，并分辨出来物理网卡，虚拟网卡，无线网卡信息
 
 
+//try...catch
+double division(int a, int b)
+{
+	if (b == 0)
+	{
+		throw "Division by zero condition!";
+	}
+	return (a / b);
+}
+//try...catch
 int main()
 {
-	BoostTest test;
 	if (1)
 	{
+		int x = 50;
+		int y = 0;
+		double z = 0;
+
+		try 
+		{
+			z = division(x, y);
+			std::cout << z << std::endl;
+		}
+		catch (const char* msg) 
+		{
+			std::cerr << msg << std::endl;
+		}
+		int b = 0;
+	}
+	if (0)
+	{
+		char czTemp[MAX_PATH];
+		int i = 100;
+		sprintf_s(czTemp, "11111111%d", 100);
+		system("pause");
+	}
+	
+	if (0)
+	{
+		BoostTest test;
 		//test.get_sec();
 		//test.test_timer();
 		//test.test_progress_timer();

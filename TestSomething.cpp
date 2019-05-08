@@ -1780,3 +1780,71 @@ typedef struct Point3D
     double objy;
     double objz;
 } POINT_3D, *PPOINT_3D;
+
+Microsoft Office Word 12.0
+
+	m_App->SetMainWindowHWND(m_hWnd);	
+	
+	if(GetItemCheck(2004)){
+		CString strV;
+		m_pEdit[0].GetWindowTextNew(strV);
+		if( ! StrIsInterger(strV)){
+			CKuiMsgBox::Show(_T("扇区开始位置必须输入正整数"), _T("输入错误"), MB_ICONEXCLAMATION);
+			return FALSE;
+		}
+	::SetWindowLong(m_pEdit[2].m_hWnd, GWL_STYLE, ::GetWindowLong(m_pEdit[2].m_hWnd, GWL_STYLE) | ES_NUMBER);
+	m_pEdit[2].SetLimitText(8);		
+	
+Realtek PCIe FE Family Controller
+VMware Virtual Ethernet Adapter for VMnet8	
+
+	//2017年12月20日15:00:36，处理有多个网卡导致获取服务器IP失败的问题
+	strcpy_s(pCMT->czServerIP, _countof(pCMT->czServerIP), gApp.m_client.GetConnIp().c_str()); 
+m_CCurPCBaseInformation
+m_CCurPCBaseInformation
+m_CCurPCBaseInformation
+m_CCurPCBaseInformation	
+
+//取得可用的盘符
+CString GetCanusefDisk()
+{
+	CString tmp = "C:", Dir;
+	UINT nType = 0;
+
+	//for(int i = 25; i > 3; i--)
+	for (char c = 'Z'; c > 'D'; c--) 
+	{   
+		//Dir = CString('A' + i) + _T(":");
+		Dir.Format(_T("%c:"), c);
+		if(!IsCanUsefDisk(Dir))
+		{
+			continue;
+		}
+        return Dir;
+	}
+	return tmp;
+}
+../../../CheckSystem/单机版/Code/product/WaVmMount.dll
+../../../CheckSystem/单机版/Code/product/WaVmMount.pdb
+
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run32" /v "monitor_client"  /f
+pause
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run32" /v "ncs_client"  /f
+pause
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run32" /v "检查系统"  /f
+pause
+
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run" /v "monitor_client"  /f
+pause
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run" /v "ncs_client"  /f
+pause
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Run" /v "检查系统"  /f
+pause
+
+E:\_work\CheckSystem\单机版\Code\CheckExe\CheckCommonInfo
+
+		TCHAR tczInfo[MAX_PATH] = {0};
+		_stprintf(tczInfo, _T("销毁窗体注册类 %s"), tczWinName);
+		OutputDebugString(tczInfo);
+		
+		netinfo
