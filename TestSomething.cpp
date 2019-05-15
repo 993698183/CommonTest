@@ -1848,3 +1848,4 @@ E:\_work\CheckSystem\单机版\Code\CheckExe\CheckCommonInfo
 		OutputDebugString(tczInfo);
 		
 		netinfo
+SQLite3.3.7 加密版源代码（VC2005）		

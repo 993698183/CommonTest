@@ -554,6 +554,23 @@ int main()
 {
 	if (1)
 	{
+		std::vector<int> ivec1;
+		ivec1.push_back(1);
+		ivec1.push_back(2);
+
+		std::vector<int>::size_type size1;
+		size1 = ivec1.size();
+
+		std::string str1 = "a";
+		std::string str2 = "b";
+		if (str1 < str2)
+		{
+			std::cout << "str1 is smaller than str2" << std::endl;
+		}
+		system("pause");
+	}
+	if (0)
+	{
 		int x = 50;
 		int y = 0;
 		double z = 0;
