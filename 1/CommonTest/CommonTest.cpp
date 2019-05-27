@@ -552,7 +552,22 @@ double division(int a, int b)
 //try...catch
 int main()
 {
-	if (1)
+	//判断电脑指令集是小端字节序还是大端字节序
+	if (0)
+	{
+		int i = 0x12345678;
+		if (0x12 == *((char *)&i))
+		{
+			std::cout << "Bid endian" << std::endl;
+		} 
+		else
+		{
+			std::cout << "Little endian" << std::endl;
+		}
+	}
+	//判断电脑指令集是小端字节序还是大端字节序
+
+	if (0)
 	{
 		std::vector<int> ivec1;
 		ivec1.push_back(1);
