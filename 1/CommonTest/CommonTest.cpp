@@ -552,6 +552,8 @@ double division(int a, int b)
 //try...catch
 int main()
 {
+	//监控文件目录变化
+	//监控文件目录变化
 	//判断电脑指令集是小端字节序还是大端字节序
 	if (0)
 	{

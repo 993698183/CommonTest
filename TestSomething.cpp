@@ -1868,3 +1868,5 @@ inline内联函数的使用：
 3：将inline函数的输入参数和返回值映射到调用方法的局部变量空间中
 4：如果inline函数有多个返回点，将其转变为inline函数代码块尾端的分支（使用GOTO）
 	
+在管理员权限的cmd窗口 sc stop sender_client_mon
+点击运行sender_client_mon.exe，拍照给我看下	
