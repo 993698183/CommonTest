@@ -1,9 +1,9 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "GetThreadID.h"
 
 #include <stdlib.h>
 #include <iostream>
-#include <thread>   //Ïß³Ì¿â
+#include <thread>   //çº¿ç¨‹åº“
 #include <future>
 #include <mutex>
 #include<numeric>
@@ -60,9 +60,9 @@ void GetThreadID::GetCurrentPCThreadID()
 	//std::future<int> fu = std::async(sum,std::ref(x),std::ref(y));
 	std::cout << fu.get() << std::endl;
 
-	//»ñÈ¡µ±Ç°¼ÆËã»úÏß³ÌÊýÁ¿
+	//èŽ·å–å½“å‰è®¡ç®—æœºçº¿ç¨‹æ•°é‡
 	std::cout << std::thread::hardware_concurrency() << std::endl;
-	//»ñÈ¡µ±Ç°Ïß³ÌID
+	//èŽ·å–å½“å‰çº¿ç¨‹ID
 	std::cout << std::hex << std::this_thread::get_id() << std::endl;
 	system("pause");
 }

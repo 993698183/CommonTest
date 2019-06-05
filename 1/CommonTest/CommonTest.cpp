@@ -1,24 +1,24 @@
-// CommonTest.cpp : Defines the entry point for the console application.
+ï»¿// CommonTest.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
 
-//¸ù¾İboostµÄasioÁ¬½Ó£¬È·¶¨±¾µØipºÍÔ¶¶Ëip
+//æ ¹æ®boostçš„asioè¿æ¥ï¼Œç¡®å®šæœ¬åœ°ipå’Œè¿œç«¯ip
 #include "BoostAsio.h"
-//¸ù¾İboostµÄasioÁ¬½Ó£¬È·¶¨±¾µØipºÍÔ¶¶Ëip
+//æ ¹æ®boostçš„asioè¿æ¥ï¼Œç¡®å®šæœ¬åœ°ipå’Œè¿œç«¯ip
 
 #include "BoostTest.h"
 
-//²âÊÔboostÏß³ÌÊ¹ÓÃ·½Ê½
+//æµ‹è¯•boostçº¿ç¨‹ä½¿ç”¨æ–¹å¼
 #include "boost/thread.hpp"
 #include <iostream>
 void mythread()
 {
 	std::cout << "hello thread" << std::endl;
 }
-//²âÊÔboostÏß³ÌÊ¹ÓÃ·½Ê½
+//æµ‹è¯•boostçº¿ç¨‹ä½¿ç”¨æ–¹å¼
 
-//²âÊÔC++ÏÂÉú³ÉDumpÎÄ¼ş
+//æµ‹è¯•C++ä¸‹ç”ŸæˆDumpæ–‡ä»¶
 //#include <imagehlp.h>
 //#include <Windows.h>
 //LONG WINAPI UnhandledExceptionFilter2(struct _EXCEPTION_POINTERS* ExceptionInfo)
@@ -37,15 +37,15 @@ void mythread()
 //	}
 //	return EXCEPTION_EXECUTE_HANDLER;
 //}
-//²âÊÔC++ÏÂÉú³ÉDumpÎÄ¼ş
+//æµ‹è¯•C++ä¸‹ç”ŸæˆDumpæ–‡ä»¶
 
-//VC»ñÈ¡×Ö·û³¤¶ÈµÄ·½·¨
+//VCè·å–å­—ç¬¦é•¿åº¦çš„æ–¹æ³•
 #include "string"
 #include "comutil.h"
 #pragma comment(lib, "comsuppw.lib")
-//VC»ñÈ¡×Ö·û³¤¶ÈµÄ·½·¨
+//VCè·å–å­—ç¬¦é•¿åº¦çš„æ–¹æ³•
 
-//ÅĞ¶ÏÖ¸¶¨Ä¿Â¼ÊÇ·ñÎª¿Õ
+//åˆ¤æ–­æŒ‡å®šç›®å½•æ˜¯å¦ä¸ºç©º
 #include <boost/system/error_code.hpp>
 #include <boost/filesystem.hpp>
 bool IsFileExistent(const boost::filesystem::path& path) 
@@ -70,9 +70,9 @@ bool IsFileExistent(const boost::filesystem::path& path)
 
 	return true;
 }
-//ÅĞ¶ÏÖ¸¶¨Ä¿Â¼ÊÇ·ñÎª¿Õ
+//åˆ¤æ–­æŒ‡å®šç›®å½•æ˜¯å¦ä¸ºç©º
 
-//boostÏß³Ì
+//boostçº¿ç¨‹
 #include <boost/thread.hpp>
 void hello()
 {
@@ -83,11 +83,11 @@ void hello()
 		boost::this_thread::sleep(boost::posix_time::seconds(1));
 	}
 }
-//boostÏß³Ì
+//boostçº¿ç¨‹
 
-//boostÎÄ¼şÄ¿Â¼²Ù×÷
+//boostæ–‡ä»¶ç›®å½•æ“ä½œ
 #include <boost/filesystem.hpp>
-//boostÎÄ¼şÄ¿Â¼²Ù×÷
+//boostæ–‡ä»¶ç›®å½•æ“ä½œ
 
 //my_reverse_copy example
 #include <iostream>
@@ -97,7 +97,7 @@ void my_reverse_copy()
 {
 	int myints[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	std::vector<int> myvector;
-	myvector.resize(9);//ÉêÇë¿Õ¼ä
+	myvector.resize(9);//ç”³è¯·ç©ºé—´
 	std::reverse_copy(myints, myints + 9, myvector.begin());
 
 	std::cout << "myvector contains:";
@@ -131,15 +131,15 @@ void my_cppy()
 
 //my_copy example 
 
-//ÑéÖ¤¶ÔÓÚ¿Õ×Ö·û´®Ê¹ÓÃ boostÈ¥µôÇ°ºó¿Õ¸ñÊÇ·ñ±¨´íÎÊÌâ
+//éªŒè¯å¯¹äºç©ºå­—ç¬¦ä¸²ä½¿ç”¨ boostå»æ‰å‰åç©ºæ ¼æ˜¯å¦æŠ¥é”™é—®é¢˜
 #include <boost/algorithm/string.hpp>
-//ÑéÖ¤¶ÔÓÚ¿Õ×Ö·û´®Ê¹ÓÃ boostÈ¥µôÇ°ºó¿Õ¸ñÊÇ·ñ±¨´íÎÊÌâ
+//éªŒè¯å¯¹äºç©ºå­—ç¬¦ä¸²ä½¿ç”¨ boostå»æ‰å‰åç©ºæ ¼æ˜¯å¦æŠ¥é”™é—®é¢˜
 
-//²âÊÔ¹Û²ìÕßÄ£Ê½
+//æµ‹è¯•è§‚å¯Ÿè€…æ¨¡å¼
 #include "ObserverPattern.h"
-//²âÊÔ¹Û²ìÕßÄ£Ê½
+//æµ‹è¯•è§‚å¯Ÿè€…æ¨¡å¼
 
-//Ê±¼ä¸ñÊ½Êä³ö
+//æ—¶é—´æ ¼å¼è¾“å‡º
 void SplitSpring(const std::string &src, const char &csplit, std::vector<std::string> &vResult)
 {
 	std::string sTemp = "";
@@ -199,9 +199,9 @@ std::string GetAbsolulyTime(const std::string &sLastTime, const int &iAddSeconds
 	std::string sSecond = IntToTheString(iSecond);
 	return sHour + ":" + sMinite + ":" + sSecond;
 }
-//Ê±¼ä¸ñÊ½Êä³ö
+//æ—¶é—´æ ¼å¼è¾“å‡º
 
-//µ÷ÓÃlogÈÕÖ¾¶¯Ì¬¿â
+//è°ƒç”¨logæ—¥å¿—åŠ¨æ€åº“
 typedef  void(*LOGFUN)(const std::string &sFile, const std::string &sFunc, const long &lLine, const std::string &sMessage);
 LOGFUN MYLOG;
 //typedef void (*LOGFUN)(const string &sFunc,const string &sMessage);
@@ -210,15 +210,15 @@ void FuncB()
 {
 	MYLOG(__FILE__, __FUNCTION__, __LINE__, "It is in FuncB");
 }
-//µ÷ÓÃlogÈÕÖ¾¶¯Ì¬¿â
+//è°ƒç”¨logæ—¥å¿—åŠ¨æ€åº“
 
-//WindowsµÄEvent±à³Ì
+//Windowsçš„Eventç¼–ç¨‹
 #include <windows.h>
 #include <iostream>
 #include <string>
 #include <vector>
-//Í¨¹ıÊÂ¼şµÃÖªÁíÒ»¸öÏß³ÌµÄ×´Ì¬
-//ÀıÈç£ºÏß³ÌÖĞÓĞÈıÖÖ×´Ì¬£ºÆğ´²¡¢³Ô·¹¡¢ÉÏ°à
+//é€šè¿‡äº‹ä»¶å¾—çŸ¥å¦ä¸€ä¸ªçº¿ç¨‹çš„çŠ¶æ€
+//ä¾‹å¦‚ï¼šçº¿ç¨‹ä¸­æœ‰ä¸‰ç§çŠ¶æ€ï¼šèµ·åºŠã€åƒé¥­ã€ä¸Šç­
 HANDLE g_getupHandle;
 HANDLE g_breakfastHandle;
 HANDLE g_workHandle;
@@ -235,9 +235,9 @@ DWORD WINAPI Worker(LPVOID n)
 
 	return 0;
 }
-//WindowsµÄEvent±à³Ì
+//Windowsçš„Eventç¼–ç¨‹
 
-//ÃæÊÔÌâ£ºÊä³öÁ½¸ö×Ö·ûÊı×éÖĞÏàÍ¬µÄ×Ö·û
+//é¢è¯•é¢˜ï¼šè¾“å‡ºä¸¤ä¸ªå­—ç¬¦æ•°ç»„ä¸­ç›¸åŒçš„å­—ç¬¦
 #include <iostream>
 void FindCommonChar(char a[], int lena, char b[], int lenb)
 {
@@ -261,18 +261,18 @@ void FindCommonChar(char a[], int lena, char b[], int lenb)
 		}
 	}
 }
-//ÃæÊÔÌâ£ºÊä³öÁ½¸ö×Ö·ûÊı×éÖĞÏàÍ¬µÄ×Ö·û
+//é¢è¯•é¢˜ï¼šè¾“å‡ºä¸¤ä¸ªå­—ç¬¦æ•°ç»„ä¸­ç›¸åŒçš„å­—ç¬¦
 
-//C++³£ÓÃºê¶¨Òå
+//C++å¸¸ç”¨å®å®šä¹‰
 #include <stdio.h>
-//C++³£ÓÃºê¶¨Òå
+//C++å¸¸ç”¨å®å®šä¹‰
 
-//boost::filesystem::is_directoryÒì³£²¶»ñ
+//boost::filesystem::is_directoryå¼‚å¸¸æ•è·
 #include <iostream>
 #include <boost/filesystem.hpp>
-//boost::filesystem::is_directoryÒì³£²¶»ñ
+//boost::filesystem::is_directoryå¼‚å¸¸æ•è·
 
-//mystringToiºÍmystringTofloat
+//mystringToiå’ŒmystringTofloat
 bool isNumericChar(char x)
 {
 	return (x >= '0' && x <= '9') ? true : false;
@@ -330,14 +330,14 @@ float string2float(const char* s)
 	}
 	return rez * fact;
 };
-//mystringToiºÍmystringTofloat
+//mystringToiå’ŒmystringTofloat
 
-//stringµÄc_str()º¯ÊıºÍdata()º¯Êı
+//stringçš„c_str()å‡½æ•°å’Œdata()å‡½æ•°
 #include <iostream>
 #include <string>
-//stringµÄc_str()º¯ÊıºÍdata()º¯Êı
+//stringçš„c_str()å‡½æ•°å’Œdata()å‡½æ•°
 
-//×Ô¼ºµÄlogÈÕÖ¾¹¦ÄÜ
+//è‡ªå·±çš„logæ—¥å¿—åŠŸèƒ½
 #include <iostream>
 #include <string>
 #include <vector>
@@ -356,87 +356,87 @@ void debug_log(
 	va_start(arglist, format);
 	vsnprintf(output, sizeof(output), format, arglist);
 	printf("[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
-	//´Ë´¦»áÆµ·±´ò¿ªÎÄ¼ş
+	//æ­¤å¤„ä¼šé¢‘ç¹æ‰“å¼€æ–‡ä»¶
 	FILE *fp = NULL;
 	fopen_s(&fp, "d:\\logfile.txt", "a+");//
 	fprintf_s(fp, "[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
 	fclose(fp);
 	va_end(arglist);
 }
-//×Ô¼ºµÄlogÈÕÖ¾¹¦ÄÜ
+//è‡ªå·±çš„logæ—¥å¿—åŠŸèƒ½
 
-//stringºÍwstring´óĞ¡Ğ´×ª»»¹¦ÄÜ
+//stringå’Œwstringå¤§å°å†™è½¬æ¢åŠŸèƒ½
 #include <string>
 #include <algorithm>
-//stringºÍwstring´óĞ¡Ğ´×ª»»¹¦ÄÜ
+//stringå’Œwstringå¤§å°å†™è½¬æ¢åŠŸèƒ½
 
-//»ñÈ¡Íø¿¨ĞÅÏ¢
+//è·å–ç½‘å¡ä¿¡æ¯
 //#include <WinSock2.h>
 #include <Iphlpapi.h>
 #include <iostream>
-#pragma comment(lib,"Iphlpapi.lib") //ĞèÒªÌí¼ÓIphlpapi.lib¿â
+#pragma comment(lib,"Iphlpapi.lib") //éœ€è¦æ·»åŠ Iphlpapi.libåº“
 bool get_netcard_info()
 {
-	//PIP_ADAPTER_INFO½á¹¹ÌåÖ¸Õë´æ´¢±¾»úÍø¿¨ĞÅÏ¢
+	//PIP_ADAPTER_INFOç»“æ„ä½“æŒ‡é’ˆå­˜å‚¨æœ¬æœºç½‘å¡ä¿¡æ¯
 	PIP_ADAPTER_INFO pIpAdapterInfo = new IP_ADAPTER_INFO();
-	//µÃµ½½á¹¹Ìå´óĞ¡,ÓÃÓÚGetAdaptersInfo²ÎÊı
+	//å¾—åˆ°ç»“æ„ä½“å¤§å°,ç”¨äºGetAdaptersInfoå‚æ•°
 	unsigned long stSize = sizeof(IP_ADAPTER_INFO);
-	//µ÷ÓÃGetAdaptersInfoº¯Êı,Ìî³äpIpAdapterInfoÖ¸Õë±äÁ¿;ÆäÖĞstSize²ÎÊı¼ÈÊÇÒ»¸öÊäÈëÁ¿Ò²ÊÇÒ»¸öÊä³öÁ¿
+	//è°ƒç”¨GetAdaptersInfoå‡½æ•°,å¡«å……pIpAdapterInfoæŒ‡é’ˆå˜é‡;å…¶ä¸­stSizeå‚æ•°æ—¢æ˜¯ä¸€ä¸ªè¾“å…¥é‡ä¹Ÿæ˜¯ä¸€ä¸ªè¾“å‡ºé‡
 	int nRel = GetAdaptersInfo(pIpAdapterInfo, &stSize);
-	//¼ÇÂ¼Íø¿¨ÊıÁ¿
+	//è®°å½•ç½‘å¡æ•°é‡
 	int netCardNum = 0;
-	//¼ÇÂ¼Ã¿ÕÅÍø¿¨ÉÏµÄIPµØÖ·ÊıÁ¿
+	//è®°å½•æ¯å¼ ç½‘å¡ä¸Šçš„IPåœ°å€æ•°é‡
 	int IPnumPerNetCard = 0;
 	if (ERROR_BUFFER_OVERFLOW == nRel)
 	{
-		//Èç¹ûº¯Êı·µ»ØµÄÊÇERROR_BUFFER_OVERFLOW
-		//ÔòËµÃ÷GetAdaptersInfo²ÎÊı´«µİµÄÄÚ´æ¿Õ¼ä²»¹»,Í¬Ê±Æä´«³östSize,±íÊ¾ĞèÒªµÄ¿Õ¼ä´óĞ¡
-		//ÕâÒ²ÊÇËµÃ÷ÎªÊ²Ã´stSize¼ÈÊÇÒ»¸öÊäÈëÁ¿Ò²ÊÇÒ»¸öÊä³öÁ¿
-		//ÊÍ·ÅÔ­À´µÄÄÚ´æ¿Õ¼ä
+		//å¦‚æœå‡½æ•°è¿”å›çš„æ˜¯ERROR_BUFFER_OVERFLOW
+		//åˆ™è¯´æ˜GetAdaptersInfoå‚æ•°ä¼ é€’çš„å†…å­˜ç©ºé—´ä¸å¤Ÿ,åŒæ—¶å…¶ä¼ å‡ºstSize,è¡¨ç¤ºéœ€è¦çš„ç©ºé—´å¤§å°
+		//è¿™ä¹Ÿæ˜¯è¯´æ˜ä¸ºä»€ä¹ˆstSizeæ—¢æ˜¯ä¸€ä¸ªè¾“å…¥é‡ä¹Ÿæ˜¯ä¸€ä¸ªè¾“å‡ºé‡
+		//é‡Šæ”¾åŸæ¥çš„å†…å­˜ç©ºé—´
 		delete pIpAdapterInfo;
-		//ÖØĞÂÉêÇëÄÚ´æ¿Õ¼äÓÃÀ´´æ´¢ËùÓĞÍø¿¨ĞÅÏ¢
+		//é‡æ–°ç”³è¯·å†…å­˜ç©ºé—´ç”¨æ¥å­˜å‚¨æ‰€æœ‰ç½‘å¡ä¿¡æ¯
 		pIpAdapterInfo = (PIP_ADAPTER_INFO)new BYTE[stSize];
-		//ÔÙ´Îµ÷ÓÃGetAdaptersInfoº¯Êı,Ìî³äpIpAdapterInfoÖ¸Õë±äÁ¿
+		//å†æ¬¡è°ƒç”¨GetAdaptersInfoå‡½æ•°,å¡«å……pIpAdapterInfoæŒ‡é’ˆå˜é‡
 		nRel = GetAdaptersInfo(pIpAdapterInfo, &stSize);
 	}
 	if (ERROR_SUCCESS == nRel)
 	{
-		//Êä³öÍø¿¨ĞÅÏ¢
-		//¿ÉÄÜÓĞ¶àÍø¿¨,Òò´ËÍ¨¹ıÑ­»·È¥ÅĞ¶Ï
+		//è¾“å‡ºç½‘å¡ä¿¡æ¯
+		//å¯èƒ½æœ‰å¤šç½‘å¡,å› æ­¤é€šè¿‡å¾ªç¯å»åˆ¤æ–­
 		while (pIpAdapterInfo)
 		{
-			std::cout << "Íø¿¨ÊıÁ¿£º" << ++netCardNum << std::endl;
-			std::cout << "Íø¿¨Ãû³Æ£º" << pIpAdapterInfo->AdapterName << std::endl;
-			std::cout << "Íø¿¨ÃèÊö£º" << pIpAdapterInfo->Description << std::endl;
+			std::cout << "ç½‘å¡æ•°é‡ï¼š" << ++netCardNum << std::endl;
+			std::cout << "ç½‘å¡åç§°ï¼š" << pIpAdapterInfo->AdapterName << std::endl;
+			std::cout << "ç½‘å¡æè¿°ï¼š" << pIpAdapterInfo->Description << std::endl;
 			switch (pIpAdapterInfo->Type)
 			{
 			case MIB_IF_TYPE_OTHER:
-				std::cout << "Íø¿¨ÀàĞÍ£º" << "OTHER" << std::endl;
+				std::cout << "ç½‘å¡ç±»å‹ï¼š" << "OTHER" << std::endl;
 				break;
 			case MIB_IF_TYPE_ETHERNET:
-				std::cout << "Íø¿¨ÀàĞÍ£º" << "ETHERNET" << std::endl;
+				std::cout << "ç½‘å¡ç±»å‹ï¼š" << "ETHERNET" << std::endl;
 				break;
 			case MIB_IF_TYPE_TOKENRING:
-				std::cout << "Íø¿¨ÀàĞÍ£º" << "TOKENRING" << std::endl;
+				std::cout << "ç½‘å¡ç±»å‹ï¼š" << "TOKENRING" << std::endl;
 				break;
 			case MIB_IF_TYPE_FDDI:
-				std::cout << "Íø¿¨ÀàĞÍ£º" << "FDDI" << std::endl;
+				std::cout << "ç½‘å¡ç±»å‹ï¼š" << "FDDI" << std::endl;
 				break;
 			case MIB_IF_TYPE_PPP:
 				printf("PP\n");
-				std::cout << "Íø¿¨ÀàĞÍ£º" << "PPP" << std::endl;
+				std::cout << "ç½‘å¡ç±»å‹ï¼š" << "PPP" << std::endl;
 				break;
 			case MIB_IF_TYPE_LOOPBACK:
-				std::cout << "Íø¿¨ÀàĞÍ£º" << "LOOPBACK" << std::endl;
+				std::cout << "ç½‘å¡ç±»å‹ï¼š" << "LOOPBACK" << std::endl;
 				break;
 			case MIB_IF_TYPE_SLIP:
-				std::cout << "Íø¿¨ÀàĞÍ£º" << "SLIP" << std::endl;
+				std::cout << "ç½‘å¡ç±»å‹ï¼š" << "SLIP" << std::endl;
 				break;
 			default:
 
 				break;
 			}
-			std::cout << "Íø¿¨MACµØÖ·£º";
+			std::cout << "ç½‘å¡MACåœ°å€ï¼š";
 			for (DWORD i = 0; i < pIpAdapterInfo->AddressLength; i++)
 			{
 				if (i < pIpAdapterInfo->AddressLength - 1)
@@ -448,15 +448,15 @@ bool get_netcard_info()
 					printf("%02X\n", pIpAdapterInfo->Address[i]);
 				}
 			}
-			std::cout << "Íø¿¨IPµØÖ·ÈçÏÂ£º" << std::endl;
-			//¿ÉÄÜÍø¿¨ÓĞ¶àIP,Òò´ËÍ¨¹ıÑ­»·È¥ÅĞ¶Ï
+			std::cout << "ç½‘å¡IPåœ°å€å¦‚ä¸‹ï¼š" << std::endl;
+			//å¯èƒ½ç½‘å¡æœ‰å¤šIP,å› æ­¤é€šè¿‡å¾ªç¯å»åˆ¤æ–­
 			IP_ADDR_STRING *pIpAddrString = &(pIpAdapterInfo->IpAddressList);
 			do
 			{
-				std::cout << "¸ÃÍø¿¨ÉÏµÄIPÊıÁ¿£º" << ++IPnumPerNetCard << std::endl;
-				std::cout << "IP µØÖ·£º" << pIpAddrString->IpAddress.String << std::endl;
-				std::cout << "×ÓÍøµØÖ·£º" << pIpAddrString->IpMask.String << std::endl;
-				std::cout << "Íø¹ØµØÖ·£º" << pIpAdapterInfo->GatewayList.IpAddress.String << std::endl;
+				std::cout << "è¯¥ç½‘å¡ä¸Šçš„IPæ•°é‡ï¼š" << ++IPnumPerNetCard << std::endl;
+				std::cout << "IP åœ°å€ï¼š" << pIpAddrString->IpAddress.String << std::endl;
+				std::cout << "å­ç½‘åœ°å€ï¼š" << pIpAddrString->IpMask.String << std::endl;
+				std::cout << "ç½‘å…³åœ°å€ï¼š" << pIpAdapterInfo->GatewayList.IpAddress.String << std::endl;
 				pIpAddrString = pIpAddrString->Next;
 			} while (pIpAddrString);
 			pIpAdapterInfo = pIpAdapterInfo->Next;
@@ -464,16 +464,16 @@ bool get_netcard_info()
 		}
 
 	}
-	//ÊÍ·ÅÄÚ´æ¿Õ¼ä
+	//é‡Šæ”¾å†…å­˜ç©ºé—´
 	if (pIpAdapterInfo)
 	{
 		delete pIpAdapterInfo;
 	}
 	return true;
 }
-//»ñÈ¡Íø¿¨ĞÅÏ¢
+//è·å–ç½‘å¡ä¿¡æ¯
 
-//»ñÈ¡Íø¿¨ĞÅÏ¢£¬²¢·Ö±æ³öÀ´ÎïÀíÍø¿¨£¬ĞéÄâÍø¿¨£¬ÎŞÏßÍø¿¨ĞÅÏ¢
+//è·å–ç½‘å¡ä¿¡æ¯ï¼Œå¹¶åˆ†è¾¨å‡ºæ¥ç‰©ç†ç½‘å¡ï¼Œè™šæ‹Ÿç½‘å¡ï¼Œæ— çº¿ç½‘å¡ä¿¡æ¯
 typedef struct __netcard_info_
 {
 	bool bIpVaild;
@@ -537,7 +537,7 @@ bool GetNetCardInfo(std::vector<NETCARD_INFO> & v)
 	}
 	return bRet;
 }
-//»ñÈ¡Íø¿¨ĞÅÏ¢£¬²¢·Ö±æ³öÀ´ÎïÀíÍø¿¨£¬ĞéÄâÍø¿¨£¬ÎŞÏßÍø¿¨ĞÅÏ¢
+//è·å–ç½‘å¡ä¿¡æ¯ï¼Œå¹¶åˆ†è¾¨å‡ºæ¥ç‰©ç†ç½‘å¡ï¼Œè™šæ‹Ÿç½‘å¡ï¼Œæ— çº¿ç½‘å¡ä¿¡æ¯
 
 
 //try...catch
@@ -552,9 +552,9 @@ double division(int a, int b)
 //try...catch
 int main()
 {
-	//¼à¿ØÎÄ¼şÄ¿Â¼±ä»¯
-	//¼à¿ØÎÄ¼şÄ¿Â¼±ä»¯
-	//ÅĞ¶ÏµçÄÔÖ¸Áî¼¯ÊÇĞ¡¶Ë×Ö½ÚĞò»¹ÊÇ´ó¶Ë×Ö½ÚĞò
+	//ç›‘æ§æ–‡ä»¶ç›®å½•å˜åŒ–
+	//ç›‘æ§æ–‡ä»¶ç›®å½•å˜åŒ–
+	//åˆ¤æ–­ç”µè„‘æŒ‡ä»¤é›†æ˜¯å°ç«¯å­—èŠ‚åºè¿˜æ˜¯å¤§ç«¯å­—èŠ‚åº
 	if (0)
 	{
 		int i = 0x12345678;
@@ -567,7 +567,7 @@ int main()
 			std::cout << "Little endian" << std::endl;
 		}
 	}
-	//ÅĞ¶ÏµçÄÔÖ¸Áî¼¯ÊÇĞ¡¶Ë×Ö½ÚĞò»¹ÊÇ´ó¶Ë×Ö½ÚĞò
+	//åˆ¤æ–­ç”µè„‘æŒ‡ä»¤é›†æ˜¯å°ç«¯å­—èŠ‚åºè¿˜æ˜¯å¤§ç«¯å­—èŠ‚åº
 
 	if (0)
 	{
@@ -637,7 +637,7 @@ int main()
 		}
 		system("pause");
 	}
-	//¸ù¾İboostµÄasioÁ¬½Ó£¬È·¶¨±¾µØipºÍÔ¶¶Ëip
+	//æ ¹æ®boostçš„asioè¿æ¥ï¼Œç¡®å®šæœ¬åœ°ipå’Œè¿œç«¯ip
 	if (0)
 	{
 		CBoostAsio  *pboostasio = new CBoostAsio("192.168.3.112", 57603);
@@ -649,7 +649,7 @@ int main()
 		pboostasio = nullptr;
 		system("pause");
 	}
-	//¸ù¾İboostµÄasioÁ¬½Ó£¬È·¶¨±¾µØipºÍÔ¶¶Ëip
+	//æ ¹æ®boostçš„asioè¿æ¥ï¼Œç¡®å®šæœ¬åœ°ipå’Œè¿œç«¯ip
 
 	if (0)
 	{
@@ -657,57 +657,57 @@ int main()
 		GetNetCardInfo(v);
 		system("pause");
 	}
-	//»ñÈ¡Íø¿¨ĞÅÏ¢£¬²¢·Ö±æ³öÀ´ÎïÀíÍø¿¨£¬ĞéÄâÍø¿¨£¬ÎŞÏßÍø¿¨ĞÅÏ¢
+	//è·å–ç½‘å¡ä¿¡æ¯ï¼Œå¹¶åˆ†è¾¨å‡ºæ¥ç‰©ç†ç½‘å¡ï¼Œè™šæ‹Ÿç½‘å¡ï¼Œæ— çº¿ç½‘å¡ä¿¡æ¯
 
-	//»ñÈ¡Íø¿¨ĞÅÏ¢
+	//è·å–ç½‘å¡ä¿¡æ¯
 	if (0)
 	{
 		get_netcard_info();
 		system("pause");
 	}
-	//»ñÈ¡Íø¿¨ĞÅÏ¢
+	//è·å–ç½‘å¡ä¿¡æ¯
 
-	//c++µ÷ÓÃcmdÖ¸Áî£¬Æô¶¯Windows¼ÆËãÆ÷
+	//c++è°ƒç”¨cmdæŒ‡ä»¤ï¼Œå¯åŠ¨Windowsè®¡ç®—å™¨
 	if (0)
 	{
-		//·½·¨Ò»£º
+		//æ–¹æ³•ä¸€ï¼š
 		system("calc");
-		//·½·¨¶ş£º
+		//æ–¹æ³•äºŒï¼š
 		//WinExec("calc", SW_NORMAL);
 	}
-	//c++µ÷ÓÃcmdÖ¸Áî£¬Æô¶¯Windows¼ÆËãÆ÷
-	//²âÊÔnewÊ§°ÜµÄ·µ»ØÖµ
+	//c++è°ƒç”¨cmdæŒ‡ä»¤ï¼Œå¯åŠ¨Windowsè®¡ç®—å™¨
+	//æµ‹è¯•newå¤±è´¥çš„è¿”å›å€¼
 	if (0)
 	{
 		int *p = nullptr;
 		p = new int[1000000];
 		system("pause");
 	}
-	//²âÊÔnewÊ§°ÜµÄ·µ»ØÖµ
+	//æµ‹è¯•newå¤±è´¥çš„è¿”å›å€¼
 
-	//stringºÍwstring´óĞ¡Ğ´×ª»»¹¦ÄÜ
+	//stringå’Œwstringå¤§å°å†™è½¬æ¢åŠŸèƒ½
 	if (0)
 	{
-		std::wstring wstr(L"absÖĞÎÄ-Da");
+		std::wstring wstr(L"absä¸­æ–‡-Da");
 		transform(wstr.begin(), wstr.end(), wstr.begin(), ::toupper);
 
-		std::string strA = "ÄãºÃyasaken@126.com";
+		std::string strA = "ä½ å¥½yasaken@126.com";
 		transform(strA.begin(), strA.end(), strA.begin(), ::toupper);
 		system("pause");
 	}
-	//stringºÍwstring´óĞ¡Ğ´×ª»»¹¦ÄÜ
+	//stringå’Œwstringå¤§å°å†™è½¬æ¢åŠŸèƒ½
 
-	//×Ô¼ºµÄlogÈÕÖ¾¹¦ÄÜ
+	//è‡ªå·±çš„logæ—¥å¿—åŠŸèƒ½
 	if (0)
 	{
 		DEBUG_LOG("%s, ranking NO.%d", "You are so smart", 1);
 		system("pause");
 	}
-	//×Ô¼ºµÄlogÈÕÖ¾¹¦ÄÜ
+	//è‡ªå·±çš„logæ—¥å¿—åŠŸèƒ½
 
-	//stringµÄc_str()º¯ÊıºÍdata()º¯Êı
-	//1. c_str()£ºÉú³ÉÒ»¸öconst char*Ö¸Õë£¬Ö¸ÏòÒÔ¿Õ×Ö·ûÖÕÖ¹µÄÊı×é¡£
-	//2. data():Óëc_str()ÀàËÆ£¬µ«ÊÇ·µ»ØµÄÊı×é²»ÒÔ¿Õ×Ö·ûÖÕÖ¹¡£
+	//stringçš„c_str()å‡½æ•°å’Œdata()å‡½æ•°
+	//1. c_str()ï¼šç”Ÿæˆä¸€ä¸ªconst char*æŒ‡é’ˆï¼ŒæŒ‡å‘ä»¥ç©ºå­—ç¬¦ç»ˆæ­¢çš„æ•°ç»„ã€‚
+	//2. data():ä¸c_str()ç±»ä¼¼ï¼Œä½†æ˜¯è¿”å›çš„æ•°ç»„ä¸ä»¥ç©ºå­—ç¬¦ç»ˆæ­¢ã€‚
 	if (0)
 	{
 		std::string s = "12345";
@@ -717,9 +717,9 @@ int main()
 		strncpy_s(test1, s.data(), 6);
 		system("pause");
 	}
-	//stringµÄc_str()º¯ÊıºÍdata()º¯Êı
+	//stringçš„c_str()å‡½æ•°å’Œdata()å‡½æ•°
 
-	//mystringToiºÍmystringTofloat
+	//mystringToiå’ŒmystringTofloat
 	if (0)
 	{
 		char* p1 = "123";
@@ -727,9 +727,9 @@ int main()
 		char* p2 = "123.333";
 		std::cout << string2float(p2) << std::endl;
 	}
-	//mystringToiºÍmystringTofloat
+	//mystringToiå’ŒmystringTofloat
 
-	//boost::filesystem::is_directoryÒì³£²¶»ñ
+	//boost::filesystem::is_directoryå¼‚å¸¸æ•è·
 	if (0)
 	{
 		/*boost::filesystem::path p("C:\OneDriveTemp\S-1-5-21-3878404667-799272800-635255798-1001");
@@ -751,24 +751,24 @@ int main()
 			}
 		}*/
 	}
-	//boost::filesystem::is_directoryÒì³£²¶»ñ
+	//boost::filesystem::is_directoryå¼‚å¸¸æ•è·
 
-	//C++³£ÓÃºê¶¨Òå
+	//C++å¸¸ç”¨å®å®šä¹‰
 	if (0)
 	{
-		printf("µ±Ç°Ô´´úÂëº¯ÊıÃû£º__FUNCTION__==%s\n", __FUNCTION__);
-		printf("µ±Ç°Ô´´úÂëĞĞºÅ£º__LINE__==%d\n", __LINE__);
-		printf("µ±Ç°Ô´´úÂëÎÄ¼şÃû£º__FILE__==%s\n", __FILE__);
-		printf("µ±Ç°±àÒëÈÕÆÚ¡²×¢ÒâºÍµ±Ç°ÏµÍ³ÈÕÆÚÇø±ğ¿ªÀ´¡³:__DATE__==%s\n", __DATE__);
-		printf("µ±Ç°±àÒëÊ±¼ä¡²×¢ÒâºÍµ±Ç°ÏµÍ³ÈÕÆÚÇø±ğ¿ªÀ´¡³:__TIME__==%s\n", __TIME__);
-		printf("µ±Ç°ÏµÍ³Ê±¼ä´Á£º__TIMESTAMP__==%s\n", __TIMESTAMP__);
-		//printf("µ±ÒªÇó³ÌĞòÑÏ¸ñ×ñÑ­ANSIC±ê×¼Ê±¸Ã±êÊ¶·û±»¸³ÖµÎª1:__STDC__==%d\n", __STDC__);
-		printf("µ±ÓÃC++±àÒë³ÌĞò±àÒëÊ±£¬±êÊ¶·û__cplusplus¾Í»á±»¶¨Òå:__cplusplus==%d\n", __cplusplus);
+		printf("å½“å‰æºä»£ç å‡½æ•°åï¼š__FUNCTION__==%s\n", __FUNCTION__);
+		printf("å½“å‰æºä»£ç è¡Œå·ï¼š__LINE__==%d\n", __LINE__);
+		printf("å½“å‰æºä»£ç æ–‡ä»¶åï¼š__FILE__==%s\n", __FILE__);
+		printf("å½“å‰ç¼–è¯‘æ—¥æœŸã€”æ³¨æ„å’Œå½“å‰ç³»ç»Ÿæ—¥æœŸåŒºåˆ«å¼€æ¥ã€•:__DATE__==%s\n", __DATE__);
+		printf("å½“å‰ç¼–è¯‘æ—¶é—´ã€”æ³¨æ„å’Œå½“å‰ç³»ç»Ÿæ—¥æœŸåŒºåˆ«å¼€æ¥ã€•:__TIME__==%s\n", __TIME__);
+		printf("å½“å‰ç³»ç»Ÿæ—¶é—´æˆ³ï¼š__TIMESTAMP__==%s\n", __TIMESTAMP__);
+		//printf("å½“è¦æ±‚ç¨‹åºä¸¥æ ¼éµå¾ªANSICæ ‡å‡†æ—¶è¯¥æ ‡è¯†ç¬¦è¢«èµ‹å€¼ä¸º1:__STDC__==%d\n", __STDC__);
+		printf("å½“ç”¨C++ç¼–è¯‘ç¨‹åºç¼–è¯‘æ—¶ï¼Œæ ‡è¯†ç¬¦__cpluspluså°±ä¼šè¢«å®šä¹‰:__cplusplus==%d\n", __cplusplus);
 		system("pause");
 	}
-	//C++³£ÓÃºê¶¨Òå
+	//C++å¸¸ç”¨å®å®šä¹‰
 
-	//ÃæÊÔÌâ£ºÊä³öÁ½¸ö×Ö·ûÊı×éÖĞÏàÍ¬µÄ×Ö·û
+	//é¢è¯•é¢˜ï¼šè¾“å‡ºä¸¤ä¸ªå­—ç¬¦æ•°ç»„ä¸­ç›¸åŒçš„å­—ç¬¦
 	if (0)
 	{
 		char a[5] = { '1', 'b', 'C', 'f', 'f' };
@@ -776,15 +776,15 @@ int main()
 		FindCommonChar(a, _countof(a), b, _countof(b));
 		system("pause");
 	}
-	//ÃæÊÔÌâ£ºÊä³öÁ½¸ö×Ö·ûÊı×éÖĞÏàÍ¬µÄ×Ö·û
+	//é¢è¯•é¢˜ï¼šè¾“å‡ºä¸¤ä¸ªå­—ç¬¦æ•°ç»„ä¸­ç›¸åŒçš„å­—ç¬¦
 
-	//WindowsµÄEvent±à³Ì
+	//Windowsçš„Eventç¼–ç¨‹
 	if (0)
 	{
-		stateTexts.reserve(3);//ÈİÆ÷Ô¤Áô¿Õ¼ä
-		g_getupHandle = CreateEventA(NULL, true, false, NULL);//ÊÖ¶¯£¬ÎŞĞÅºÅ
-		g_breakfastHandle = CreateEventA(NULL, true, false, NULL);//ÊÖ¶¯£¬ÎŞĞÅºÅ
-		g_workHandle = CreateEventA(NULL, true, false, NULL);//ÊÖ¶¯£¬ÎŞĞÅºÅ
+		stateTexts.reserve(3);//å®¹å™¨é¢„ç•™ç©ºé—´
+		g_getupHandle = CreateEventA(NULL, true, false, NULL);//æ‰‹åŠ¨ï¼Œæ— ä¿¡å·
+		g_breakfastHandle = CreateEventA(NULL, true, false, NULL);//æ‰‹åŠ¨ï¼Œæ— ä¿¡å·
+		g_workHandle = CreateEventA(NULL, true, false, NULL);//æ‰‹åŠ¨ï¼Œæ— ä¿¡å·
 
 		DWORD threadId;
 		HANDLE theadHandle = CreateThread(NULL,
@@ -811,9 +811,9 @@ int main()
 
 		system("pause");
 	}
-	//WindowsµÄEvent±à³Ì
+	//Windowsçš„Eventç¼–ç¨‹
 
-	//µ÷ÓÃlogÈÕÖ¾¶¯Ì¬¿â
+	//è°ƒç”¨logæ—¥å¿—åŠ¨æ€åº“
 	if (0)
 	{
 		char c;
@@ -852,7 +852,7 @@ int main()
 		}
 		c = getchar();
 	}
-	//µ÷ÓÃlogÈÕÖ¾¶¯Ì¬¿â
+	//è°ƒç”¨logæ—¥å¿—åŠ¨æ€åº“
 
 	if (0)
 	{
@@ -868,7 +868,7 @@ int main()
 
 	if (0)
 	{
-		std::string str("1111ĞÂ½¨ÎÄ¼ş¼Ğ");
+		std::string str("1111æ–°å»ºæ–‡ä»¶å¤¹");
 		std::size_t nlength = strlen(str.c_str());
 		std::size_t nlength2 = str.length();
 
@@ -923,7 +923,7 @@ int main()
 			int i = 0;
 		}
 	}
-	//std::stringµÄcomparº¯ÊıµÄÊ¹ÓÃ
+	//std::stringçš„comparå‡½æ•°çš„ä½¿ç”¨
 	if (0)
 	{
 		std::string str("0");
@@ -936,41 +936,41 @@ int main()
 	}
 	if (0)
 	{
-		//boostÏß³Ì
+		//boostçº¿ç¨‹
 		boost::thread thrd(&hello);
 		thrd.join();
 		getchar();
 	}
 	if (0)
 	{
-		//ÅĞ¶ÏÖ¸¶¨Ä¿Â¼ÊÇ·ñÎª¿Õ
+		//åˆ¤æ–­æŒ‡å®šç›®å½•æ˜¯å¦ä¸ºç©º
 		std::string str(("C:\\Users\\waction\\Desktop\\1\\*.*"));
 		bool ret = IsFileExistent(str.c_str());
 	}
 	if (0)
 	{
-		//VC»ñÈ¡×Ö·û³¤¶ÈµÄ·½·¨
-		char s1[] = "ÖĞÎÄABC";
-		wchar_t s2[] = L"ÖĞÎÄABC";
+		//VCè·å–å­—ç¬¦é•¿åº¦çš„æ–¹æ³•
+		char s1[] = "ä¸­æ–‡ABC";
+		wchar_t s2[] = L"ä¸­æ–‡ABC";
 
-		//Ê¹ÓÃsizeof»ñÈ¡×Ö·û´®³¤¶È
+		//ä½¿ç”¨sizeofè·å–å­—ç¬¦ä¸²é•¿åº¦
 		printf("sizeof s1: %d\r\n", sizeof(s1));
 		printf("sizeof s2: %d\r\n", sizeof(s2));
 
-		//Ê¹ÓÃstrlen»ñÈ¡×Ö·û´®³¤¶È
+		//ä½¿ç”¨strlenè·å–å­—ç¬¦ä¸²é•¿åº¦
 		printf("strlen(s1): %d\r\n", strlen(s1));
 		printf("wcslen(s2): %d\r\n", wcslen(s2));
 
-		//Ê¹ÓÃCString::GetLength()»ñÈ¡×Ö·û´®³¤¶È
+		//ä½¿ç”¨CString::GetLength()è·å–å­—ç¬¦ä¸²é•¿åº¦
 		//CStringA sa = s1;
 		//CStringW sw = s2;
 		//printf("sa.GetLength(): %d\r\n", sa.GetLength());
 		//printf("sw.GetLength(): %d\r\n", sw.GetLength());
-		//Ê¹ÓÃstring::size()»ñÈ¡×Ö·û´®³¤¶È
+		//ä½¿ç”¨string::size()è·å–å­—ç¬¦ä¸²é•¿åº¦
 		std::string ss1 = s1;
 		std::wstring ss2 = s2;printf("ss1.size(): %d\r\n", ss1.size());
 		printf("ss2.size(): %d\r\n", ss2.size());
-		//Ê¹ÓÃ_bstr_t::length()»ñÈ¡×Ö·û´®³¤¶È
+		//ä½¿ç”¨_bstr_t::length()è·å–å­—ç¬¦ä¸²é•¿åº¦
 		_bstr_t bs1(s1);
 		_bstr_t bs2(s2);
 		printf("bs1.length(): %d\r\n", bs1.length());
@@ -979,12 +979,12 @@ int main()
 	}
 	if (0)
 	{
-		//²âÊÔC++ÏÂÉú³ÉDumpÎÄ¼ş
+		//æµ‹è¯•C++ä¸‹ç”ŸæˆDumpæ–‡ä»¶
 		//SetUnhandledExceptionFilter(UnhandledExceptionFilter2);
 	}
 	if (0)
 	{
-		//²âÊÔboostÏß³ÌÊ¹ÓÃ·½Ê½
+		//æµ‹è¯•boostçº¿ç¨‹ä½¿ç”¨æ–¹å¼
 		boost::function<void()>f(mythread);
 		boost::thread t(f);
 		t.join();

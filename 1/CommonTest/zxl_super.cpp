@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "zxl_super.h"
 
 // deriv_super.cpp

@@ -1,10 +1,10 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
-//¸ù¾İboostµÄasioÁ¬½Ó£¬È·¶¨±¾µØipºÍÔ¶¶Ëip
+//æ ¹æ®boostçš„asioè¿æ¥ï¼Œç¡®å®šæœ¬åœ°ipå’Œè¿œç«¯ip
 #include <boost/asio.hpp>
 #include <boost/asio/io_service.hpp>  
 using boost::asio::ip::tcp;
-//¸ù¾İboostµÄasioÁ¬½Ó£¬È·¶¨±¾µØipºÍÔ¶¶Ëip
+//æ ¹æ®boostçš„asioè¿æ¥ï¼Œç¡®å®šæœ¬åœ°ipå’Œè¿œç«¯ip
 class CBoostAsio
 {
 public:

@@ -1,4 +1,4 @@
-
+ï»¿
 // TrayTestDlg.cpp : implementation file
 //
 
@@ -19,7 +19,7 @@ void hello_thread()
 	while (true)
 	{
 		//m_num++;
-		//Ê¹ÓÃµ±Ç°local£¬µ«ÊÇnumpunctÊ¹ÓÃÈ±Ê¡£¬Òò´Ë²»»áÊä³öÊı×ÖÊ±²»»á¼ÓÉÏÇ§·ÖºÅ·Ö¸ô·û
+		//ä½¿ç”¨å½“å‰localï¼Œä½†æ˜¯numpunctä½¿ç”¨ç¼ºçœï¼Œå› æ­¤ä¸ä¼šè¾“å‡ºæ•°å­—æ—¶ä¸ä¼šåŠ ä¸Šåƒåˆ†å·åˆ†éš”ç¬¦
 		//std::locale::global(std::locale("").combine<std::numpunct<char>>(std::locale::classic()));
 		//std::string strNum = boost::lexical_cast<std::string>(m_num);
 		//boost::this_thread::sleep(boost::posix_time::milliseconds(100));
@@ -180,10 +180,10 @@ void CTrayTestDlg::ToTray(void)
 	m_nid.uID = IDR_MAINFRAME;
 	m_nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
 	m_nid.uCallbackMessage = WM_SHOWTASK;
-	//×Ô¶¨ÒåµÄÏûÏ¢Ãû³Æ WM_SHOWTASK Í·º¯ÊıÖĞ¶¨ÒåÎªWM_USER+10
+	//è‡ªå®šä¹‰çš„æ¶ˆæ¯åç§° WM_SHOWTASK å¤´å‡½æ•°ä¸­å®šä¹‰ä¸ºWM_USER+10
 	m_nid.hIcon = LoadIcon(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDR_MAINFRAME));
-	StrCpyW(m_nid.szTip, L"ÍĞÅÌÍ¼±ê");//µ±Êó±ê·ÅÔÚÉÏÃæÊ±£¬ËùÏÔÊ¾µÄÄÚÈİ 
-	Shell_NotifyIcon(NIM_ADD, &m_nid);//ÔÚÍĞÅÌÇøÌí¼ÓÍ¼±ê 
+	StrCpyW(m_nid.szTip, L"æ‰˜ç›˜å›¾æ ‡");//å½“é¼ æ ‡æ”¾åœ¨ä¸Šé¢æ—¶ï¼Œæ‰€æ˜¾ç¤ºçš„å†…å®¹ 
+	Shell_NotifyIcon(NIM_ADD, &m_nid);//åœ¨æ‰˜ç›˜åŒºæ·»åŠ å›¾æ ‡ 
 }
 
 
@@ -193,26 +193,26 @@ LRESULT CTrayTestDlg::onShowTask(WPARAM wParam, LPARAM lParam)
 		return 1;
 	switch (lParam)
 	{
-	case WM_RBUTTONUP://ÓÒ¼üÆğÀ´Ê±µ¯³ö¿ì½İ²Ëµ¥£¬ÕâÀïÖ»ÓĞÒ»¸ö¡°¹Ø±Õ¡± 
+	case WM_RBUTTONUP://å³é”®èµ·æ¥æ—¶å¼¹å‡ºå¿«æ·èœå•ï¼Œè¿™é‡Œåªæœ‰ä¸€ä¸ªâ€œå…³é—­â€ 
 	{
 		LPPOINT lpoint = new tagPOINT;
-		::GetCursorPos(lpoint);//µÃµ½Êó±êÎ»ÖÃ 
+		::GetCursorPos(lpoint);//å¾—åˆ°é¼ æ ‡ä½ç½® 
 		CMenu menu;
-		menu.CreatePopupMenu();//ÉùÃ÷Ò»¸öµ¯³öÊ½²Ëµ¥ 
-							   //Ôö¼Ó²Ëµ¥Ïî¡°¹Ø±Õ¡±£¬µã»÷Ôò·¢ËÍÏûÏ¢WM_DESTROY¸øÖ÷´°¿Ú£¨ÒÑ 
-							   //Òş²Ø£©£¬½«³ÌĞò½áÊø¡£ 
-		menu.AppendMenu(MF_STRING, WM_DESTROY, L"ÍË³ö");
-		//È·¶¨µ¯³öÊ½²Ëµ¥µÄÎ»ÖÃ 
+		menu.CreatePopupMenu();//å£°æ˜ä¸€ä¸ªå¼¹å‡ºå¼èœå• 
+							   //å¢åŠ èœå•é¡¹â€œå…³é—­â€ï¼Œç‚¹å‡»åˆ™å‘é€æ¶ˆæ¯WM_DESTROYç»™ä¸»çª—å£ï¼ˆå·² 
+							   //éšè—ï¼‰ï¼Œå°†ç¨‹åºç»“æŸã€‚ 
+		menu.AppendMenu(MF_STRING, WM_DESTROY, L"é€€å‡º");
+		//ç¡®å®šå¼¹å‡ºå¼èœå•çš„ä½ç½® 
 		menu.TrackPopupMenu(TPM_LEFTALIGN, lpoint->x, lpoint->y, this);
-		//×ÊÔ´»ØÊÕ 
+		//èµ„æºå›æ”¶ 
 		HMENU hmenu = menu.Detach();
 		menu.DestroyMenu();
 		delete lpoint;
 	}
 	break;
-	case WM_LBUTTONDBLCLK://Ë«»÷×ó¼üµÄ´¦Àí 
+	case WM_LBUTTONDBLCLK://åŒå‡»å·¦é”®çš„å¤„ç† 
 	{
-		this->ShowWindow(SW_SHOWNORMAL);//¼òµ¥µÄÏÔÊ¾Ö÷´°¿Ú
+		this->ShowWindow(SW_SHOWNORMAL);//ç®€å•çš„æ˜¾ç¤ºä¸»çª—å£
 	}
 	break;
 	}

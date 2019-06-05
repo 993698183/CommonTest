@@ -1,9 +1,9 @@
-#pragma once
+﻿#pragma once
 /*
-  * �۲���ģʽ
-  * �龰�������Σ�ABCD��λͬѧ��A�Ǻ�ѧ����ȥ�ϿΣ�B������˯����C�����ɴ���Ϸ��D��ѧУ����Ů�ѹ��
-  * ����Լ�������Ҫ�����ˣ�A��QQȺ���һ�����������̸ϵ�����ȥ��
-  * ���ù۲���ģʽʵ������龰��Ӧ�á�
+  * 观察者模式
+  * 情景：高数课，ABCD四位同学，A是好学生，去上课，B在寝室睡觉，C在网吧打游戏，D在学校外陪女友逛街
+  * 他们约定，如果要点名了，A在QQ群里吼一声，他们立刻赶到教室去。
+  * 采用观察者模式实现这个情景的应用。
 */
 #include <iostream>
 #include <string>
@@ -60,7 +60,7 @@ void QQGroup::removeObsvr(Observer * obsvr)
 
 void QQGroup::notifyObsvrs(const std::string &msg)
 {
-	std::cout << "Ⱥ��Ϣ" << msg << std::endl;
+	std::cout << "群消息" << msg << std::endl;
 	std::list<Observer *>::iterator iter = _observers->begin();
 	for (; iter != _observers->end(); ++iter)
 	{
@@ -89,13 +89,13 @@ private:
 void RooMate::Update(const std::string &msg)
 {
 	std::cout << "This is" << _name << std::endl;
-	if (msg == "������")
+	if (msg == "点名了")
 	{
-		std::cout << "Action��" << _action << std::endl << std::endl;
+		std::cout << "Action：" << _action << std::endl << std::endl;
 	} 
 	else
 	{
-		std::cout << "Go on��" << _now << std::endl << std::endl;
+		std::cout << "Go on：" << _now << std::endl << std::endl;
 	}
 }
 
@@ -122,8 +122,8 @@ void testObserverPattern()
 	qqgroup->registerObsvr(B);
 	qqgroup->registerObsvr(C);
 	qqgroup->registerObsvr(D);
-	qqgroup->notifyObsvrs("Ŀǰû����");
-	qqgroup->notifyObsvrs("������");
+	qqgroup->notifyObsvrs("目前没点名");
+	qqgroup->notifyObsvrs("点名了");
 
 	system("Pause");
 }

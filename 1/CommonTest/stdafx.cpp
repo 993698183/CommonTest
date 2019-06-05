@@ -1,11 +1,11 @@
-// stdafx.cpp : source file that includes just the standard includes
+ï»¿// stdafx.cpp : source file that includes just the standard includes
 // CommonTest.pch will be the pre-compiled header
 // stdafx.obj will contain the pre-compiled type information
 
 #include "stdafx.h"
 #include <Windows.h>
 #include <string>
-//¿í×Ö·û×ª¶à×Ö½Ú
+//å®½å­—ç¬¦è½¬å¤šå­—èŠ‚
 std::string W2A(const std::wstring& utf8)
 {
 	int buffSize = WideCharToMultiByte(CP_ACP, NULL, utf8.c_str(), -1, NULL, NULL, NULL, FALSE);
@@ -18,7 +18,7 @@ std::string W2A(const std::wstring& utf8)
 	return result;
 }
 
-//¶à×Ö½Ú×ª¿í×Ö·û
+//å¤šå­—èŠ‚è½¬å®½å­—ç¬¦
 std::wstring A2W(const std::string& gbk)
 {
 	int buffSize = MultiByteToWideChar(CP_ACP, NULL, gbk.c_str(), -1, NULL, NULL);

@@ -1,17 +1,17 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "MYLog.h"
 #include <time.h>
 
-//µ¥Àı¾²Ì¬Ö¸Õë³õÊ¼»¯
+//å•ä¾‹é™æ€æŒ‡é’ˆåˆå§‹åŒ–
 MYLog *  MYLog::m_pInstance = new MYLog();
 /***********************************
-´Ëº¯Êı²»»á±»µ÷ÓÃ
+æ­¤å‡½æ•°ä¸ä¼šè¢«è°ƒç”¨
 ***********************************/
 MYLog::MYLog(void)
 {
 }
 /***********************************
-Îö¹¹µ¥ÀıÖ¸Õë
+ææ„å•ä¾‹æŒ‡é’ˆ
 ***********************************/
 MYLog::~MYLog(void)
 {
@@ -22,14 +22,14 @@ MYLog::~MYLog(void)
 	m_fout.close();
 }
 /***********************************
-»ñµÃµ¥ÀıÊµÀı
+è·å¾—å•ä¾‹å®ä¾‹
 ***********************************/
 MYLog * MYLog::Log()
 {
 	return m_pInstance;
 }
 /***********************************
-´ò¿ªLogÎÄ¼ş
+æ‰“å¼€Logæ–‡ä»¶
 ***********************************/
 bool MYLog::OpenLogFile(const std::string &sFilePath)
 {
@@ -61,7 +61,7 @@ bool MYLog::OpenLogFile(const std::string &sFilePath)
 	return true;
 }
 /**********************************
-»ñÈ¡µ±Ç°Ê±¼ä
+è·å–å½“å‰æ—¶é—´
 **********************************/
 void  MYLog::GetNowTime()
 {
@@ -82,7 +82,7 @@ void  MYLog::GetNowTime()
 }
 
 /***********************************
-½«ĞÅÏ¢Ğ´ÈëLogÎÄ¼ş
+å°†ä¿¡æ¯å†™å…¥Logæ–‡ä»¶
 ***********************************/
 void MYLog::Message(const std::string &sFile, const std::string &sFunc, const long &lLine, const std::string &sMessage)
 {

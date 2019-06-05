@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "stdafx.h"
 #include <iostream>
 #include <windows.h>
@@ -19,8 +19,8 @@ public:
 	int get_sec();
 	void test_timer();
 
-	// boost::progress_timerÒ²ÊÇÒ»¸ö¼ÆÊ±Æ÷£¬Ëü¼Ì³Ğ×Ôtimer£¬
-	// Ëü»áÔÚÎö¹¹Ê±×Ô¶¯Êä³öÊ±¼ä£¬Ê¡È¥ÁËboost::timerÊÖ¶¯µ÷ÓÃelapsed()µÄ¹¤×÷£¬ÊÇÒ»¸öÓÃÓÚ×Ô¶¯¼ÆÊ±Ïàµ±·½±ãµÄĞ¡¹¤¾ß
+	// boost::progress_timerä¹Ÿæ˜¯ä¸€ä¸ªè®¡æ—¶å™¨ï¼Œå®ƒç»§æ‰¿è‡ªtimerï¼Œ
+	// å®ƒä¼šåœ¨ææ„æ—¶è‡ªåŠ¨è¾“å‡ºæ—¶é—´ï¼Œçœå»äº†boost::timeræ‰‹åŠ¨è°ƒç”¨elapsed()çš„å·¥ä½œï¼Œæ˜¯ä¸€ä¸ªç”¨äºè‡ªåŠ¨è®¡æ—¶ç›¸å½“æ–¹ä¾¿çš„å°å·¥å…·
 	void test_progress_timer();
 	void test_progress_display();
 	void test_progress_display_restart();

@@ -1,47 +1,47 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "BoostTest.h"
 
-//constµÄÊ¹ÓÃ
+//constçš„ä½¿ç”¨
 class A
 {
 public:
-	//¹¹Ôìº¯Êı
+	//æ„é€ å‡½æ•°
 	A():a(0) {};
-	A(int x):a(x) {};//³õÊ¼»¯ÁĞ±í
+	A(int x):a(x) {};//åˆå§‹åŒ–åˆ—è¡¨
 
-	//const»¹¿ÉÒÔÓÃ×÷¶ÔÖØÔØº¯ÊıµÄÇø·Ö
-	int getValue();//ÆÕÍ¨³ÉÔ±º¯Êı
-	int getValue() const;//³£³ÉÔ±º¯Êı£¬²»µÃĞŞ¸ÄÈÎºÎÀàÖĞµÄÈÎºÎÊı¾İ³ÉÔ±µÄÖµ
+	//constè¿˜å¯ä»¥ç”¨ä½œå¯¹é‡è½½å‡½æ•°çš„åŒºåˆ†
+	int getValue();//æ™®é€šæˆå‘˜å‡½æ•°
+	int getValue() const;//å¸¸æˆå‘˜å‡½æ•°ï¼Œä¸å¾—ä¿®æ”¹ä»»ä½•ç±»ä¸­çš„ä»»ä½•æ•°æ®æˆå‘˜çš„å€¼
 protected:
 private:
-	const int a;//³£¶ÔÏó³ÉÔ±£¬Ö»ÄÜÔÚ³õÊ¼»¯ÁĞ±íÖĞÊ¹ÓÃ
+	const int a;//å¸¸å¯¹è±¡æˆå‘˜ï¼Œåªèƒ½åœ¨åˆå§‹åŒ–åˆ—è¡¨ä¸­ä½¿ç”¨
 };
 
 void function()
 {
-	//¶ÔÏó
-	A b;//ÆÕÍ¨¶ÔÏó£¬¿ÉÒÔµ÷ÓÃÈ«²¿³ÉÔ±º¯Êı
-	const A a;//³£¶ÔÏó£¬Ö»ÄÜµ÷ÓÃ³£³ÉÔ±º¯Êı£¬¸üĞÂ³£³ÉÔ±±äÁ¿
-	const A *p = &a;//³£Ö¸Õë
-	const A &q = a;//³£ÒıÓÃ
+	//å¯¹è±¡
+	A b;//æ™®é€šå¯¹è±¡ï¼Œå¯ä»¥è°ƒç”¨å…¨éƒ¨æˆå‘˜å‡½æ•°
+	const A a;//å¸¸å¯¹è±¡ï¼Œåªèƒ½è°ƒç”¨å¸¸æˆå‘˜å‡½æ•°ï¼Œæ›´æ–°å¸¸æˆå‘˜å˜é‡
+	const A *p = &a;//å¸¸æŒ‡é’ˆ
+	const A &q = a;//å¸¸å¼•ç”¨
 
 	char greeting[] = "Hello";
-	char *p1 = greeting;//Ö¸Õë±äÁ¿£¬Ö¸Ïò×Ö·ûÊı×é±äÁ¿
-	const char *p2 = greeting;//Ö¸Õë±äÁ¿£¬Ö¸Ïò×Ö·ûÊı×é³£Á¿
-	char *const p3 = greeting;//³£Ö¸Õë£¬Ö¸Ïò×Ö·ûÊı×é³£Á¿
-	const char * const p4 = greeting;//³£Ö¸Õë£¬Ö¸Ïò×Ö·ûÊı×é³£Á¿
+	char *p1 = greeting;//æŒ‡é’ˆå˜é‡ï¼ŒæŒ‡å‘å­—ç¬¦æ•°ç»„å˜é‡
+	const char *p2 = greeting;//æŒ‡é’ˆå˜é‡ï¼ŒæŒ‡å‘å­—ç¬¦æ•°ç»„å¸¸é‡
+	char *const p3 = greeting;//å¸¸æŒ‡é’ˆï¼ŒæŒ‡å‘å­—ç¬¦æ•°ç»„å¸¸é‡
+	const char * const p4 = greeting;//å¸¸æŒ‡é’ˆï¼ŒæŒ‡å‘å­—ç¬¦æ•°ç»„å¸¸é‡
 }
 
-//º¯Êı
-void function1(const int Var);//´«µİ¹ıÀ´µÄ²ÎÊıÔÚº¯ÊıÄÚ²»¿É±ä
-void function2(const char* Var);//²ÎÊıÖ¸ÕëËùÖ¸ÄÚÈİÎª³£Á¿
-void function3(char * const Var);//²ÎÊıÖ¸ÕëÎª³£Ö¸Õë
-void function4(const int &Var);//ÒıÓÃ²ÎÊıÔÚº¯ÊıÄÚÎª³£Á¿
+//å‡½æ•°
+void function1(const int Var);//ä¼ é€’è¿‡æ¥çš„å‚æ•°åœ¨å‡½æ•°å†…ä¸å¯å˜
+void function2(const char* Var);//å‚æ•°æŒ‡é’ˆæ‰€æŒ‡å†…å®¹ä¸ºå¸¸é‡
+void function3(char * const Var);//å‚æ•°æŒ‡é’ˆä¸ºå¸¸æŒ‡é’ˆ
+void function4(const int &Var);//å¼•ç”¨å‚æ•°åœ¨å‡½æ•°å†…ä¸ºå¸¸é‡
 
-//º¯Êı·µ»ØÖµ
-const int function5();//·µ»ØÒ»¸ö³£Êı
-const int* function6();//·µ»ØÒ»¸öÖ¸Ïò³£Á¿µÄÖ¸Õë±äÁ¿
-int* const function7();//·µ»ØÒ»¸öÖ¸Ïò±äÁ¿µÄ³£Ö¸Õë
+//å‡½æ•°è¿”å›å€¼
+const int function5();//è¿”å›ä¸€ä¸ªå¸¸æ•°
+const int* function6();//è¿”å›ä¸€ä¸ªæŒ‡å‘å¸¸é‡çš„æŒ‡é’ˆå˜é‡
+int* const function7();//è¿”å›ä¸€ä¸ªæŒ‡å‘å˜é‡çš„å¸¸æŒ‡é’ˆ
 
 BoostTest::BoostTest()
 {
@@ -66,7 +66,7 @@ int BoostTest::get_sec()
 
 void BoostTest::test_timer()
 {
-	// ÉùÃ÷Ò»¸ö¼ÆÊ±Æ÷¶ÔÏó£¬²¢¿ªÊ¼¼ÆÊ±!
+	// å£°æ˜ä¸€ä¸ªè®¡æ—¶å™¨å¯¹è±¡ï¼Œå¹¶å¼€å§‹è®¡æ—¶!
 	boost::timer t;
 
 	long long sum = 0;
@@ -75,16 +75,16 @@ void BoostTest::test_timer()
 		sum = sum + i;
 	}
 
-	// ¼ÆËãÊ±¼ä²î, ²âÁ¿×Ô¶ÔÏó´´½¨ºóËùÁ÷ÊÅµÄÊ±¼ä¡£
+	// è®¡ç®—æ—¶é—´å·®, æµ‹é‡è‡ªå¯¹è±¡åˆ›å»ºåæ‰€æµé€çš„æ—¶é—´ã€‚
 	double dl = t.elapsed();
 	std::cout << "now time elapsed:" << dl << std::endl;
 
-	//¿É¶ÈÁ¿µÄ×î´óÊ±¼ä£¬ÒÔÃëÎªµ¥Î»	
+	//å¯åº¦é‡çš„æœ€å¤§æ—¶é—´ï¼Œä»¥ç§’ä¸ºå•ä½	
 	std::cout << "max timespan:" << t.elapsed_max() / 3600 << "h" << std::endl;
-	//¿É¶ÈÁ¿µÄ×îĞ¡Ê±¼ä£¬ÒÔÃëÎªµ¥Î»
+	//å¯åº¦é‡çš„æœ€å°æ—¶é—´ï¼Œä»¥ç§’ä¸ºå•ä½
 	std::cout << "min timespan:" << t.elapsed_min() << "s" << std::endl;
 
-	// »¹ÓĞÒ»¸örestart()¿ªÊ¼ÖØĞÂ¼ÆÊ±
+	// è¿˜æœ‰ä¸€ä¸ªrestart()å¼€å§‹é‡æ–°è®¡æ—¶
 	t.restart();
 }
 
@@ -102,30 +102,30 @@ void BoostTest::test_progress_timer()
 
 	//pt.elapsed();
 
-	// ÁíÍâÒ»ÖÖ·½·¨£¬²»ÒªÓÃel
+	// å¦å¤–ä¸€ç§æ–¹æ³•ï¼Œä¸è¦ç”¨el
 	{
 		boost::progress_timer pt;
 		// do_something();
 		long long sum2 = 0;
 		for (int i = 0; i < 10000000; i++)
 			sum2 = sum2 + i;
-	}   // ptÎö¹¹Ê±×Ô¶¯Êä³öÁ÷ÊÅÊ±¼ä
+	}   // ptææ„æ—¶è‡ªåŠ¨è¾“å‡ºæµé€æ—¶é—´
 }
 
 void BoostTest::test_progress_display()
 {
-	std::vector<std::string> v(1000000, "êÃĞøÂ·");
+	std::vector<std::string> v(1000000, "æ˜ç»­è·¯");
 	std::ofstream fs("E:\\display.txt");
 
-	// ÉùÃ÷Ò»¸öprogress_display ¶ÔÏó£¬»ùÊıÊÇvµÄ´óĞ¡
+	// å£°æ˜ä¸€ä¸ªprogress_display å¯¹è±¡ï¼ŒåŸºæ•°æ˜¯vçš„å¤§å°
 	boost::progress_display pd(v.size());
 
-	// ¿ªÊ¼Ñ¡´ú±éÀúÏòÁ¿£¬´¦Àí×Ö·û´®
+	// å¼€å§‹é€‰ä»£éå†å‘é‡ï¼Œå¤„ç†å­—ç¬¦ä¸²
 	std::vector<std::string>::iterator pos;
 	for (pos = v.begin(); pos != v.end(); ++pos)
 	{
 		fs << *pos << std::endl;
-		++pd; // ¸üĞÂ½ø¶ÈÏÔÊ¾
+		++pd; // æ›´æ–°è¿›åº¦æ˜¾ç¤º
 	}
 }
 

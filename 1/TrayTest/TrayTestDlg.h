@@ -1,4 +1,4 @@
-
+﻿
 // TrayTestDlg.h : header file
 //
 
