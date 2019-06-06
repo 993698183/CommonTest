@@ -550,8 +550,36 @@ double division(int a, int b)
 	return (a / b);
 }
 //try...catch
+
+//测试类模板
+#include "TemplateTest.h"
+//测试类模板
 int main()
 {
+	//测试类模板
+	if (1)
+	{
+		MyClass<int, int> class1(1, 3);
+		class1.show();
+
+		MyClass<int, char> class2(3, 'a');
+		class2.show();
+
+		MyClass<double, int> class3(3.9, 10);
+		class3.show();
+
+		int x = 2;
+		int y = 4;
+		double a = 1.0;
+		double b = 2.0;
+
+		std::cout << "x=2,y=4" << min(x, y) << std::endl;
+		std::cout << "a=1.0,b=2.0" << min(a, b) << std::endl;
+
+		system("pause");
+	}
+	//测试类模板
+
 	//监控文件目录变化
 	//监控文件目录变化
 	//判断电脑指令集是小端字节序还是大端字节序
