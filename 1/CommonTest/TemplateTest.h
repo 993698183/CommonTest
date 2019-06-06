@@ -44,6 +44,7 @@ T min(T x, T y)
 class TemplateTest
 {
 public:
+	static void test_template_class_function();
 	TemplateTest();
 	~TemplateTest();
 };
