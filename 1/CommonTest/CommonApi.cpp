@@ -436,6 +436,78 @@ void CommonApi::test_windows_event()
 	CloseHandle(g_workHandle);
 }
 
+
+//mystringToiºÍmystringTofloat
+bool isNumericChar(char x)
+{
+	return (x >= '0' && x <= '9') ? true : false;
+}
+int string2i(char *str)
+{
+	if (*str == NULL)
+	{
+		return 0;
+	}
+
+	int res = 0;
+	int sign = 1;
+	int i = 0;
+
+	if (str[0] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+
+	for (; str[i] != '\0'; ++i)
+	{
+		if (isNumericChar(str[i]) == false)
+		{
+			return 0;
+		}
+		res = res * 10 + str[i] - '0';
+	}
+
+	return sign*res;
+}
+
+float string2float(const char* s)
+{
+	float rez = 0, fact = 1;
+	if (*s == '-')
+	{
+		s++;
+		fact = -1;
+	}
+	for (int point_seen = 0; *s; s++)
+	{
+		if (*s == '.')
+		{
+			point_seen = 1;
+			continue;
+		}
+		int d = *s - '0';
+		if (d >= 0 && d <= 9)
+		{
+			if (point_seen) fact /= 10.0f;
+			rez = rez * 10.0f + (float)d;
+		}
+	}
+	return rez * fact;
+};
+//mystringToiºÍmystringTofloat
+void CommonApi::test_string_to_i()
+{
+	char* p1 = "123";
+	std::cout << string2i(p1) << std::endl;
+}
+
+void CommonApi::test_string_to_float()
+{
+	char* p2 = "123.333";
+	std::cout << string2float(p2) << std::endl;
+}
+
 CommonApi::CommonApi()
 {
 }

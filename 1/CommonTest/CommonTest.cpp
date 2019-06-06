@@ -26,65 +26,7 @@
 #include <boost/filesystem.hpp>
 //boost::filesystem::is_directory异常捕获
 
-//mystringToi和mystringTofloat
-bool isNumericChar(char x)
-{
-	return (x >= '0' && x <= '9') ? true : false;
-}
-int string2i(char *str)
-{
-	if (*str == NULL)
-	{
-		return 0;
-	}
 
-	int res = 0;
-	int sign = 1;
-	int i = 0;
-
-	if (str[0] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-
-	for (; str[i] != '\0'; ++i)
-	{
-		if (isNumericChar(str[i]) == false)
-		{
-			return 0;
-		}
-		res = res * 10 + str[i] - '0';
-	}
-
-	return sign*res;
-}
-
-float string2float(const char* s) 
-{
-	float rez = 0, fact = 1;
-	if (*s == '-') 
-	{
-		s++;
-		fact = -1;
-	}
-	for (int point_seen = 0; *s; s++) 
-	{
-		if (*s == '.') 
-		{
-			point_seen = 1;
-			continue;
-		}
-		int d = *s - '0';
-		if (d >= 0 && d <= 9) 
-		{
-			if (point_seen) fact /= 10.0f;
-			rez = rez * 10.0f + (float)d;
-		}
-	}
-	return rez * fact;
-};
-//mystringToi和mystringTofloat
 
 //string的c_str()函数和data()函数
 #include <iostream>
@@ -118,9 +60,6 @@ void debug_log(
 	va_end(arglist);
 }
 //自己的log日志功能
-
-
-
 
 
 //测试类模板
@@ -235,16 +174,6 @@ int main()
 		system("pause");
 	}
 	//string的c_str()函数和data()函数
-
-	//mystringToi和mystringTofloat
-	if (0)
-	{
-		char* p1 = "123";
-		std::cout << string2i(p1) << std::endl;
-		char* p2 = "123.333";
-		std::cout << string2float(p2) << std::endl;
-	}
-	//mystringToi和mystringTofloat
 
 	//面试题：输出两个字符数组中相同的字符
 	if (0)
