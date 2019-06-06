@@ -222,6 +222,23 @@ void CommonApi::test_boost_thread()
 	thrd.join();
 }
 
+//测试boost线程使用方式
+#include "boost/thread.hpp"
+#include <iostream>
+void mythread()
+{
+	std::cout << "hello thread" << std::endl;
+}
+//测试boost线程使用方式
+void CommonApi::test_boost_thread2()
+{
+	//测试boost线程使用方式
+	boost::function<void()>f(mythread);
+	boost::thread t(f);
+	t.join();
+	std::cout << "thread is over" << std::endl;
+}
+
 void CommonApi::test_my_reverse_copy()
 {
 	int myints[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -310,6 +327,14 @@ void CommonApi::test_format_time()
 		Sleep(1000);
 		std::cout << "Time is" << sTest << std::endl;
 	}
+}
+
+//测试观察者模式
+#include "ObserverPattern.h"
+//测试观察者模式
+void CommonApi::test_ObserverPattern()
+{
+	testObserverPattern();
 }
 
 CommonApi::CommonApi()

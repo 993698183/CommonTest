@@ -9,22 +9,13 @@
 
 #include "BoostTest.h"
 
-//测试boost线程使用方式
-#include "boost/thread.hpp"
-#include <iostream>
-void mythread()
-{
-	std::cout << "hello thread" << std::endl;
-}
-//测试boost线程使用方式
+
 
 //验证对于空字符串使用 boost去掉前后空格是否报错问题
 #include <boost/algorithm/string.hpp>
 //验证对于空字符串使用 boost去掉前后空格是否报错问题
 
-//测试观察者模式
-#include "ObserverPattern.h"
-//测试观察者模式
+
 
 //调用log日志动态库
 typedef  void(*LOGFUN)(const std::string &sFile, const std::string &sFunc, const long &lLine, const std::string &sMessage);
@@ -374,37 +365,6 @@ int main()
 		c = getchar();
 	}
 	//调用log日志动态库
-
-	if (0)
-	{
-
-	}
-
-	if (0)
-	{
-		std::string str("1111新建文件夹");
-		std::size_t nlength = strlen(str.c_str());
-		std::size_t nlength2 = str.length();
-
-		char cztmp[MAX_PATH] = {0};
-		memcpy(cztmp, str.c_str(), nlength2);
-		system("Pause");
-	}
-	if (0)
-	{
-		testObserverPattern();
-	}
-
-	if (0)
-	{
-		//测试boost线程使用方式
-		boost::function<void()>f(mythread);
-		boost::thread t(f);
-		t.join();
-		std::cout << "thread is over" << std::endl;
-		getchar();
-	}
-
     return 0;
 }
 
