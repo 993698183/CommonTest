@@ -39,57 +39,6 @@ void mythread()
 //}
 //测试C++下生成Dump文件
 
-
-
-//判断指定目录是否为空
-#include <boost/system/error_code.hpp>
-#include <boost/filesystem.hpp>
-bool IsFileExistent(const boost::filesystem::path& path) 
-{
-
-	boost::system::error_code error;
-	auto file_status = boost::filesystem::status(path, error);
-	//if (error) 
-	//{
-	//	return false;
-	//}
-
-	if (!boost::filesystem::exists(file_status))
-	{
-		return false;
-	}
-
-	//if (boost::filesystem::is_directory(file_status)) 
-	//{
-	//	return false;
-	//}
-
-	return true;
-}
-//判断指定目录是否为空
-
-
-//my_reverse_copy example
-#include <iostream>
-#include <algorithm>
-#include <vector>
-void my_reverse_copy()
-{
-	int myints[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	std::vector<int> myvector;
-	myvector.resize(9);//申请空间
-	std::reverse_copy(myints, myints + 9, myvector.begin());
-
-	std::cout << "myvector contains:";
-	for (std::vector<int>::iterator it = myvector.begin(); it != myvector.end(); ++it)
-	{
-		std::cout << ' ' << *it;
-	}
-
-	std::cout << '\n';
-}
-//my_reverse_copy example
-
 //my_copy example 
 #include <iostream>
 #include <algorithm>
@@ -562,18 +511,7 @@ int main()
 		my_cppy();
 		getchar();
 	}
-	if (0)
-	{
-		my_reverse_copy();
-		getchar();
-	}
 
-	if (0)
-	{
-		//判断指定目录是否为空
-		std::string str(("C:\\Users\\waction\\Desktop\\1\\*.*"));
-		bool ret = IsFileExistent(str.c_str());
-	}
 	if (0)
 	{
 		//测试C++下生成Dump文件

@@ -222,6 +222,22 @@ void CommonApi::test_boost_thread()
 	thrd.join();
 }
 
+void CommonApi::test_my_reverse_copy()
+{
+	int myints[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	std::vector<int> myvector;
+	myvector.resize(9);//…Í«Îø’º‰
+	std::reverse_copy(myints, myints + 9, myvector.begin());
+
+	std::cout << "myvector contains:";
+	for (std::vector<int>::iterator it = myvector.begin(); it != myvector.end(); ++it)
+	{
+		std::cout << ' ' << *it;
+	}
+
+	std::cout << '\n';
+}
+
 CommonApi::CommonApi()
 {
 }

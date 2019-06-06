@@ -16,6 +16,7 @@ public:
 	static void test_get_string_length();
 	static void test_boost_filepath();
 	static void test_boost_thread();
+	static void test_my_reverse_copy();
 	CommonApi();
 	~CommonApi();
 };
