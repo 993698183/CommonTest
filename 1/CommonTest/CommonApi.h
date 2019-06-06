@@ -13,6 +13,7 @@ public:
 	static void test_try_catch();
 	static void test_string_wstring_to_upper_lowwer();
 	static void test_findcommon();
+	static void test_get_string_length();
 	CommonApi();
 	~CommonApi();
 };

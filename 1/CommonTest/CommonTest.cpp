@@ -39,11 +39,7 @@ void mythread()
 //}
 //测试C++下生成Dump文件
 
-//VC获取字符长度的方法
-#include "string"
-#include "comutil.h"
-#pragma comment(lib, "comsuppw.lib")
-//VC获取字符长度的方法
+
 
 //判断指定目录是否为空
 #include <boost/system/error_code.hpp>
@@ -600,26 +596,6 @@ int main()
 
 	if (0)
 	{
-		std::string str("11111_sql.xml");
-		size_t pos = str.find("_sql_");
-		if (0 == pos)
-		{
-			int i = 0;
-		}
-	}
-	//std::string的compar函数的使用
-	if (0)
-	{
-		std::string str("0");
-		std::string str2("1");
-		int nret = str.compare(std::string("1").c_str());
-		if (nret)
-		{
-			int a = 0;
-		}
-	}
-	if (0)
-	{
 		//boost线程
 		boost::thread thrd(&hello);
 		thrd.join();
@@ -630,36 +606,6 @@ int main()
 		//判断指定目录是否为空
 		std::string str(("C:\\Users\\waction\\Desktop\\1\\*.*"));
 		bool ret = IsFileExistent(str.c_str());
-	}
-	if (0)
-	{
-		//VC获取字符长度的方法
-		char s1[] = "中文ABC";
-		wchar_t s2[] = L"中文ABC";
-
-		//使用sizeof获取字符串长度
-		printf("sizeof s1: %d\r\n", sizeof(s1));
-		printf("sizeof s2: %d\r\n", sizeof(s2));
-
-		//使用strlen获取字符串长度
-		printf("strlen(s1): %d\r\n", strlen(s1));
-		printf("wcslen(s2): %d\r\n", wcslen(s2));
-
-		//使用CString::GetLength()获取字符串长度
-		//CStringA sa = s1;
-		//CStringW sw = s2;
-		//printf("sa.GetLength(): %d\r\n", sa.GetLength());
-		//printf("sw.GetLength(): %d\r\n", sw.GetLength());
-		//使用string::size()获取字符串长度
-		std::string ss1 = s1;
-		std::wstring ss2 = s2;printf("ss1.size(): %d\r\n", ss1.size());
-		printf("ss2.size(): %d\r\n", ss2.size());
-		//使用_bstr_t::length()获取字符串长度
-		_bstr_t bs1(s1);
-		_bstr_t bs2(s2);
-		printf("bs1.length(): %d\r\n", bs1.length());
-		printf("bs2.length(): %d\r\n", bs2.length());
-		getchar();
 	}
 	if (0)
 	{
