@@ -24,6 +24,7 @@ public:
 	static void test_windows_event();
 	static void test_string_to_i();
 	static void test_string_to_float();
+	static void test_string_c_str_data();
 	CommonApi();
 	~CommonApi();
 };

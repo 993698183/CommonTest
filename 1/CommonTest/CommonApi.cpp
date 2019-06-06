@@ -508,6 +508,18 @@ void CommonApi::test_string_to_float()
 	std::cout << string2float(p2) << std::endl;
 }
 
+void CommonApi::test_string_c_str_data()
+{
+	//string的c_str()函数和data()函数
+	//1. c_str()：生成一个const char*指针，指向以空字符终止的数组。
+	//2. data():与c_str()类似，但是返回的数组不以空字符终止。
+	std::string s = "12345";
+	char test[10] = { 0 };
+	strncpy_s(test, s.c_str(), 6);
+	char test1[10] = { 0 };
+	strncpy_s(test1, s.data(), 6);
+}
+
 CommonApi::CommonApi()
 {
 }
