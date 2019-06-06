@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-
+#include "CommonApi.h"
 //根据boost的asio连接，确定本地ip和远端ip
 #include "BoostAsio.h"
 //根据boost的asio连接，确定本地ip和远端ip
@@ -556,17 +556,11 @@ double division(int a, int b)
 //测试类模板
 int main()
 {
-	//unique_ptr的get方法
 	if (1)
 	{
-		//std::unique_ptr<T, Deleter>::get(C++11开始使用)
-		//返回指向被管理对象的指针，如果无管理对象，则为nullptr
-		std::unique_ptr<std::string> s_p(new std::string("hello world"));
-		std::string *s = s_p.get();
-		std::cout << *s << std::endl;
-		system("pasue");
+		CommonApi::test_unique_ptr_get_release_reset();
+		system("pause");
 	}
-	//unique_ptr的get方法
 	//测试类模板
 	if (0)
 	{
