@@ -68,20 +68,6 @@ bool IsFileExistent(const boost::filesystem::path& path)
 }
 //判断指定目录是否为空
 
-//boost线程
-#include <boost/thread.hpp>
-void hello()
-{
-	while (true)
-	{
-		std::cout << "hello world, i am a thread" << std::endl;
-		//Sleep(1000);
-		boost::this_thread::sleep(boost::posix_time::seconds(1));
-	}
-}
-//boost线程
-
-
 
 //my_reverse_copy example
 #include <iostream>
@@ -582,13 +568,6 @@ int main()
 		getchar();
 	}
 
-	if (0)
-	{
-		//boost线程
-		boost::thread thrd(&hello);
-		thrd.join();
-		getchar();
-	}
 	if (0)
 	{
 		//判断指定目录是否为空

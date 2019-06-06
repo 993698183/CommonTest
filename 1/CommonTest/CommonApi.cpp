@@ -203,6 +203,25 @@ void CommonApi::test_boost_filepath()
 	path_send_monitor /= path_send;
 }
 
+//boost线程
+#include <boost/thread.hpp>
+void hello()
+{
+	while (true)
+	{
+		std::cout << "hello world, i am a thread" << std::endl;
+		//Sleep(1000);
+		boost::this_thread::sleep(boost::posix_time::seconds(1));
+	}
+}
+//boost线程
+void CommonApi::test_boost_thread()
+{
+	//boost线程
+	boost::thread thrd(&hello);
+	thrd.join();
+}
+
 CommonApi::CommonApi()
 {
 }
