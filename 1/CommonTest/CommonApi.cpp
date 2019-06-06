@@ -238,6 +238,80 @@ void CommonApi::test_my_reverse_copy()
 	std::cout << '\n';
 }
 
+//时间格式输出
+void SplitSpring(const std::string &src, const char &csplit, std::vector<std::string> &vResult)
+{
+	std::string sTemp = "";
+	for (unsigned int iIndex = 0; iIndex < src.length(); iIndex++)
+	{
+		if (src[iIndex] == csplit)
+		{
+			vResult.push_back(sTemp);
+			sTemp = "";
+			continue;
+		}
+		sTemp += src[iIndex];
+	}
+
+	if ("" != sTemp)
+	{
+		vResult.push_back(sTemp);
+	}
+}
+
+std::string IntToTheString(int &iValue)
+{
+	char cTemp[100] = { 0 };
+	sprintf_s(cTemp, "%02d", iValue);
+	std::string sTemp(cTemp);
+	return sTemp;
+}
+std::string GetAbsolulyTime(const std::string &sLastTime, const int &iAddSeconds)
+{
+	std::vector<std::string> vResult;
+	SplitSpring(sLastTime, ':', vResult);
+	if (vResult.size() < 3)
+	{
+		return sLastTime;
+	}
+	int iHour = atoi(vResult[0].c_str());
+	int iMinite = atoi(vResult[1].c_str());
+	int iSecond = atoi(vResult[2].c_str());
+	int iAddTime = 0;
+	iSecond += iAddSeconds;
+
+	if (iSecond >= 60)
+	{
+		iAddTime = iSecond / 60;
+		iSecond = iSecond % 60;
+		iMinite += iAddTime;
+		if (iMinite >= 60)
+		{
+			iAddTime = iMinite / 60;
+			iMinite = iMinite % 60;
+			iHour += iAddTime;
+		}
+	}
+
+	std::string sHour = IntToTheString(iHour);
+	std::string sMinite = IntToTheString(iMinite);
+	std::string sSecond = IntToTheString(iSecond);
+	return sHour + ":" + sMinite + ":" + sSecond;
+}
+//时间格式输出
+void CommonApi::test_format_time()
+{
+	//格式化输出时间，并计算80秒后的时间
+	std::string sTest = "00:00:00";
+	std::string sResult;
+	while (true)
+	{
+		sTest = GetAbsolulyTime(sTest, 80);
+		Sleep(1000);
+		std::cout << "Time is" << sTest << std::endl;
+	}
+}
+
 CommonApi::CommonApi()
 {
 }
