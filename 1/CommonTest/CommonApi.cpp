@@ -189,6 +189,20 @@ void CommonApi::test_get_string_length()
 	printf("bs2.length(): %d\r\n", bs2.length());
 }
 
+//boost文件目录操作
+#include <boost/filesystem.hpp>
+//boost文件目录操作
+void CommonApi::test_boost_filepath()
+{
+	TCHAR szCurPath[MAX_PATH] = { 0 };
+	GetModuleFileName(NULL, szCurPath, MAX_PATH);
+	std::wstring wstrpath(szCurPath);
+	boost::filesystem::path path_send(wstrpath);
+	boost::filesystem::path path_send_monitor(path_send.parent_path().wstring() + _T("\\send"));
+	path_send = path_send.filename();
+	path_send_monitor /= path_send;
+}
+
 CommonApi::CommonApi()
 {
 }

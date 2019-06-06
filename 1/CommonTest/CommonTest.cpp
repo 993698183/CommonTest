@@ -81,9 +81,7 @@ void hello()
 }
 //boost线程
 
-//boost文件目录操作
-#include <boost/filesystem.hpp>
-//boost文件目录操作
+
 
 //my_reverse_copy example
 #include <iostream>
@@ -582,16 +580,6 @@ int main()
 	{
 		my_reverse_copy();
 		getchar();
-	}
-	if (0)
-	{
-		TCHAR szCurPath[MAX_PATH] = { 0 };
-		GetModuleFileName(NULL, szCurPath, MAX_PATH);
-		std::wstring wstrpath(szCurPath);
-		boost::filesystem::path path_send(wstrpath);
-		boost::filesystem::path path_send_monitor(path_send.parent_path().wstring() + _T("\\send"));
-		path_send = path_send.filename();
-		path_send_monitor /= path_send;
 	}
 
 	if (0)
