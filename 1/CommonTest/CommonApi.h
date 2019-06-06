@@ -11,8 +11,6 @@ public:
 	static void test_size_type_vector();
 	static void test_string_big_or_little();
 	static void test_try_catch();
-	static void test_boo_BOOL();
-	static void test_boost_asio();
 	CommonApi();
 	~CommonApi();
 };
