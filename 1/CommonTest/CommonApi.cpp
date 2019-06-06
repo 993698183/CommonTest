@@ -520,6 +520,39 @@ void CommonApi::test_string_c_str_data()
 	strncpy_s(test1, s.data(), 6);
 }
 
+
+//自己的log日志功能
+#include <iostream>
+#include <string>
+#include <vector>
+#define DEBUG_LOG(...) debug_log("DEBUG", __TIME__, __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__)
+void debug_log(
+	const char *loglevel,
+	const char *time,
+	const char *file,
+	const char *func,
+	const int iline,
+	const char *format, ...
+)
+{
+	static char output[10240] = { 0 };
+	va_list arglist;
+	va_start(arglist, format);
+	vsnprintf(output, sizeof(output), format, arglist);
+	printf("[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
+	//此处会频繁打开文件
+	FILE *fp = NULL;
+	fopen_s(&fp, "d:\\logfile.txt", "a+");//
+	fprintf_s(fp, "[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
+	fclose(fp);
+	va_end(arglist);
+}
+//自己的log日志功能
+void CommonApi::test_my_log_file()
+{
+	DEBUG_LOG("%s, ranking NO.%d", "You are so smart", 1);
+}
+
 CommonApi::CommonApi()
 {
 }

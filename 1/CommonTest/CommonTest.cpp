@@ -33,34 +33,6 @@
 #include <string>
 //string的c_str()函数和data()函数
 
-//自己的log日志功能
-#include <iostream>
-#include <string>
-#include <vector>
-#define DEBUG_LOG(...) debug_log("DEBUG", __TIME__, __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__)
-void debug_log(
-	const char *loglevel,
-	const char *time,
-	const char *file,
-	const char *func,
-	const int iline,
-	const char *format,...
-)
-{
-	static char output[10240] = { 0 };
-	va_list arglist;
-	va_start(arglist, format);
-	vsnprintf(output, sizeof(output), format, arglist);
-	printf("[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
-	//此处会频繁打开文件
-	FILE *fp = NULL;
-	fopen_s(&fp, "d:\\logfile.txt", "a+");//
-	fprintf_s(fp, "[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
-	fclose(fp);
-	va_end(arglist);
-}
-//自己的log日志功能
-
 
 //测试类模板
 #include "TemplateTest.h"
@@ -136,14 +108,6 @@ int main()
 		//WinExec("calc", SW_NORMAL);
 	}
 	//c++调用cmd指令，启动Windows计算器
-	//测试new失败的返回值
-	if (0)
-	{
-		int *p = nullptr;
-		p = new int[1000000];
-		system("pause");
-	}
-	//测试new失败的返回值
 
 	//string和wstring大小写转换功能
 	if (0)
@@ -156,7 +120,7 @@ int main()
 	//自己的log日志功能
 	if (0)
 	{
-		DEBUG_LOG("%s, ranking NO.%d", "You are so smart", 1);
+
 		system("pause");
 	}
 	//自己的log日志功能
