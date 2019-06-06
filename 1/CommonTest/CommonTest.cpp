@@ -237,32 +237,6 @@ DWORD WINAPI Worker(LPVOID n)
 }
 //Windows的Event编程
 
-//面试题：输出两个字符数组中相同的字符
-#include <iostream>
-void FindCommonChar(char a[], int lena, char b[], int lenb)
-{
-	int hasha[256] = { 0 };
-	int hashb[256] = { 0 };
-	for (int i = 0; i < lena; i++)
-	{
-		hasha[(int)a[i]] = 1;
-	}
-
-	for (int j = 0; j < lena; j++)
-	{
-		hashb[(int)b[j]] = 1;
-	}
-
-	for (int i = 0; i < 256; i++)
-	{
-		if (hasha[i] ==1 && hashb[i] == 1)
-		{
-			std::cout << (char)i << std::endl;
-		}
-	}
-}
-//面试题：输出两个字符数组中相同的字符
-
 //C++常用宏定义
 #include <stdio.h>
 //C++常用宏定义
@@ -492,51 +466,10 @@ int main()
 	}
 	//mystringToi和mystringTofloat
 
-	//boost::filesystem::is_directory异常捕获
-	if (0)
-	{
-		/*boost::filesystem::path p("C:\OneDriveTemp\S-1-5-21-3878404667-799272800-635255798-1001");
-		try
-		{
-			boost::filesystem::is_directory(p);
-		}
-		catch (const boost::filesystem::filesystem_error& e)
-		{
-			if (e.code() == boost::system::errc::permission_denied)
-			{
-				std::cout << "Search permission is denied for one of the directories "
-					<< "in the path prefix of " << p << "\n";
-			}
-			else
-			{
-				std::cout << "is_directory(" << p << ") failed with "
-					<< e.code().message() << '\n';
-			}
-		}*/
-	}
-	//boost::filesystem::is_directory异常捕获
-
-	//C++常用宏定义
-	if (0)
-	{
-		printf("当前源代码函数名：__FUNCTION__==%s\n", __FUNCTION__);
-		printf("当前源代码行号：__LINE__==%d\n", __LINE__);
-		printf("当前源代码文件名：__FILE__==%s\n", __FILE__);
-		printf("当前编译日期〔注意和当前系统日期区别开来〕:__DATE__==%s\n", __DATE__);
-		printf("当前编译时间〔注意和当前系统日期区别开来〕:__TIME__==%s\n", __TIME__);
-		printf("当前系统时间戳：__TIMESTAMP__==%s\n", __TIMESTAMP__);
-		//printf("当要求程序严格遵循ANSIC标准时该标识符被赋值为1:__STDC__==%d\n", __STDC__);
-		printf("当用C++编译程序编译时，标识符__cplusplus就会被定义:__cplusplus==%d\n", __cplusplus);
-		system("pause");
-	}
-	//C++常用宏定义
-
 	//面试题：输出两个字符数组中相同的字符
 	if (0)
 	{
-		char a[5] = { '1', 'b', 'C', 'f', 'f' };
-		char b[6] = { '1', 'b', 'd', 'e', 'C','d' };
-		FindCommonChar(a, _countof(a), b, _countof(b));
+		CommonApi::test_findcommon();
 		system("pause");
 	}
 	//面试题：输出两个字符数组中相同的字符
@@ -643,19 +576,7 @@ int main()
 	{
 		testObserverPattern();
 	}
-	if (0)
-	{
-		std::string str1(" 11111 ");
-		boost::trim(str1);
-		std::string str2("");
-		boost::trim(str2);
-		getchar();
-	}
-	if (0)
-	{
-		int i = 0;
-		i = 1 << i;
-	}
+
 	if (0)
 	{
 		my_cppy();

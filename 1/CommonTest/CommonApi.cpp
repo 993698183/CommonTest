@@ -122,6 +122,37 @@ void CommonApi::test_string_wstring_to_upper_lowwer()
 	transform(strA.begin(), strA.end(), strA.begin(), ::toupper);
 }
 
+//面试题：输出两个字符数组中相同的字符
+void FindCommonChar(char a[], int lena, char b[], int lenb)
+{
+	int hasha[256] = { 0 };
+	int hashb[256] = { 0 };
+	for (int i = 0; i < lena; i++)
+	{
+		hasha[(int)a[i]] = 1;
+	}
+
+	for (int j = 0; j < lena; j++)
+	{
+		hashb[(int)b[j]] = 1;
+	}
+
+	for (int i = 0; i < 256; i++)
+	{
+		if (hasha[i] == 1 && hashb[i] == 1)
+		{
+			std::cout << (char)i << std::endl;
+		}
+	}
+}
+//面试题：输出两个字符数组中相同的字符
+void CommonApi::test_findcommon()
+{
+	char a[5] = { '1', 'b', 'C', 'f', 'f' };
+	char b[6] = { '1', 'b', 'd', 'e', 'C','d' };
+	FindCommonChar(a, _countof(a), b, _countof(b));
+}
+
 CommonApi::CommonApi()
 {
 }
