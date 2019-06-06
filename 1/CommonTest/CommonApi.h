@@ -21,6 +21,7 @@ public:
 	static void test_format_time();
 	static void test_ObserverPattern();
 	static void test_log_dll();
+	static void test_windows_event();
 	CommonApi();
 	~CommonApi();
 };

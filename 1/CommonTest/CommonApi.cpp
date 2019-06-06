@@ -381,6 +381,61 @@ void CommonApi::test_log_dll()
 	
 }
 
+//Windows的Event编程
+#include <windows.h>
+#include <iostream>
+#include <string>
+#include <vector>
+//通过事件得知另一个线程的状态
+//例如：线程中有三种状态：起床、吃饭、上班
+HANDLE g_getupHandle;
+HANDLE g_breakfastHandle;
+HANDLE g_workHandle;
+
+std::vector<std::string> stateTexts;
+DWORD WINAPI Worker(LPVOID n)
+{
+	stateTexts.push_back("GetUp");
+	SetEvent(g_getupHandle);
+	stateTexts.push_back("Breakfast");
+	SetEvent(g_breakfastHandle);
+	stateTexts.push_back("Work");
+	SetEvent(g_workHandle);
+
+	return 0;
+}
+//Windows的Event编程
+void CommonApi::test_windows_event()
+{
+	stateTexts.reserve(3);//容器预留空间
+	g_getupHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
+	g_breakfastHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
+	g_workHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
+
+	DWORD threadId;
+	HANDLE theadHandle = CreateThread(NULL,
+		0,
+		Worker,
+		0,
+		0,
+		&threadId
+	);
+
+	WaitForSingleObject(g_getupHandle, INFINITE);
+	std::cout << stateTexts[0] << std::endl;
+
+	WaitForSingleObject(g_breakfastHandle, 3000);
+	std::cout << stateTexts[1] << std::endl;
+
+	WaitForSingleObject(g_workHandle, INFINITE);
+	std::cout << stateTexts[2] << std::endl;
+
+	CloseHandle(theadHandle);
+	CloseHandle(g_getupHandle);
+	CloseHandle(g_breakfastHandle);
+	CloseHandle(g_workHandle);
+}
+
 CommonApi::CommonApi()
 {
 }

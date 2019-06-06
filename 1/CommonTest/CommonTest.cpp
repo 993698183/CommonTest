@@ -15,30 +15,7 @@
 #include <boost/algorithm/string.hpp>
 //验证对于空字符串使用 boost去掉前后空格是否报错问题
 
-//Windows的Event编程
-#include <windows.h>
-#include <iostream>
-#include <string>
-#include <vector>
-//通过事件得知另一个线程的状态
-//例如：线程中有三种状态：起床、吃饭、上班
-HANDLE g_getupHandle;
-HANDLE g_breakfastHandle;
-HANDLE g_workHandle;
 
-std::vector<std::string> stateTexts;
-DWORD WINAPI Worker(LPVOID n)
-{
-	stateTexts.push_back("GetUp");
-	SetEvent(g_getupHandle);
-	stateTexts.push_back("Breakfast");
-	SetEvent(g_breakfastHandle);
-	stateTexts.push_back("Work");
-	SetEvent(g_workHandle);
-
-	return 0;
-}
-//Windows的Event编程
 
 //C++常用宏定义
 #include <stdio.h>
@@ -277,40 +254,6 @@ int main()
 	}
 	//面试题：输出两个字符数组中相同的字符
 
-	//Windows的Event编程
-	if (0)
-	{
-		stateTexts.reserve(3);//容器预留空间
-		g_getupHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
-		g_breakfastHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
-		g_workHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
-
-		DWORD threadId;
-		HANDLE theadHandle = CreateThread(NULL,
-			0,
-			Worker,
-			0,
-			0,
-			&threadId
-			);
-
-		WaitForSingleObject(g_getupHandle, INFINITE);
-		std::cout << stateTexts[0] << std::endl;
-
-		WaitForSingleObject(g_breakfastHandle, 3000);
-		std::cout << stateTexts[1] << std::endl;
-
-		WaitForSingleObject(g_workHandle, INFINITE);
-		std::cout << stateTexts[2] << std::endl;
-
-		CloseHandle(theadHandle);
-		CloseHandle(g_getupHandle);
-		CloseHandle(g_breakfastHandle);
-		CloseHandle(g_workHandle);
-
-		system("pause");
-	}
-	//Windows的Event编程
     return 0;
 }
 
