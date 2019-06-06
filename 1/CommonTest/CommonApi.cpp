@@ -337,6 +337,50 @@ void CommonApi::test_ObserverPattern()
 	testObserverPattern();
 }
 
+//调用log日志动态库
+typedef  void(*LOGFUN)(const std::string &sFile, const std::string &sFunc, const long &lLine, const std::string &sMessage);
+LOGFUN MYLOG;
+//typedef void (*LOGFUN)(const string &sFunc,const string &sMessage);
+//extern LOGFUN MYLOG;
+void FuncB()
+{
+	MYLOG(__FILE__, __FUNCTION__, __LINE__, "It is in FuncB");
+}
+//调用log日志动态库
+void CommonApi::test_log_dll()
+{
+	//调用log日志动态库
+	char c;
+	HINSTANCE hInput;
+	hInput = LoadLibrary(_T("LogDll.dll"));
+	if (NULL == hInput)
+	{
+		std::cout << "load failed" << std::endl;
+	}
+	typedef bool(*FUNC)(const std::string &sFilePath);
+	FUNC fun = (FUNC)GetProcAddress(hInput, "LogPath");
+	if (NULL == fun)
+	{
+		std::cout << "load function failed" << std::endl;
+	}
+	bool iResult = fun("D://");
+	std::cout << "result is" << iResult << std::endl;
+
+	MYLOG = (LOGFUN)GetProcAddress(hInput, "WRITELOG");
+	if (NULL == MYLOG)
+	{
+		std::cout << "load function failed" << std::endl;
+	}
+	while (true)
+	{
+		std::cout << "wrtite..." << std::endl;
+		MYLOG(__FILE__, __FUNCTION__, __LINE__, "This is a test");
+		FuncB();
+		Sleep(5000);
+	}
+	
+}
+
 CommonApi::CommonApi()
 {
 }

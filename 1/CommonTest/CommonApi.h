@@ -20,6 +20,7 @@ public:
 	static void test_my_reverse_copy();
 	static void test_format_time();
 	static void test_ObserverPattern();
+	static void test_log_dll();
 	CommonApi();
 	~CommonApi();
 };

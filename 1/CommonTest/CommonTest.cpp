@@ -15,19 +15,6 @@
 #include <boost/algorithm/string.hpp>
 //验证对于空字符串使用 boost去掉前后空格是否报错问题
 
-
-
-//调用log日志动态库
-typedef  void(*LOGFUN)(const std::string &sFile, const std::string &sFunc, const long &lLine, const std::string &sMessage);
-LOGFUN MYLOG;
-//typedef void (*LOGFUN)(const string &sFunc,const string &sMessage);
-//extern LOGFUN MYLOG;
-void FuncB()
-{
-	MYLOG(__FILE__, __FUNCTION__, __LINE__, "It is in FuncB");
-}
-//调用log日志动态库
-
 //Windows的Event编程
 #include <windows.h>
 #include <iostream>
@@ -324,47 +311,6 @@ int main()
 		system("pause");
 	}
 	//Windows的Event编程
-
-	//调用log日志动态库
-	if (0)
-	{
-		char c;
-		HINSTANCE hInput;
-		hInput = LoadLibrary(_T("LogDll.dll"));
-		if (NULL == hInput)
-		{
-			std::cout << "load failed" << std::endl;
-			c = getchar();
-			return -1;
-		}
-		typedef bool(*FUNC)(const std::string &sFilePath);
-		FUNC fun = (FUNC)GetProcAddress(hInput, "LogPath");
-		if (NULL == fun)
-		{
-			std::cout << "load function failed" << std::endl;
-			c = getchar();
-			return -1;
-		}
-		bool iResult = fun("D://");
-		std::cout << "result is" << iResult << std::endl;
-
-		MYLOG = (LOGFUN)GetProcAddress(hInput, "WRITELOG");
-		if (NULL == MYLOG)
-		{
-			std::cout << "load function failed" << std::endl;
-			c = getchar();
-			return -1;
-		}
-		while (true)
-		{
-			std::cout << "wrtite..." << std::endl;
-			MYLOG(__FILE__, __FUNCTION__, __LINE__, "This is a test");
-			FuncB();
-			Sleep(5000);
-		}
-		c = getchar();
-	}
-	//调用log日志动态库
     return 0;
 }
 
