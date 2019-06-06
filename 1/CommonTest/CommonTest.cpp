@@ -3,9 +3,7 @@
 
 #include "stdafx.h"
 #include "CommonApi.h"
-//根据boost的asio连接，确定本地ip和远端ip
-#include "BoostAsio.h"
-//根据boost的asio连接，确定本地ip和远端ip
+
 
 #include "BoostTest.h"
 
@@ -577,13 +575,6 @@ int main()
 		CommonApi::test_try_catch();
 		system("pause");
 	}
-	if (0)
-	{
-		char czTemp[MAX_PATH];
-		int i = 100;
-		sprintf_s(czTemp, "11111111%d", 100);
-		system("pause");
-	}
 	
 	if (0)
 	{
@@ -599,28 +590,13 @@ int main()
 	}
 	if (0)
 	{
-		BOOL bRet = TRUE;
-		bool bRet2 = true;
-		if (-1 == bRet)
-		{
-			int i = 0;
-		}
-		if (-1 == bRet2)
-		{
-			int i = 9;
-		}
+		CommonApi::test_boo_BOOL();
 		system("pause");
 	}
 	//根据boost的asio连接，确定本地ip和远端ip
 	if (0)
 	{
-		CBoostAsio  *pboostasio = new CBoostAsio("192.168.3.112", 57603);
-		pboostasio->SetIP();
-		std::cout << "LocalClientIP=" << pboostasio->GetLocalClientIP() << std::endl;
-		std::cout << "RemoteServerIP=" << pboostasio->GetRemoteServerIP() << std::endl;
-
-		delete pboostasio;
-		pboostasio = nullptr;
+		CommonApi::test_boost_asio();
 		system("pause");
 	}
 	//根据boost的asio连接，确定本地ip和远端ip

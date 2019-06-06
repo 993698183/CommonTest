@@ -6,6 +6,10 @@
 #include <string>
 #include <vector>
 
+//根据boost的asio连接，确定本地ip和远端ip
+#include "BoostAsio.h"
+//根据boost的asio连接，确定本地ip和远端ip
+
 struct Foo 
 {
 	Foo() { std::cout << "Foo\n"; }
@@ -108,6 +112,31 @@ void CommonApi::test_try_catch()
 	{
 		std::cerr << msg << std::endl;
 	}
+}
+
+void CommonApi::test_boo_BOOL()
+{
+	BOOL bRet = TRUE;
+	bool bRet2 = true;
+	if (-1 == bRet)
+	{
+		int i = 0;
+	}
+	if (-1 == bRet2)
+	{
+		int i = 9;
+	}
+}
+
+void CommonApi::test_boost_asio()
+{
+	CBoostAsio  *pboostasio = new CBoostAsio("192.168.3.112", 57603);
+	pboostasio->SetIP();
+	std::cout << "LocalClientIP=" << pboostasio->GetLocalClientIP() << std::endl;
+	std::cout << "RemoteServerIP=" << pboostasio->GetRemoteServerIP() << std::endl;
+
+	delete pboostasio;
+	pboostasio = nullptr;
 }
 
 CommonApi::CommonApi()
