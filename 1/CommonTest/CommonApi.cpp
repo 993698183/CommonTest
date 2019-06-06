@@ -5,7 +5,10 @@
 #include <cassert>
 #include <string>
 #include <vector>
-
+//string和wstring大小写转换功能
+#include <string>
+#include <algorithm>
+//string和wstring大小写转换功能
 struct Foo 
 {
 	Foo() { std::cout << "Foo\n"; }
@@ -108,6 +111,15 @@ void CommonApi::test_try_catch()
 	{
 		std::cerr << msg << std::endl;
 	}
+}
+
+void CommonApi::test_string_wstring_to_upper_lowwer()
+{
+	std::wstring wstr(L"abs中文-Da");
+	transform(wstr.begin(), wstr.end(), wstr.begin(), ::toupper);
+
+	std::string strA = "你好yasaken@126.com";
+	transform(strA.begin(), strA.end(), strA.begin(), ::toupper);
 }
 
 CommonApi::CommonApi()
