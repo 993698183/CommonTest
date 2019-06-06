@@ -540,23 +540,12 @@ bool GetNetCardInfo(std::vector<NETCARD_INFO> & v)
 //获取网卡信息，并分辨出来物理网卡，虚拟网卡，无线网卡信息
 
 
-//try...catch
-double division(int a, int b)
-{
-	if (b == 0)
-	{
-		throw "Division by zero condition!";
-	}
-	return (a / b);
-}
-//try...catch
-
 //测试类模板
 #include "TemplateTest.h"
 //测试类模板
 int main()
 {
-	if (1)
+	if (0)
 	{
 		CommonApi::test_unique_ptr_get_release_reset();
 		system("pause");
@@ -572,51 +561,21 @@ int main()
 	//判断电脑指令集是小端字节序还是大端字节序
 	if (0)
 	{
-		int i = 0x12345678;
-		if (0x12 == *((char *)&i))
-		{
-			std::cout << "Bid endian" << std::endl;
-		} 
-		else
-		{
-			std::cout << "Little endian" << std::endl;
-		}
+		CommonApi::test_computer_little_or_big_endian();
+		system("pause");
 	}
 	//判断电脑指令集是小端字节序还是大端字节序
 
-	if (0)
+	if (1)
 	{
-		std::vector<int> ivec1;
-		ivec1.push_back(1);
-		ivec1.push_back(2);
-
-		std::vector<int>::size_type size1;
-		size1 = ivec1.size();
-
-		std::string str1 = "a";
-		std::string str2 = "b";
-		if (str1 < str2)
-		{
-			std::cout << "str1 is smaller than str2" << std::endl;
-		}
+		CommonApi::test_size_type_vector();//适用stl的size_type变量
+		CommonApi::test_string_big_or_little();//判断string类型的大小
 		system("pause");
 	}
 	if (0)
 	{
-		int x = 50;
-		int y = 0;
-		double z = 0;
-
-		try 
-		{
-			z = division(x, y);
-			std::cout << z << std::endl;
-		}
-		catch (const char* msg) 
-		{
-			std::cerr << msg << std::endl;
-		}
-		int b = 0;
+		CommonApi::test_try_catch();
+		system("pause");
 	}
 	if (0)
 	{
