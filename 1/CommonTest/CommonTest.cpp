@@ -556,8 +556,19 @@ double division(int a, int b)
 //测试类模板
 int main()
 {
-	//测试类模板
+	//unique_ptr的get方法
 	if (1)
+	{
+		//std::unique_ptr<T, Deleter>::get(C++11开始使用)
+		//返回指向被管理对象的指针，如果无管理对象，则为nullptr
+		std::unique_ptr<std::string> s_p(new std::string("hello world"));
+		std::string *s = s_p.get();
+		std::cout << *s << std::endl;
+		system("pasue");
+	}
+	//unique_ptr的get方法
+	//测试类模板
+	if (0)
 	{
 		MyClass<int, int> class1(1, 3);
 		class1.show();
