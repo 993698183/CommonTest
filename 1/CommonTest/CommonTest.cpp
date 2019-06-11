@@ -19,6 +19,11 @@
 //测试类模板
 int main()
 {	
+	if (1)
+	{
+		CommonApi::test_unordered_map();
+		system("pause");
+	}
 	if (0)
 	{
 		BoostTest test;

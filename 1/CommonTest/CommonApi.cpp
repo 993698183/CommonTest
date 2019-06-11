@@ -553,6 +553,24 @@ void CommonApi::test_my_log_file()
 	DEBUG_LOG("%s, ranking NO.%d", "You are so smart", 1);
 }
 
+#include <unordered_map>
+void CommonApi::test_unordered_map()
+{
+	std::unordered_map<std::string, std::string> u = {
+		{"RED", "#FF0000"},
+		{"GREEN", "#00FF00"},
+		{"BLUE", "#0000FF"}
+	};
+	for (const auto &n : u)
+	{
+		std::cout << "Key:[" << n.first << "] Value:[" << n.second << "]\n";
+	}
+	u["BLACK"] = "#000000";
+	u["WHITE"] = "#FFFFFF";
+	std::cout << "The Hex of color RED is:[" << u["RED"] << "]\n";
+	std::cout << "The Hex of color BLACK is:[" << u["BLACK"] << "]\n";
+}
+
 CommonApi::CommonApi()
 {
 }

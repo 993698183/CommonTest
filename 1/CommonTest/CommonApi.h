@@ -26,6 +26,7 @@ public:
 	static void test_string_to_float();
 	static void test_string_c_str_data();
 	static void test_my_log_file();
+	static void test_unordered_map();
 	CommonApi();
 	~CommonApi();
 };
