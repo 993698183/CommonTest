@@ -17,9 +17,16 @@
 //测试类模板
 #include "TemplateTest.h"
 //测试类模板
+
+
 int main()
 {	
 	if (1)
+	{
+		CommonApi::test_vfprintf();
+		system("pause");
+	}
+	if (0)
 	{
 		CommonApi::test_unordered_map();
 		system("pause");

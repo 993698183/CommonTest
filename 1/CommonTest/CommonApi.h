@@ -3,6 +3,8 @@
 #ifndef COMMONAPI_H
 #define COMMONAPI_H
 
+#include <string>
+
 class CommonApi
 {
 public:
@@ -27,6 +29,7 @@ public:
 	static void test_string_c_str_data();
 	static void test_my_log_file();
 	static void test_unordered_map();
+	static void test_vfprintf();
 	CommonApi();
 	~CommonApi();
 };
