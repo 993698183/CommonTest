@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include <Windows.h>
 #include <string>
+//windows api进行字符集转换
 //宽字符转多字节
 std::string W2A(const std::wstring& utf8)
 {
