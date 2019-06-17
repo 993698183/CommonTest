@@ -30,6 +30,7 @@ public:
 	static void test_my_log_file();
 	static void test_unordered_map();
 	static void test_vfprintf();
+	static void test_copy_file();
 	CommonApi();
 	~CommonApi();
 };

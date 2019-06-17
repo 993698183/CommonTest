@@ -3,8 +3,10 @@
 // stdafx.obj will contain the pre-compiled type information
 
 #include "stdafx.h"
+
 #include <Windows.h>
 #include <string>
+//windows api进行字符集转换
 //宽字符转多字节
 std::string W2A(const std::wstring& utf8)
 {
@@ -30,5 +32,6 @@ std::wstring A2W(const std::string& gbk)
 	utf8 = nullptr;
 	return result;
 }
+
 // TODO: reference any additional headers you need in STDAFX.H
 // and not in this file

@@ -23,6 +23,9 @@ int main()
 {	
 	if (1)
 	{
+	}
+	if (0)
+	{
 		CommonApi::test_vfprintf();
 		system("pause");
 	}

@@ -9,6 +9,39 @@
 #include <string>
 #include <algorithm>
 //string和wstring大小写转换功能
+
+//C++实现文件的复制、删除、重命名
+#include <fstream>
+int CopyFile(char *SourceFile, char *NewFile)
+{
+	std::ifstream in;
+	std::ofstream out;
+	in.open(SourceFile, std::ios::binary);//打开源文件
+	if (in.fail())
+	{
+		std::cout << "failed to open sourcefile" << std::endl;
+		in.close();
+		out.close();
+		return 0;
+	}
+	out.open(NewFile, std::ios::binary);//创建目标文件
+	if (out.fail())
+	{
+		std::cout << "failed to create new file" << std::endl;
+		out.close();
+		in.close();
+		return 0;
+	}
+	else
+	{
+		//开始复制文件
+		out << in.rdbuf();
+		out.close();
+		in.close();
+		return 1;
+	}
+}
+//C++实现文件的复制、删除、重命名
 struct Foo 
 {
 	Foo() { std::cout << "Foo\n"; }
@@ -592,6 +625,34 @@ void CommonApi::test_vfprintf()
 	WriteFrmtd(fp, "This is just one argument %d \n", 10);
 
 	fclose(fp);
+}
+
+void CommonApi::test_copy_file()
+{
+//	char source1[256];
+//	char newfile1[256];
+//	std::cout << "请输入要复制文件的路径" << std::endl;
+//	std::cin >> newfile1;
+//	std::cout << "请输入新文件的路径" << std::endl;
+//	std::cin >> newfile1;
+//	bool ret = false;
+//#ifdef _UNICODE
+//	std::wstring wstrsource = A2W(source1);
+//	std::wstring wstrnewfile = A2W(newfile1);
+//	ret = CopyFile(wstrsource.c_str(), wstrnewfile.c_str());
+//#else
+//	ret = CopyFile(source1, newfile1);
+//#endif // _UNICODE
+//	if (ret)
+//	{
+//		std::cout << "文件已经复制成功" << std::endl;
+//	}
+//	//else
+//	{
+//		std::cout << "文件复制失败" << std::endl;
+//	}
+//	std::cin.get();
+//	std::cin.get();
 }
 
 CommonApi::CommonApi()
