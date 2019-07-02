@@ -655,6 +655,26 @@ void CommonApi::test_copy_file()
 //	std::cin.get();
 }
 
+//直接进行对象的交换，包括对象的内容
+void CommonApi::test_STL_swap()
+{
+	std::vector<int> foo(3, 100);//three ints with a value of 100
+	std::vector<int> bar(5, 200);
+
+	foo.swap(bar);
+
+	std::cout << "foo contains:";
+	for (unsigned i = 0; i < foo.size(); i++)
+		std::cout << ' ' << foo[i];
+	std::cout << '\n';
+
+	std::cout << "bar contains:";
+	for (unsigned i = 0; i < bar.size(); i++)
+		std::cout << ' ' << bar[i];
+	std::cout << '\n'
+
+}
+
 CommonApi::CommonApi()
 {
 }

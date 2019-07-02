@@ -31,6 +31,7 @@ public:
 	static void test_unordered_map();
 	static void test_vfprintf();
 	static void test_copy_file();
+	static void test_STL_swap();
 	CommonApi();
 	~CommonApi();
 };
