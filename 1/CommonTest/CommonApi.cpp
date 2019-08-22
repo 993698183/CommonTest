@@ -425,49 +425,49 @@ HANDLE g_getupHandle;
 HANDLE g_breakfastHandle;
 HANDLE g_workHandle;
 
-std::vector<std::string> stateTexts;
-DWORD WINAPI Worker(LPVOID n)
-{
-	stateTexts.push_back("GetUp");
-	SetEvent(g_getupHandle);
-	stateTexts.push_back("Breakfast");
-	SetEvent(g_breakfastHandle);
-	stateTexts.push_back("Work");
-	SetEvent(g_workHandle);
-
-	return 0;
-}
+//std::vector<std::string> stateTexts;
+//DWORD WINAPI Worker(LPVOID n)
+//{
+//	stateTexts.push_back("GetUp");
+//	SetEvent(g_getupHandle);
+//	stateTexts.push_back("Breakfast");
+//	SetEvent(g_breakfastHandle);
+//	stateTexts.push_back("Work");
+//	SetEvent(g_workHandle);
+//
+//	return 0;
+//}
 //Windows的Event编程
-void CommonApi::test_windows_event()
-{
-	stateTexts.reserve(3);//容器预留空间
-	g_getupHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
-	g_breakfastHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
-	g_workHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
-
-	DWORD threadId;
-	HANDLE theadHandle = CreateThread(NULL,
-		0,
-		Worker,
-		0,
-		0,
-		&threadId
-	);
-
-	WaitForSingleObject(g_getupHandle, INFINITE);
-	std::cout << stateTexts[0] << std::endl;
-
-	WaitForSingleObject(g_breakfastHandle, 3000);
-	std::cout << stateTexts[1] << std::endl;
-
-	WaitForSingleObject(g_workHandle, INFINITE);
-	std::cout << stateTexts[2] << std::endl;
-
-	CloseHandle(theadHandle);
-	CloseHandle(g_getupHandle);
-	CloseHandle(g_breakfastHandle);
-	CloseHandle(g_workHandle);
-}
+//void CommonApi::test_windows_event()
+//{
+//	stateTexts.reserve(3);//容器预留空间
+//	g_getupHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
+//	g_breakfastHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
+//	g_workHandle = CreateEventA(NULL, true, false, NULL);//手动，无信号
+//
+//	DWORD threadId;
+//	HANDLE theadHandle = CreateThread(NULL,
+//		0,
+//		Worker,
+//		0,
+//		0,
+//		&threadId
+//	);
+//
+//	WaitForSingleObject(g_getupHandle, INFINITE);
+//	std::cout << stateTexts[0] << std::endl;
+//
+//	WaitForSingleObject(g_breakfastHandle, 3000);
+//	std::cout << stateTexts[1] << std::endl;
+//
+//	WaitForSingleObject(g_workHandle, INFINITE);
+//	std::cout << stateTexts[2] << std::endl;
+//
+//	CloseHandle(theadHandle);
+//	CloseHandle(g_getupHandle);
+//	CloseHandle(g_breakfastHandle);
+//	CloseHandle(g_workHandle);
+//}
 
 
 //mystringToi和mystringTofloat
@@ -554,37 +554,37 @@ void CommonApi::test_string_c_str_data()
 }
 
 
+////自己的log日志功能
+//#include <iostream>
+//#include <string>
+//#include <vector>
+//#define DEBUG_LOG(...) debug_log("DEBUG", __TIME__, __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__)
+//void debug_log(
+//	const char *loglevel,
+//	const char *time,
+//	const char *file,
+//	const char *func,
+//	const int iline,
+//	const char *format, ...
+//)
+//{
+//	static char output[10240] = { 0 };
+//	va_list arglist;
+//	va_start(arglist, format);
+//	vsnprintf(output, sizeof(output), format, arglist);
+//	printf("[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
+//	//此处会频繁打开文件
+//	FILE *fp = NULL;
+//	fopen_s(&fp, "d:\\logfile.txt", "a+");//
+//	fprintf_s(fp, "[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
+//	fclose(fp);
+//	va_end(arglist);
+//}
 //自己的log日志功能
-#include <iostream>
-#include <string>
-#include <vector>
-#define DEBUG_LOG(...) debug_log("DEBUG", __TIME__, __FILE__, __FUNCTION__, __LINE__, __VA_ARGS__)
-void debug_log(
-	const char *loglevel,
-	const char *time,
-	const char *file,
-	const char *func,
-	const int iline,
-	const char *format, ...
-)
-{
-	static char output[10240] = { 0 };
-	va_list arglist;
-	va_start(arglist, format);
-	vsnprintf(output, sizeof(output), format, arglist);
-	printf("[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
-	//此处会频繁打开文件
-	FILE *fp = NULL;
-	fopen_s(&fp, "d:\\logfile.txt", "a+");//
-	fprintf_s(fp, "[%s][%s][%s][%s][%d]:%s\n", time, loglevel, file, func, iline, output);
-	fclose(fp);
-	va_end(arglist);
-}
-//自己的log日志功能
-void CommonApi::test_my_log_file()
-{
-	DEBUG_LOG("%s, ranking NO.%d", "You are so smart", 1);
-}
+//void CommonApi::test_my_log_file()
+//{
+//	DEBUG_LOG("%s, ranking NO.%d", "You are so smart", 1);
+//}
 
 #include <unordered_map>
 void CommonApi::test_unordered_map()
@@ -656,24 +656,24 @@ void CommonApi::test_copy_file()
 }
 
 //直接进行对象的交换，包括对象的内容
-void CommonApi::test_STL_swap()
-{
-	std::vector<int> foo(3, 100);//three ints with a value of 100
-	std::vector<int> bar(5, 200);
-
-	foo.swap(bar);
-
-	std::cout << "foo contains:";
-	for (unsigned i = 0; i < foo.size(); i++)
-		std::cout << ' ' << foo[i];
-	std::cout << '\n';
-
-	std::cout << "bar contains:";
-	for (unsigned i = 0; i < bar.size(); i++)
-		std::cout << ' ' << bar[i];
-	std::cout << '\n'
-
-}
+//void CommonApi::test_STL_swap()
+//{
+//	std::vector<int> foo(3, 100);//three ints with a value of 100
+//	std::vector<int> bar(5, 200);
+//
+//	foo.swap(bar);
+//
+//	std::cout << "foo contains:";
+//	for (unsigned i = 0; i < foo.size(); i++)
+//		std::cout << ' ' << foo[i];
+//	std::cout << '\n';
+//
+//	std::cout << "bar contains:";
+//	for (unsigned i = 0; i < bar.size(); i++)
+//		std::cout << ' ' << bar[i];
+//	std::cout << '\n'
+//
+//}
 
 CommonApi::CommonApi()
 {
