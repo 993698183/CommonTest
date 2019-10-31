@@ -26,11 +26,11 @@ void test_date_accessor()
 	date::day_of_year_type dy = dt.day_of_year();
 	assert(dy == 58);	// 一年的第58天
 
-						// 获取date是在一周中的第几天
+	// 获取date是在一周中的第几天
 	date::day_of_week_type dw = dt.day_of_week();
 	assert(dw == 0);	// 星期天
 
-						// 获取当前日期的本月最后一天
+	// 获取当前日期的本月最后一天
 	date dend1 = dt.end_of_month();
 	assert(dend1 == date(2011, 2, 28));
 	date dend2 = dend1 + months(1);
@@ -42,7 +42,7 @@ void test_date_accessor()
 	int wn = dt.week_number();
 	assert(wn == 8);	// 第八周
 
-						// 儒略日(Julian day), 是指由公元前4713年1月1日
+	// 儒略日(Julian day), 是指由公元前4713年1月1日
 	long l = dt.julian_day();	// 从儒略日到当天有多少天?
 }
 
