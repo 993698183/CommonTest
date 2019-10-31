@@ -20,7 +20,8 @@ int main()
 	//test_string_find_string();
 	//test_string_find_token();
 	//test_thread();
-	test_thread_mutex();
+	//test_thread_mutex();
+	test_bind_fun1();
 	getchar();
     return 0;
 }
