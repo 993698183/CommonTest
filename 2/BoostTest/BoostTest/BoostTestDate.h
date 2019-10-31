@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <boost/date_time.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
 
 void test_date_accessor()
 {
@@ -285,6 +286,69 @@ void test_date_holiday()
 	partial_date pd(25, 12);
 	date d4 = pd.get_date(2012);
 	std::cout << "圣诞节: " << d4 << std::endl;
+}
+
+void test_ptime_construct()
+{
+	using namespace boost::gregorian;
+	using namespace boost::posix_time;
+
+	// 1. 常规的构造函数有如下几种:
+	ptime p0;
+	// 最常用的构造方法
+	ptime p1(date(2012, 11, 30), time_duration(1, 2, 3));	// 2012-Nov-30 01:02:03
+	ptime p2(p1);											// 复制构造
+	ptime ps1(neg_infin);
+	ptime ps2(pos_infin);
+	ptime ps3(not_a_date_time);
+	ptime ps4(max_date_time);	// 9999-Dec-31
+	ptime ps5(min_date_time);	// 1400-Jan-01
+
+								// 2. 通过字符串构造
+	ptime pstr1(time_from_string("2012-11-30 23:59:59.000"));
+	ptime pstr2(from_iso_string("20121130T200001"));
+
+	// 3. 通过clock构造
+	ptime pc1(second_clock::local_time());
+	ptime pc2(second_clock::universal_time());
+	ptime pc3(microsec_clock::local_time());
+	ptime pc4(microsec_clock::universal_time());
+
+	// 4. 通过转换函数from_time_t和ptime_from_tm, 
+	// 注意: 这样通过from_time_t转换成ptime后, 好像是格林威治时间
+	time_t t1 = time(NULL);
+	ptime pc5 = from_time_t(t1);
+	std::cout << pc5 << std::endl;
+
+	tm* t2 = localtime(&t1);
+	ptime pc6 = ptime_from_tm(*t2);
+	std::cout << pc6 << std::endl;
+}
+
+void test_ptime_accessor()
+{
+	using namespace boost::posix_time;
+	using namespace boost::gregorian;
+
+	// 获取日期部分
+	ptime pt(second_clock::local_time());
+	date d1 = pt.date();
+
+	// 获取时间部分
+	time_duration td = pt.time_of_day();
+
+	// 获取秒的小数部分
+	__int64 l = td.fractional_seconds();
+	std::cout << l << std::endl;
+}
+
+void test_ptime2string()
+{
+	using namespace boost::posix_time;
+
+	time_duration td1(1, 2, 3, 4);
+	std::cout << to_simple_string(td1) << std::endl;
+	std::cout << to_iso_string(td1) << std::endl;
 }
 
 #endif // !BOOST_TEST_DATE
