@@ -474,4 +474,36 @@ void test_string_join()
 	std::cout << boost::join_if(v, "__", is_contains_a()) << std::endl;
 }
 
+// to_upper_copy两种重载函数
+void test_string_upper()
+{
+	std::string str1 = "Hello world!";
+
+	// 方法1
+	std::string str2 = boost::to_upper_copy(str1);
+	assert(str2 == "HELLO WORLD!");
+
+	// 方法2, 第二个参数是range, 可以是如下几种类型
+	// 1. make_pire(iterator, iterator)
+	// 2. std::string
+	// 3. 数组
+	// 4. 标准库容器 
+	std::string str3 = "str3 = ";
+	boost::to_upper_copy(std::back_inserter(str3), std::make_pair(str1.begin(), str1.end()));
+	assert(str3 == "str3 = HELLO WORLD!");
+
+	std::string str4 = "str4 = ";
+	boost::to_upper_copy(std::back_inserter(str4), "HELLO WORLD!");
+	assert(str4 == "str4 = HELLO WORLD!");
+
+	std::string str5 = "str5 = ";
+	boost::to_upper_copy(std::back_inserter(str5), boost::make_iterator_range(str1));
+	assert(str5 == "str5 = HELLO WORLD!");
+
+	std::string str6 = "str6 = ";
+	char* p = "HELLO WORLD!";
+	boost::to_upper_copy(std::back_inserter(str6), p);
+	assert(str6 == "str6 = HELLO WORLD!");
+}
+
 #endif
