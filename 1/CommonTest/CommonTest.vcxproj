@@ -155,6 +155,7 @@
     <ClInclude Include="CommonApi.h" />
     <ClInclude Include="GetThreadID.h" />
     <ClInclude Include="ObserverPattern.h" />
+    <ClInclude Include="OperatorOverloadingClass.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TemplateTest.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="CommonApi.cpp" />
     <ClCompile Include="CommonTest.cpp" />
     <ClCompile Include="GetThreadID.cpp" />
+    <ClCompile Include="OperatorOverloadingClass.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

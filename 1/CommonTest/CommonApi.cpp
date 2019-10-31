@@ -383,7 +383,6 @@ void FuncB()
 void CommonApi::test_log_dll()
 {
 	//调用log日志动态库
-	char c;
 	HINSTANCE hInput;
 	hInput = LoadLibrary(_T("LogDll.dll"));
 	if (NULL == hInput)
