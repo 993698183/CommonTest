@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #ifndef BOOST_TEST_STRING_ALGO_FIND
 #define BOOST_TEST_STRING_ALGO_FIND
@@ -8,32 +8,32 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/algorithm/string/regex.hpp>
 
-// find_first:¡¾1¡¿²éÕÒ×Ö·û´®ÔÚÊäÈëÖĞµÚÒ»´Î³öÏÖµÄÎ»ÖÃ¡£
-// find_last: ¡¾2¡¿²éÕÒ×Ö·û´®ÔÚÊäÈëÖĞ×îºóÒ»´Î³öÏÖµÄÎ»ÖÃ¡£
-// find_nth:  ¡¾3¡¿²éÕÒ×Ö·û´®ÔÚÊäÈëÖĞµÄµÚn´Î£¨´Ó0¿ªÊ¼¼ÆÊı£©³öÏÖµÄÎ»ÖÃ¡£
-// find_head: ¡¾4¡¿È¡Ò»¸ö×Ö·û´®¿ªÍ·N¸ö×Ö·ûµÄ×Ö´®£¬Ïàµ±ÓÚsubstr(0,n);
-// find_tail: ¡¾5¡¿È¡Ò»¸ö×Ö·û´®Ä©Î²N¸ö×Ö·ûµÄ×Ö´®¡£
+// find_first:ã€1ã€‘æŸ¥æ‰¾å­—ç¬¦ä¸²åœ¨è¾“å…¥ä¸­ç¬¬ä¸€æ¬¡å‡ºç°çš„ä½ç½®ã€‚
+// find_last: ã€2ã€‘æŸ¥æ‰¾å­—ç¬¦ä¸²åœ¨è¾“å…¥ä¸­æœ€åä¸€æ¬¡å‡ºç°çš„ä½ç½®ã€‚
+// find_nth:  ã€3ã€‘æŸ¥æ‰¾å­—ç¬¦ä¸²åœ¨è¾“å…¥ä¸­çš„ç¬¬næ¬¡ï¼ˆä»0å¼€å§‹è®¡æ•°ï¼‰å‡ºç°çš„ä½ç½®ã€‚
+// find_head: ã€4ã€‘å–ä¸€ä¸ªå­—ç¬¦ä¸²å¼€å¤´Nä¸ªå­—ç¬¦çš„å­—ä¸²ï¼Œç›¸å½“äºsubstr(0,n);
+// find_tail: ã€5ã€‘å–ä¸€ä¸ªå­—ç¬¦ä¸²æœ«å°¾Nä¸ªå­—ç¬¦çš„å­—ä¸²ã€‚
 void test_string_find_string()
 {
 	std::string str1("a1234_first_nth_first_nth_");
 	boost::iterator_range<std::string::iterator> ir;
 
-	// find_firstÓëifind_first£¨²»Çø·Ö´óĞ¡Ğ´£¬ÆäËüÍ¬find_first£©
+	// find_firstä¸ifind_firstï¼ˆä¸åŒºåˆ†å¤§å°å†™ï¼Œå…¶å®ƒåŒfind_firstï¼‰
 	ir = boost::find_first(str1, "first");
-	// 1. Í¨¹ıiterator_range¹¹½¨×Ö·û´®
+	// 1. é€šè¿‡iterator_rangeæ„å»ºå­—ç¬¦ä¸²
 	assert(std::string(ir.begin(), ir.end()) == "first");
-	// 2. ²é¿´ËÑË÷µ½µÄ×Ö·û´®ËùÔÚÎ»ÖÃ
+	// 2. æŸ¥çœ‹æœç´¢åˆ°çš„å­—ç¬¦ä¸²æ‰€åœ¨ä½ç½®
 	assert(ir.begin() - str1.begin() == 6 && ir.end() - str1.begin() == 6 + 5);
-	// 3. ÀûÓÃiterator_range´¦ÀíËÑË÷µ½µÄ×Ö·û´®
+	// 3. åˆ©ç”¨iterator_rangeå¤„ç†æœç´¢åˆ°çš„å­—ç¬¦ä¸²
 	boost::to_upper(ir);
 	assert(str1 == "a1234_FIRST_nth_first_nth_");
 	boost::to_lower(ir);
 	assert(str1 == "a1234_first_nth_first_nth_");
 
-	// findÃ»ÓĞÕÒµ½µÄÇé¿ö
+	// findæ²¡æœ‰æ‰¾åˆ°çš„æƒ…å†µ
 	ir = boost::find_first(str1, "no");
-	assert(ir.empty()); // ²»´æÔÚ
-	assert(std::string(ir.begin(), ir.end()).empty()); // ²»´æÔÚ£¬ÈÔ¿É¹¹½¨Ò»¸östring
+	assert(ir.empty()); // ä¸å­˜åœ¨
+	assert(std::string(ir.begin(), ir.end()).empty()); // ä¸å­˜åœ¨ï¼Œä»å¯æ„å»ºä¸€ä¸ªstring
 	std::ostringstream osstr;
 	osstr << boost::find_first(str1, "_first_");
 	assert(osstr.str() == "_first_");
@@ -63,7 +63,7 @@ void test_string_find_token()
 }
 
 
-// ×¢Òâ¼ÓÉÏÍ·ÎÄ¼ş
+// æ³¨æ„åŠ ä¸Šå¤´æ–‡ä»¶
 // #include <boost/algorithm/string/regex.hpp>
 // find_regex, find_all_regex
 void test_string_find_regex()
@@ -85,7 +85,7 @@ void test_string_find_regex()
 	assert(tokens[1] == "b22_");
 	assert(tokens[2] == "b333_");
 
-	// ÍøÂçÉÏÕÒµ½µÄÁíÒ»¸öÀı×Ó
+	// ç½‘ç»œä¸Šæ‰¾åˆ°çš„å¦ä¸€ä¸ªä¾‹å­
 	std::string value = "123a1cxxxxa56c";
 	regex pattern("a[0-9]+c");
 	iterator_range<std::string::iterator> find_result;
@@ -122,12 +122,12 @@ void test_string_trim_if()
 	boost::trim_right_if(str, boost::is_alnum());
 	assert(str == "!@#$%^");
 
-	// Èç¹ûÊÇ¶şÔªº¯Êı£¬¿ÉÒÔ×öÈçÏÂ´¦Àí
+	// å¦‚æœæ˜¯äºŒå…ƒå‡½æ•°ï¼Œå¯ä»¥åšå¦‚ä¸‹å¤„ç†
 	std::string str2nd("###GoodBye ChongQing!######");
 	boost::trim_if(str2nd, bind2nd(std::equal_to<char>(), '#'));
 	assert(str2nd == "GoodBye ChongQing!");
 
-	// µ±È»ÓÃÏÂÃæµÄ·½·¨Ò²¿ÉÒÔÊµÏÖÈçÉÏµÄ¹¦ÄÜ
+	// å½“ç„¶ç”¨ä¸‹é¢çš„æ–¹æ³•ä¹Ÿå¯ä»¥å®ç°å¦‚ä¸Šçš„åŠŸèƒ½
 	std::string strAny("###Hello Fuzhou!######");
 	boost::trim_if(strAny, boost::is_any_of("#"));
 	assert(strAny == "Hello Fuzhou!");
@@ -180,7 +180,7 @@ void test_string_erase()
 	}
 	std::cout << std::endl;
 
-	// ×¢ÒânthµÄË÷Òı´Ó0¿ªÊ¼.
+	// æ³¨æ„nthçš„ç´¢å¼•ä»0å¼€å§‹.
 	std::cout << "#### erase_nth and erase_nth_copy ####" << std::endl;
 	{
 		std::string str4 = str;
@@ -338,7 +338,7 @@ void test_string_replace()
 	}
 	std::cout << std::endl;
 
-	// ×¢ÒânthµÄË÷Òı´Ó0¿ªÊ¼.
+	// æ³¨æ„nthçš„ç´¢å¼•ä»0å¼€å§‹.
 	std::cout << "#### replace_nth and replace_nth_copy ####" << std::endl;
 	{
 		std::string str4 = str;
@@ -412,7 +412,7 @@ void test_string_replace()
 		std::string str6 = str;
 		regex reg("H.*?o");
 
-		//		replace_regex(str6, reg, "GoodBye");	// Ö±½ÓÕâÃ´Ğ´»á±¨´í. ÒªÓÃÈçÏÂµÄ·½·¨.
+		//		replace_regex(str6, reg, "GoodBye");	// ç›´æ¥è¿™ä¹ˆå†™ä¼šæŠ¥é”™. è¦ç”¨å¦‚ä¸‹çš„æ–¹æ³•.
 		std::string strReplace = "GoodBye";
 		replace_regex(str6, reg, strReplace);
 
@@ -474,20 +474,20 @@ void test_string_join()
 	std::cout << boost::join_if(v, "__", is_contains_a()) << std::endl;
 }
 
-// to_upper_copyÁ½ÖÖÖØÔØº¯Êı
+// to_upper_copyä¸¤ç§é‡è½½å‡½æ•°
 void test_string_upper()
 {
 	std::string str1 = "Hello world!";
 
-	// ·½·¨1
+	// æ–¹æ³•1
 	std::string str2 = boost::to_upper_copy(str1);
 	assert(str2 == "HELLO WORLD!");
 
-	// ·½·¨2, µÚ¶ş¸ö²ÎÊıÊÇrange, ¿ÉÒÔÊÇÈçÏÂ¼¸ÖÖÀàĞÍ
+	// æ–¹æ³•2, ç¬¬äºŒä¸ªå‚æ•°æ˜¯range, å¯ä»¥æ˜¯å¦‚ä¸‹å‡ ç§ç±»å‹
 	// 1. make_pire(iterator, iterator)
 	// 2. std::string
-	// 3. Êı×é
-	// 4. ±ê×¼¿âÈİÆ÷ 
+	// 3. æ•°ç»„
+	// 4. æ ‡å‡†åº“å®¹å™¨ 
 	std::string str3 = "str3 = ";
 	boost::to_upper_copy(std::back_inserter(str3), std::make_pair(str1.begin(), str1.end()));
 	assert(str3 == "str3 = HELLO WORLD!");

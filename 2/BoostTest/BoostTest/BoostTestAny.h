@@ -1,19 +1,19 @@
-#pragma once
+ï»¿#pragma once
 #ifndef BOOST_TEST_ANY
 #define BOOST_TEST_ANY
 
 /* 
-anyÊÇÒ»ÖÖÌØÊâµÄÈÝÆ÷£¬ËüÖ»ÄÜÈÝÄÉÒ»¸öÔªËØ£¬µ«Õâ¸öÔªËØ¿ÉÒÔÊÇÈÎÒâÀàÐÍ;
-¿ÉÒÔÓÃany±£´æÈÎºÎÀàÐÍ£¬ÔÚÈÎºÎÐèÒªµÄÊ±ºòÈ¡³öËü;
-ÕâÖÖ¹¦ÄÜºÍshared_ptr<void>ÀàËÆ£¬µ«ÊÇanyÊÇÀàÐÍ°²È«µÄ;
-any²»ÊÇÒ»¸öÄ£°åÀà£¬µ«ÊÇÆäÓÐÄ£°å¹¹Ôìº¯Êý£¬´Ó¶øÊµÏÖÈÎÒâÀàÐÍ;
-¿ÕµÄany¹¹Ôìº¯Êý´´½¨Ò»¸ö¿ÕµÄany¶ÔÏó£¬²»³ÖÓÐÈÎºÎÖµ;
-³ÉÔ±º¯Êýempty()¿ÉÅÐ¶ÏanyÊÇ·ñÎª¿Õ;
-³ÉÔ±º¯Êýswap(...)¿É½»»»Á½¸öanyµÄÖµ;
-Èç¹ûany³ÖÓÐÒ»¸ö¶ÔÏó£¬º¯Êýtype()·µ»Ø¶ÔÏóµÄtype_infoÀàÐÍÐÅÏ¢;
-µ±ÈÝÆ÷µÄÔªËØÊÇanyÊ±£¬ÈÝÆ÷¾ÍÏñÊÇÒ»¸ö¿É³ÖÓÐ¶à¸ö²»Í¬ÀàÐÍ¶ÔÏóµÄ¶¯Ì¬tuple;
-Èç¹ûÏ£ÍûÒ»ÖÖÊý¾Ý½á¹¹¾ßÓÐtupleÄÇÑùµÄÈÝÄÉÈÎÒâÀàÐÍµÄÄÜÁ¦£¬ÓÖ¿ÉÔÚÔËÐÐÊ±¶¯Ì¬±ä»¯´óÐ¡£¬¿ÉÒÔÓÃany×÷ÎªÔªËØÀàÐÍ´îÅäÈÝÆ÷.
-¸ü¶àÓÃ·¨Çë²Î¿¼boost³ÌÐòÍêÈ«¿ª·¢Ö¸ÄÏ...
+anyæ˜¯ä¸€ç§ç‰¹æ®Šçš„å®¹å™¨ï¼Œå®ƒåªèƒ½å®¹çº³ä¸€ä¸ªå…ƒç´ ï¼Œä½†è¿™ä¸ªå…ƒç´ å¯ä»¥æ˜¯ä»»æ„ç±»åž‹;
+å¯ä»¥ç”¨anyä¿å­˜ä»»ä½•ç±»åž‹ï¼Œåœ¨ä»»ä½•éœ€è¦çš„æ—¶å€™å–å‡ºå®ƒ;
+è¿™ç§åŠŸèƒ½å’Œshared_ptr<void>ç±»ä¼¼ï¼Œä½†æ˜¯anyæ˜¯ç±»åž‹å®‰å…¨çš„;
+anyä¸æ˜¯ä¸€ä¸ªæ¨¡æ¿ç±»ï¼Œä½†æ˜¯å…¶æœ‰æ¨¡æ¿æž„é€ å‡½æ•°ï¼Œä»Žè€Œå®žçŽ°ä»»æ„ç±»åž‹;
+ç©ºçš„anyæž„é€ å‡½æ•°åˆ›å»ºä¸€ä¸ªç©ºçš„anyå¯¹è±¡ï¼Œä¸æŒæœ‰ä»»ä½•å€¼;
+æˆå‘˜å‡½æ•°empty()å¯åˆ¤æ–­anyæ˜¯å¦ä¸ºç©º;
+æˆå‘˜å‡½æ•°swap(...)å¯äº¤æ¢ä¸¤ä¸ªanyçš„å€¼;
+å¦‚æžœanyæŒæœ‰ä¸€ä¸ªå¯¹è±¡ï¼Œå‡½æ•°type()è¿”å›žå¯¹è±¡çš„type_infoç±»åž‹ä¿¡æ¯;
+å½“å®¹å™¨çš„å…ƒç´ æ˜¯anyæ—¶ï¼Œå®¹å™¨å°±åƒæ˜¯ä¸€ä¸ªå¯æŒæœ‰å¤šä¸ªä¸åŒç±»åž‹å¯¹è±¡çš„åŠ¨æ€tuple;
+å¦‚æžœå¸Œæœ›ä¸€ç§æ•°æ®ç»“æž„å…·æœ‰tupleé‚£æ ·çš„å®¹çº³ä»»æ„ç±»åž‹çš„èƒ½åŠ›ï¼Œåˆå¯åœ¨è¿è¡Œæ—¶åŠ¨æ€å˜åŒ–å¤§å°ï¼Œå¯ä»¥ç”¨anyä½œä¸ºå…ƒç´ ç±»åž‹æ­é…å®¹å™¨.
+æ›´å¤šç”¨æ³•è¯·å‚è€ƒboostç¨‹åºå®Œå…¨å¼€å‘æŒ‡å—...
 */
 
 /*
@@ -50,7 +50,7 @@ using namespace std;
 using namespace boost;
 using namespace boost::assign;
 
-//¸¨Öúº¯Êý
+//è¾…åŠ©å‡½æ•°
 template<typename T>
 bool can_cast(any &a)
 {
@@ -103,7 +103,7 @@ int test()
 	get<int>(a1) = 10;
 	*get_ptr<int>(a1) = 20;
 
-	//Ó¦ÓÃÓÚÈÝÆ÷
+	//åº”ç”¨äºŽå®¹å™¨
 	vector<any> v1;
 	v1.push_back(23);
 	v1.push_back(3.145);

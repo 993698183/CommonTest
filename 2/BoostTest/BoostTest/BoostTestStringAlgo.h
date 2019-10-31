@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #ifndef BOOST_TEST_STRINGALGO
 #define BOOST_TEST_STRINGALGO
 
@@ -7,30 +7,30 @@
 
 #include <boost/algorithm/string.hpp>
 /*
-��������
-	ǰ׺i�������ǰ׺�����㷨�Ǵ�Сд�����еģ������Ǵ�Сд���е�
-	��׺copy���������׺�����㷨���䶯���룬���ش�������Ŀ����������㷨ԭ�ش��������뼴���
-	��׺if���������׺�����㷨��Ҫһ����Ϊ�ж�ʽ��ν�ʺ������󣬷���ʹ��Ĭ�ϵ��ж�׼��
+命名规则：
+	前缀i：有这个前缀表明算法是大小写不敏感的，否则是大小写敏感的
+	后缀copy：有这个后缀表明算法不变动输入，返回处理结果的拷贝，否则算法原地处理，输入即输出
+	后缀if：有这个后缀表明算法需要一个作为判断式的谓词函数对象，否则使用默认的判断准则
 */
 
 /*
-�㷨���ࣺ
-	string_algo���ṩ���㷨������ࣺ
-		1����Сдת��
-		2���ж�ʽ�����
-		3���޼�
-		4���������滻
-		5���ָ���ϲ�
+算法分类：
+	string_algo库提供的算法分五大类：
+		1：大小写转换
+		2：判断式与分类
+		3：修剪
+		4：查找与替换
+		5：分割与合并
 */
 
 void test_string_case()
 {
-	// ���ش�д����, ԭ�ַ����ı�
+	// 返回大写拷贝, 原字符串改变
 	std::string str1("I Don't Know. ");
 	boost::to_upper(str1);
 	std::cout << "str1 = " << str1 << std::endl;
 
-	// ���ش�д����, ԭ�ַ������ı�
+	// 返回大写拷贝, 原字符串不改变
 	std::string str2("I Don't Know. ");
 	std::string str3 = boost::to_upper_copy(str2);
 	std::cout << "str2 = " << str2 << std::endl;
@@ -82,7 +82,7 @@ void test_string_precidate()
 	// lexicalgrephical_compare
 	assert(boost::lexicographical_compare("boost_python-vc100-mt-1_49.dll", "boost_system-vc100-mt-1_49.dll"));
 
-	// all: �����������Ԫ������һ��������ͨ���ж�ʽ���������������������ʽ������
+	// all: 如果它的所有元素满足一个给定的通过判断式描述的条件，则这个条件式成立。
 	assert(boost::all("\x20\t\n\r", boost::is_space()));
 	assert(boost::all("\x20\t\n\r", boost::is_classified(std::ctype_base::space)));
 	assert(boost::all("\x20\t\n\r", boost::is_any_of("\x20\t\n\r")));
@@ -94,19 +94,19 @@ void test_string_precidate()
 
 void test_string_classify()
 {
-	// 	is_space: �ַ��Ƿ�Ϊ�ո�
-	// 	is_alnum: �ַ��Ƿ�Ϊ��ĸ�������ַ�
-	// 	is_alpha: �ַ��Ƿ�Ϊ��ĸ
-	// 	is_cntrl: �ַ��Ƿ�Ϊ�����ַ�
-	// 	is_digit: �ַ��Ƿ�Ϊʮ��������
-	// 	is_graph: �ַ��Ƿ�Ϊͼ���ַ�
-	// 	is_lower: �ַ��Ƿ�ΪСд�ַ�
-	// 	is_print: �ַ��Ƿ�Ϊ�ɴ�ӡ�ַ�
-	// 	is_punct: �ַ��Ƿ�Ϊ�������ַ�
-	//  is_upper: �ַ��Ƿ�Ϊ��д�ַ�
-	//  is_xdigit: �ַ��Ƿ�Ϊʮ����������
-	//  is_any_of: �ַ��Ƿ��ǲ����ַ������е������ַ�
-	//  if_from_range �ַ��Ƿ�λ��ָ�������ڣ���from <= ch <= to
+	// 	is_space: 字符是否为空格
+	// 	is_alnum: 字符是否为字母和数字字符
+	// 	is_alpha: 字符是否为字母
+	// 	is_cntrl: 字符是否为控制字符
+	// 	is_digit: 字符是否为十进制数字
+	// 	is_graph: 字符是否为图形字符
+	// 	is_lower: 字符是否为小写字符
+	// 	is_print: 字符是否为可打印字符
+	// 	is_punct: 字符是否为标点符号字符
+	//  is_upper: 字符是否为大写字符
+	//  is_xdigit: 字符是否为十六进制数字
+	//  is_any_of: 字符是否是参数字符序列中的任意字符
+	//  if_from_range 字符是否位于指定区间内，即from <= ch <= to
 
 }
 

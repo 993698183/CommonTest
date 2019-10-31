@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #ifndef BOOST_TEST_TOKENIZER
 #define BOOST_TEST_TOKENIZER
 
@@ -11,7 +11,7 @@ void test_string_tokenizer()
 {
 	using namespace boost;
 
-	// 1. Ê¹ÓÃÈ±Ê¡Ä£°å²ÎÊı´´½¨·Ö´Ê¶ÔÏó, Ä¬ÈÏ°ÑËùÓĞµÄ¿Õ¸ñºÍ±êµã×÷Îª·Ö¸ô·û. 
+	// 1. ä½¿ç”¨ç¼ºçœæ¨¡æ¿å‚æ•°åˆ›å»ºåˆ†è¯å¯¹è±¡, é»˜è®¤æŠŠæ‰€æœ‰çš„ç©ºæ ¼å’Œæ ‡ç‚¹ä½œä¸ºåˆ†éš”ç¬¦. 
 	{
 		std::string str("Link raise the master-sword.");
 
@@ -26,7 +26,7 @@ void test_string_tokenizer()
 	{
 		std::string str("Link raise the master-sword.");
 
-		// Ò»¸öchar_separator¶ÔÏó, Ä¬ÈÏ¹¹Ôìº¯Êı(±£Áô±êµãµ«½«Ëü¿´×÷·Ö¸ô·û)
+		// ä¸€ä¸ªchar_separatorå¯¹è±¡, é»˜è®¤æ„é€ å‡½æ•°(ä¿ç•™æ ‡ç‚¹ä½†å°†å®ƒçœ‹ä½œåˆ†éš”ç¬¦)
 		char_separator<char> sep;
 		tokenizer<char_separator<char> > tok(str, sep);
 		for (BOOST_AUTO(pos, tok.begin()); pos != tok.end(); ++pos)
@@ -65,7 +65,7 @@ void test_string_tokenizer()
 			std::cout << "[" << *pos << "]";
 		std::cout << std::endl;
 		// [Field 1][putting quotes around fields, allows commas][Field 3]
-		// ÒıºÅÄÚµÄ¶ººÅ²»¿É×öÎª·Ö¸ô·û.
+		// å¼•å·å†…çš„é€—å·ä¸å¯åšä¸ºåˆ†éš”ç¬¦.
 	}
 
 	// 5. offset_separator

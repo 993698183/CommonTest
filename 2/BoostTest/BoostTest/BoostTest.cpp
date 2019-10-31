@@ -1,4 +1,4 @@
-// BoostTest.cpp : Defines the entry point for the console application.
+﻿// BoostTest.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -18,7 +18,9 @@ int main()
 	//test_function();
 	//test_string();
 	//test_string_find_string();
-	test_string_find_token();
+	//test_string_find_token();
+	//test_thread();
+	test_thread_mutex();
 	getchar();
     return 0;
 }

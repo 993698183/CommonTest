@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #ifndef BOOST_TEST_DATE
 #define BOOST_TEST_DATE
 #include <iostream>
@@ -23,28 +23,28 @@ void test_date_accessor()
 	assert(ymd.month == 2);
 	assert(ymd.day == 27);
 
-	// »ñÈ¡dateÊÇÔÚÒ»ÄêÖĞµÄµÚ¼¸Ìì
+	// è·å–dateæ˜¯åœ¨ä¸€å¹´ä¸­çš„ç¬¬å‡ å¤©
 	date::day_of_year_type dy = dt.day_of_year();
-	assert(dy == 58);	// Ò»ÄêµÄµÚ58Ìì
+	assert(dy == 58);	// ä¸€å¹´çš„ç¬¬58å¤©
 
-	// »ñÈ¡dateÊÇÔÚÒ»ÖÜÖĞµÄµÚ¼¸Ìì
+	// è·å–dateæ˜¯åœ¨ä¸€å‘¨ä¸­çš„ç¬¬å‡ å¤©
 	date::day_of_week_type dw = dt.day_of_week();
-	assert(dw == 0);	// ĞÇÆÚÌì
+	assert(dw == 0);	// æ˜ŸæœŸå¤©
 
-	// »ñÈ¡µ±Ç°ÈÕÆÚµÄ±¾ÔÂ×îºóÒ»Ìì
+	// è·å–å½“å‰æ—¥æœŸçš„æœ¬æœˆæœ€åä¸€å¤©
 	date dend1 = dt.end_of_month();
 	assert(dend1 == date(2011, 2, 28));
 	date dend2 = dend1 + months(1);
 	dend2 = dend2.end_of_month();
 	assert(dend2 == date(2011, 3, 31));
 
-	// ±¾ÄêµÄµÚ¼¸ÖÜ(ISO 8601 week number)
-	// ×¢ÒâĞÇÆÚÌì±ä³ÉÒ»ÖÜ½áÊø£¬²»ÊÇÀÏÍâÏ°¹ßµÄÒ»ÖÜµÄ¿ªÊ¼¡£
+	// æœ¬å¹´çš„ç¬¬å‡ å‘¨(ISO 8601 week number)
+	// æ³¨æ„æ˜ŸæœŸå¤©å˜æˆä¸€å‘¨ç»“æŸï¼Œä¸æ˜¯è€å¤–ä¹ æƒ¯çš„ä¸€å‘¨çš„å¼€å§‹ã€‚
 	int wn = dt.week_number();
-	assert(wn == 8);	// µÚ°ËÖÜ
+	assert(wn == 8);	// ç¬¬å…«å‘¨
 
-	// ÈåÂÔÈÕ(Julian day), ÊÇÖ¸ÓÉ¹«ÔªÇ°4713Äê1ÔÂ1ÈÕ
-	long l = dt.julian_day();	// ´ÓÈåÂÔÈÕµ½µ±ÌìÓĞ¶àÉÙÌì?
+	// å„’ç•¥æ—¥(Julian day), æ˜¯æŒ‡ç”±å…¬å…ƒå‰4713å¹´1æœˆ1æ—¥
+	long l = dt.julian_day();	// ä»å„’ç•¥æ—¥åˆ°å½“å¤©æœ‰å¤šå°‘å¤©?
 }
 
 void test_date2string()
@@ -67,11 +67,11 @@ void test_date2tm()
 	date dt(2011, 2, 27);
 
 	tm t = to_tm(dt);
-	assert(t.tm_year == 111);	// ´Ó1900Äê¼Æ
-	assert(t.tm_mon == 1);		// ½á¹û1£¬´Ó0¿ªÊ¼£¬±íÊ¾2ÔÂ·İ
+	assert(t.tm_year == 111);	// ä»1900å¹´è®¡
+	assert(t.tm_mon == 1);		// ç»“æœ1ï¼Œä»0å¼€å§‹ï¼Œè¡¨ç¤º2æœˆä»½
 	assert(t.tm_mday == 27);
-	assert(t.tm_wday == 0);		// ½á¹û0£¬´ÓĞÇÆÚÈÕ¿ªÊ¼¼Æ
-	assert(t.tm_yday == 57);	// ½á¹û57£¬´Ó0¿ªÊ¼¼Æ£¬58Ìì
+	assert(t.tm_wday == 0);		// ç»“æœ0ï¼Œä»æ˜ŸæœŸæ—¥å¼€å§‹è®¡
+	assert(t.tm_yday == 57);	// ç»“æœ57ï¼Œä»0å¼€å§‹è®¡ï¼Œ58å¤©
 	assert(t.tm_hour == 0);
 	assert(t.tm_min == 0);
 	assert(t.tm_sec == 0);
@@ -89,17 +89,17 @@ void test_tm2date()
 	assert(to_iso_extended_string(d) == "2011-02-27");
 }
 
-//date¹¹Ôì·½·¨
-//±¾¿â²ÉÓÃ¸ñÀïÀúÈÕÆÚÏµÍ³, Ö§³Ö´Ó1400-Jan-01µ½9999-Dec-31.
+//dateæ„é€ æ–¹æ³•
+//æœ¬åº“é‡‡ç”¨æ ¼é‡Œå†æ—¥æœŸç³»ç»Ÿ, æ”¯æŒä»1400-Jan-01åˆ°9999-Dec-31.
 
 void test_dt_construct()
 {
 	using namespace boost::gregorian;
 
-	// 1. ³£¹æµÄ¹¹Ôìº¯ÊıÓĞÈçÏÂ¼¸ÖÖ:
+	// 1. å¸¸è§„çš„æ„é€ å‡½æ•°æœ‰å¦‚ä¸‹å‡ ç§:
 	date d0;
-	date d1(2008, 8, 9);	// ×î³£ÓÃµÄ¹¹Ôì·½·¨
-	date d2(d1);			// ¸´ÖÆ¹¹Ôì
+	date d1(2008, 8, 9);	// æœ€å¸¸ç”¨çš„æ„é€ æ–¹æ³•
+	date d2(d1);			// å¤åˆ¶æ„é€ 
 	date ds1(neg_infin);
 	date ds2(pos_infin);
 	date ds3(not_a_date_time);
@@ -114,25 +114,25 @@ void test_dt_construct()
 	assert(!ds4.is_special());
 	assert(!ds5.is_special());
 
-	// 2. Í¨¹ı×Ö·û´®¹¹Ôì
+	// 2. é€šè¿‡å­—ç¬¦ä¸²æ„é€ 
 	date dstr1(from_string("2011/08/09"));
 	date dstr2(from_string("2011-08-09"));
 	date dstr3(from_string("2011-Feb-28"));
 	date dstr4(from_string("2011-February-28"));
 	date dstr5(from_undelimited_string("20110809"));
 
-	// ²»³£ÓÃµÄ×Ö·û´®
-	date dstr6(from_us_string("Feb-28-2011"));	// ÍêÕûµÄÔÂ·İµ¥´ÊÒ²¿ÉÒÔ
-	date dstr7(from_uk_string("28-Feb-2011"));	// ÍêÕûµÄÔÂ·İµ¥´ÊÒ²¿ÉÒÔ
+	// ä¸å¸¸ç”¨çš„å­—ç¬¦ä¸²
+	date dstr6(from_us_string("Feb-28-2011"));	// å®Œæ•´çš„æœˆä»½å•è¯ä¹Ÿå¯ä»¥
+	date dstr7(from_uk_string("28-Feb-2011"));	// å®Œæ•´çš„æœˆä»½å•è¯ä¹Ÿå¯ä»¥
 
-												// 3. Í¨¹ıclock¹¹Ôì
+												// 3. é€šè¿‡clockæ„é€ 
 	date dc1(day_clock::local_day());
 	date dc2(day_clock::universal_day());
 
-	// 4. ¹¹ÔìÊ±µÄÒì³£
+	// 4. æ„é€ æ—¶çš„å¼‚å¸¸
 	try
 	{
-		// Äê, ÔÂ, ÈÕ³¬¹ı·¶Î§Ê±»áÅ×Òì³£.
+		// å¹´, æœˆ, æ—¥è¶…è¿‡èŒƒå›´æ—¶ä¼šæŠ›å¼‚å¸¸.
 		date d6(1300, 12, 25);
 	}
 	catch (std::exception& e)
@@ -141,12 +141,12 @@ void test_dt_construct()
 	}
 }
 
-//date_durationÓëdate_period
+//date_durationä¸date_period
 void test_date_duration()
 {
 	using namespace boost::gregorian;
 
-	// ³£¼ûµÄ¼¸ÖÖ¹¹Ôì·½·¨
+	// å¸¸è§çš„å‡ ç§æ„é€ æ–¹æ³•
 	{
 		date_duration dd(3);
 
@@ -157,7 +157,7 @@ void test_date_duration()
 		days dd5(min_date_time);
 	}
 
-	// ¼òµ¥ÔËËã
+	// ç®€å•è¿ç®—
 	{
 		date_duration dd1(3);
 		date_duration dd2(5);
@@ -194,42 +194,42 @@ void test_date_period()
 {
 	using namespace boost::gregorian;
 
-	// ×¢ÒâÕâÑùµÄ¹¹Ôìº¯ÊıÊÇ×ó±ÕÓÒ¿ª
+	// æ³¨æ„è¿™æ ·çš„æ„é€ å‡½æ•°æ˜¯å·¦é—­å³å¼€
 	date_period dp1(date(2010, 11, 29), date(2010, 12, 1));
 	date_period dp2(date(2010, 11, 29), days(2));
 	date_period dp3(dp2);
 
-	// Ê±¼ä¶ÎÏòºóÆ½ÒÆ3Ìì(dp2 = 12.2-->12.4)
+	// æ—¶é—´æ®µå‘åå¹³ç§»3å¤©(dp2 = 12.2-->12.4)
 	dp2.shift(days(3));
 	assert(dp2 == date_period(date(2010, 12, 2), date(2010, 12, 4)));
 
-	// Ê±¼ä¶ÎÏòÇ°ºó¸÷À©Õ¹1Ìì(dp3 = 11.28-->12.2)
+	// æ—¶é—´æ®µå‘å‰åå„æ‰©å±•1å¤©(dp3 = 11.28-->12.2)
 	dp3.expand(days(1));
 	assert(dp3 == date_period(date(2010, 11, 28), date(2010, 12, 2)));
 
 	// begin, end, last
 	assert(dp1.begin() == date(2010, 11, 29));
-	// ×¢Òâend, lastµÄÇø±ğ¡£ lastÊÇ×îºóÒ»Ìì, endÊÇÊ±¼ä¶ÎµÄÓÒ±ß½ç£¨²»°üº¬£©
+	// æ³¨æ„end, lastçš„åŒºåˆ«ã€‚ lastæ˜¯æœ€åä¸€å¤©, endæ˜¯æ—¶é—´æ®µçš„å³è¾¹ç•Œï¼ˆä¸åŒ…å«ï¼‰
 	assert(dp1.end() == date(2010, 12, 1));
 	assert(dp1.last() == date(2010, 11, 30));
 
-	// Ê±¼ä¶ÎµÄ³¤¶È
+	// æ—¶é—´æ®µçš„é•¿åº¦
 	// assert(dp1.length() == 2);
 
-	// Ò»Ğ©ÅĞ¶Ïº¯Êı(·µ»ØÖµÊÇbool)
-	assert(!dp1.is_null());	// µ±ÆğÊ¼Ê±¼ä´óÓÚ½áÊøÊ±¼ä
-	assert(!dp1.contains(date(2010, 12, 1)));	// Ò²¿ÉÒÔ°üº¬Ê±¼ä¶Î	
-	bool b1 = dp3.intersects(dp1);	// ³ıÁË°üº¬Ê±¼äµãÖ®Íâ, »¹¿ÉÒÔ°üº¬Ê±¼ä¶Î½»²æµÄÔËËã
+	// ä¸€äº›åˆ¤æ–­å‡½æ•°(è¿”å›å€¼æ˜¯bool)
+	assert(!dp1.is_null());	// å½“èµ·å§‹æ—¶é—´å¤§äºç»“æŸæ—¶é—´
+	assert(!dp1.contains(date(2010, 12, 1)));	// ä¹Ÿå¯ä»¥åŒ…å«æ—¶é—´æ®µ	
+	bool b1 = dp3.intersects(dp1);	// é™¤äº†åŒ…å«æ—¶é—´ç‚¹ä¹‹å¤–, è¿˜å¯ä»¥åŒ…å«æ—¶é—´æ®µäº¤å‰çš„è¿ç®—
 	assert(b1 == true);
 	bool b2 = dp3.intersects(dp2);
 	assert(b2 == false);
-	// intersectionÓëintersects²»Í¬ÔÚÓÚ: ËüµÄ·µ»ØÖµÉÏdate_period
+	// intersectionä¸intersectsä¸åŒåœ¨äº: å®ƒçš„è¿”å›å€¼ä¸Šdate_period
 	date_period dp4(date(2010, 11, 30), date(2010, 12, 3));
 	dp4 = dp4.intersection(dp1);
 	assert(dp4.begin() == date(2010, 11, 30));
 	assert(dp4.end() == date(2010, 12, 1));
 
-	// is_adjacentÅĞ¶ÏÊ±¼ä¶ÎÊÇ·ñÏàÁÚ. ²»ÄÜÖØµş.
+	// is_adjacentåˆ¤æ–­æ—¶é—´æ®µæ˜¯å¦ç›¸é‚». ä¸èƒ½é‡å .
 	date_period dp5(date(2010, 12, 1), date(2010, 12, 5));
 	bool b3 = dp1.is_adjacent(dp5);
 	assert(b3);
@@ -242,50 +242,50 @@ void test_date_period()
 	bool b5 = dp1.is_before(d1);
 	assert(!b5);
 
-	// Ê±¼ä¶ÎºÏ²¢(merge), Á½¸öÃ»ÓĞÖØºÏ(°üÀ¨ÏàÁÚ)µÄÊ±¼ä¶Î, ½á¹ûÎª¿Õ.
+	// æ—¶é—´æ®µåˆå¹¶(merge), ä¸¤ä¸ªæ²¡æœ‰é‡åˆ(åŒ…æ‹¬ç›¸é‚»)çš„æ—¶é—´æ®µ, ç»“æœä¸ºç©º.
 	date_period dp6 = dp1.merge(dp3);
 	assert(dp6 == date_period(date(2010, 11, 28), date(2010, 12, 2)));
 
-	// Ê±¼ä¶ÎºÏ²¢(span)
+	// æ—¶é—´æ®µåˆå¹¶(span)
 	// begin = min(p1.begin, p2.begin)
 	// end = max(p1.end , p2.end)
 	date_period dp7(date(2010, 12, 1), date(2010, 12, 5));
 	date_period dp8(date(2010, 12, 9), date(2010, 12, 31));
 	date_period dp9 = dp7.span(dp8); // 2002-Jan-01/2002-Jan-31
 	assert(dp9 == date_period(date(2010, 12, 1), date(2010, 12, 31)));
-	// Êä³ö: [2010-Dec-01/2010-Dec-30]
+	// è¾“å‡º: [2010-Dec-01/2010-Dec-30]
 	std::cout << dp9 << std::endl;
 }
 
-//Í¨¹ıdate¿âÖĞÒ»Ğ©ÀàĞÍ¼ÆËã½Ú¼ÙÈÕ
+//é€šè¿‡dateåº“ä¸­ä¸€äº›ç±»å‹è®¡ç®—èŠ‚å‡æ—¥
 void test_date_holiday()
 {
 	using namespace boost::gregorian;
 
-	// Î÷·½µÄ½ÚÈÕ
-	// ¸¸Ç×½Ú(Father's Day), Ã¿Äê6ÔÂ·İµÄµÚ3¸öĞÇÆÚÈÕ
+	// è¥¿æ–¹çš„èŠ‚æ—¥
+	// çˆ¶äº²èŠ‚(Father's Day), æ¯å¹´6æœˆä»½çš„ç¬¬3ä¸ªæ˜ŸæœŸæ—¥
 	typedef nth_day_of_the_week_in_month type_ndwm;
 	type_ndwm ndwm(type_ndwm::third, 0, 6);
-	date d1 = ndwm.get_date(2012);		// 2012Äê¸¸Ç×½Ú
-	std::cout << "¸¸Ç×½Ú: " << d1 << std::endl;
+	date d1 = ndwm.get_date(2012);		// 2012å¹´çˆ¶äº²èŠ‚
+	std::cout << "çˆ¶äº²èŠ‚: " << d1 << std::endl;
 
-	// Ä¸Ç×½Ú(Mother's Day), Ã¿Äê5ÔÂ·İµÄµÚ2¸öĞÇÆÚÈÕ
-	// Õâ¸ö·½·¨Óë¸¸Ç×½Úµã
+	// æ¯äº²èŠ‚(Mother's Day), æ¯å¹´5æœˆä»½çš„ç¬¬2ä¸ªæ˜ŸæœŸæ—¥
+	// è¿™ä¸ªæ–¹æ³•ä¸çˆ¶äº²èŠ‚ç‚¹
 
-	// ÀÍ¹¤½Ú(Labor Day), Ã¿Äê9ÔÂ·İµÄµÚÒ»¸öĞÇÆÚÒ»
+	// åŠ³å·¥èŠ‚(Labor Day), æ¯å¹´9æœˆä»½çš„ç¬¬ä¸€ä¸ªæ˜ŸæœŸä¸€
 	first_day_of_the_week_in_month fdwn(1, 9);
-	date d2 = fdwn.get_date(2012);		// 2012ÄêÀÍ¹¤½Ú
-	std::cout << "ÀÍ¹¤½Ú: " << d2 << std::endl;
+	date d2 = fdwn.get_date(2012);		// 2012å¹´åŠ³å·¥èŠ‚
+	std::cout << "åŠ³å·¥èŠ‚: " << d2 << std::endl;
 
-	// ¸Ğ¶÷½Ú(Thanksgiving Day), Ã¿Äê11ÔÂ×îºóÒ»¸öĞÇÆÚËÄ
+	// æ„Ÿæ©èŠ‚(Thanksgiving Day), æ¯å¹´11æœˆæœ€åä¸€ä¸ªæ˜ŸæœŸå››
 	last_day_of_the_week_in_month ldwn(4, 11);
 	date d3 = ldwn.get_date(2012);
-	std::cout << "¸Ğ¶÷½Ú: " << d3 << std::endl;
+	std::cout << "æ„Ÿæ©èŠ‚: " << d3 << std::endl;
 
-	// Ê¥µ®½Ú(Christmas Day), Ã¿Äê12ÔÂ25ÈÕ
+	// åœ£è¯èŠ‚(Christmas Day), æ¯å¹´12æœˆ25æ—¥
 	partial_date pd(25, 12);
 	date d4 = pd.get_date(2012);
-	std::cout << "Ê¥µ®½Ú: " << d4 << std::endl;
+	std::cout << "åœ£è¯èŠ‚: " << d4 << std::endl;
 }
 
 void test_ptime_construct()
@@ -293,29 +293,29 @@ void test_ptime_construct()
 	using namespace boost::gregorian;
 	using namespace boost::posix_time;
 
-	// 1. ³£¹æµÄ¹¹Ôìº¯ÊıÓĞÈçÏÂ¼¸ÖÖ:
+	// 1. å¸¸è§„çš„æ„é€ å‡½æ•°æœ‰å¦‚ä¸‹å‡ ç§:
 	ptime p0;
-	// ×î³£ÓÃµÄ¹¹Ôì·½·¨
+	// æœ€å¸¸ç”¨çš„æ„é€ æ–¹æ³•
 	ptime p1(date(2012, 11, 30), time_duration(1, 2, 3));	// 2012-Nov-30 01:02:03
-	ptime p2(p1);											// ¸´ÖÆ¹¹Ôì
+	ptime p2(p1);											// å¤åˆ¶æ„é€ 
 	ptime ps1(neg_infin);
 	ptime ps2(pos_infin);
 	ptime ps3(not_a_date_time);
 	ptime ps4(max_date_time);	// 9999-Dec-31
 	ptime ps5(min_date_time);	// 1400-Jan-01
 
-								// 2. Í¨¹ı×Ö·û´®¹¹Ôì
+								// 2. é€šè¿‡å­—ç¬¦ä¸²æ„é€ 
 	ptime pstr1(time_from_string("2012-11-30 23:59:59.000"));
 	ptime pstr2(from_iso_string("20121130T200001"));
 
-	// 3. Í¨¹ıclock¹¹Ôì
+	// 3. é€šè¿‡clockæ„é€ 
 	ptime pc1(second_clock::local_time());
 	ptime pc2(second_clock::universal_time());
 	ptime pc3(microsec_clock::local_time());
 	ptime pc4(microsec_clock::universal_time());
 
-	// 4. Í¨¹ı×ª»»º¯Êıfrom_time_tºÍptime_from_tm, 
-	// ×¢Òâ: ÕâÑùÍ¨¹ıfrom_time_t×ª»»³Éptimeºó, ºÃÏñÊÇ¸ñÁÖÍşÖÎÊ±¼ä
+	// 4. é€šè¿‡è½¬æ¢å‡½æ•°from_time_tå’Œptime_from_tm, 
+	// æ³¨æ„: è¿™æ ·é€šè¿‡from_time_tè½¬æ¢æˆptimeå, å¥½åƒæ˜¯æ ¼æ—å¨æ²»æ—¶é—´
 	time_t t1 = time(NULL);
 	ptime pc5 = from_time_t(t1);
 	std::cout << pc5 << std::endl;
@@ -330,14 +330,14 @@ void test_ptime_accessor()
 	using namespace boost::posix_time;
 	using namespace boost::gregorian;
 
-	// »ñÈ¡ÈÕÆÚ²¿·Ö
+	// è·å–æ—¥æœŸéƒ¨åˆ†
 	ptime pt(second_clock::local_time());
 	date d1 = pt.date();
 
-	// »ñÈ¡Ê±¼ä²¿·Ö
+	// è·å–æ—¶é—´éƒ¨åˆ†
 	time_duration td = pt.time_of_day();
 
-	// »ñÈ¡ÃëµÄĞ¡Êı²¿·Ö
+	// è·å–ç§’çš„å°æ•°éƒ¨åˆ†
 	__int64 l = td.fractional_seconds();
 	std::cout << l << std::endl;
 }

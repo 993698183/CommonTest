@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #ifndef BOOST_TEST_STRING
 #define BOOST_TEST_STRING
 #include <iostream>

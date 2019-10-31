@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #ifndef BOOST_TEST_FUNCTION
 #define BOOST_TEST_FUNCTION
 
@@ -37,24 +37,24 @@ private:
 
 void test_function()
 {
-	//ÆÕÍ¨º¯Êı
+	//æ™®é€šå‡½æ•°
 	boost::function<int(int, int)> func1;
 	func1 = fsum;
 	std::cout << "4+5=" << func1(4, 5) << std::endl;
 
-	//º¯Êı¶ÔÏó
+	//å‡½æ•°å¯¹è±¡
 	boost::function<void(std::string, int)> func2;
 	Person person;
 	func2 = person;
 	func2("myname", 30);
 
-	//³ÉÔ±º¯Êı
+	//æˆå‘˜å‡½æ•°
 	boost::function<void(Car*, int)> func3;
 	func3 = &Car::info;
 	Car car;
 	func3(&car, 25);
 
-	//¿Õº¯Êı
+	//ç©ºå‡½æ•°
 	boost::function<int(int, int)> func4;
 	assert(func4.empty());
 	assert(!func1.empty());
