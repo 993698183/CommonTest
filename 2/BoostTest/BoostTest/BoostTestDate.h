@@ -256,4 +256,35 @@ void test_date_period()
 	std::cout << dp9 << std::endl;
 }
 
+//通过date库中一些类型计算节假日
+void test_date_holiday()
+{
+	using namespace boost::gregorian;
+
+	// 西方的节日
+	// 父亲节(Father's Day), 每年6月份的第3个星期日
+	typedef nth_day_of_the_week_in_month type_ndwm;
+	type_ndwm ndwm(type_ndwm::third, 0, 6);
+	date d1 = ndwm.get_date(2012);		// 2012年父亲节
+	std::cout << "父亲节: " << d1 << std::endl;
+
+	// 母亲节(Mother's Day), 每年5月份的第2个星期日
+	// 这个方法与父亲节点
+
+	// 劳工节(Labor Day), 每年9月份的第一个星期一
+	first_day_of_the_week_in_month fdwn(1, 9);
+	date d2 = fdwn.get_date(2012);		// 2012年劳工节
+	std::cout << "劳工节: " << d2 << std::endl;
+
+	// 感恩节(Thanksgiving Day), 每年11月最后一个星期四
+	last_day_of_the_week_in_month ldwn(4, 11);
+	date d3 = ldwn.get_date(2012);
+	std::cout << "感恩节: " << d3 << std::endl;
+
+	// 圣诞节(Christmas Day), 每年12月25日
+	partial_date pd(25, 12);
+	date d4 = pd.get_date(2012);
+	std::cout << "圣诞节: " << d4 << std::endl;
+}
+
 #endif // !BOOST_TEST_DATE
