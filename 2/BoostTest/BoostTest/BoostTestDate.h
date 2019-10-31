@@ -60,4 +60,20 @@ void test_date2string()
 	assert(dstr3 == "2011-Feb-27");
 }
 
+void test_date2tm()
+{
+	using namespace boost::gregorian;
+	date dt(2011, 2, 27);
+
+	tm t = to_tm(dt);
+	assert(t.tm_year == 111);	// 从1900年计
+	assert(t.tm_mon == 1);		// 结果1，从0开始，表示2月份
+	assert(t.tm_mday == 27);
+	assert(t.tm_wday == 0);		// 结果0，从星期日开始计
+	assert(t.tm_yday == 57);	// 结果57，从0开始计，58天
+	assert(t.tm_hour == 0);
+	assert(t.tm_min == 0);
+	assert(t.tm_sec == 0);
+	assert(t.tm_isdst == -1);
+}
 #endif // !BOOST_TEST_DATE
