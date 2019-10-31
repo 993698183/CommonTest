@@ -88,4 +88,56 @@ void test_tm2date()
 	assert(to_iso_extended_string(d) == "2011-02-27");
 }
 
+//date构造方法
+//本库采用格里历日期系统, 支持从1400-Jan-01到9999-Dec-31.
+
+void test_dt_construct()
+{
+	using namespace boost::gregorian;
+
+	// 1. 常规的构造函数有如下几种:
+	date d0;
+	date d1(2008, 8, 9);	// 最常用的构造方法
+	date d2(d1);			// 复制构造
+	date ds1(neg_infin);
+	date ds2(pos_infin);
+	date ds3(not_a_date_time);
+	date ds4(max_date_time);	// 9999-Dec-31
+	date ds5(min_date_time);	// 1400-Jan-01
+
+	assert(d0.is_not_a_date());
+	assert(d0.is_special());
+	assert(ds1.is_special());
+	assert(ds2.is_special());
+	assert(ds3.is_special());
+	assert(!ds4.is_special());
+	assert(!ds5.is_special());
+
+	// 2. 通过字符串构造
+	date dstr1(from_string("2011/08/09"));
+	date dstr2(from_string("2011-08-09"));
+	date dstr3(from_string("2011-Feb-28"));
+	date dstr4(from_string("2011-February-28"));
+	date dstr5(from_undelimited_string("20110809"));
+
+	// 不常用的字符串
+	date dstr6(from_us_string("Feb-28-2011"));	// 完整的月份单词也可以
+	date dstr7(from_uk_string("28-Feb-2011"));	// 完整的月份单词也可以
+
+												// 3. 通过clock构造
+	date dc1(day_clock::local_day());
+	date dc2(day_clock::universal_day());
+
+	// 4. 构造时的异常
+	try
+	{
+		// 年, 月, 日超过范围时会抛异常.
+		date d6(1300, 12, 25);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
 #endif // !BOOST_TEST_DATE
