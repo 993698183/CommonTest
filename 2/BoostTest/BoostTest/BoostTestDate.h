@@ -76,4 +76,16 @@ void test_date2tm()
 	assert(t.tm_sec == 0);
 	assert(t.tm_isdst == -1);
 }
+
+void test_tm2date()
+{
+	using namespace boost::gregorian;
+	tm t;
+	t.tm_year = 111;
+	t.tm_mon = 1;
+	t.tm_mday = 27;
+	date d = date_from_tm(t);
+	assert(to_iso_extended_string(d) == "2011-02-27");
+}
+
 #endif // !BOOST_TEST_DATE
