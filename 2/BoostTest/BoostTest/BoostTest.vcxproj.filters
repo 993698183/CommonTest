@@ -45,6 +45,9 @@
     <ClInclude Include="BoostTestStringAlgoFind.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BoostTestDate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

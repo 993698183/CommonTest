@@ -10,6 +10,7 @@
 #include "BoostTestTokenizer.h"
 #include "BoostTestStringAlgo.h"
 #include "BoostTestStringAlgoFind.h"
+#include "BoostTestDate.h"
 
 int main()
 {
