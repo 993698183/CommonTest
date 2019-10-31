@@ -11,6 +11,7 @@
 #include "BoostTestStringAlgo.h"
 #include "BoostTestStringAlgoFind.h"
 #include "BoostTestDate.h"
+#include "BoostTestThread.h"
 
 int main()
 {
