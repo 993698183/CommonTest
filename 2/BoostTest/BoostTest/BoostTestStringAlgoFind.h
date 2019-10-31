@@ -454,4 +454,24 @@ void test_string_replace()
 	std::cout << std::endl;
 }
 
+void test_string_join()
+{
+	using namespace boost::assign;
+	std::vector<std::string> v = list_of("Samus")("Link")("Zelda")("Mario");
+
+	std::copy(v.cbegin(), v.cend(), std::ostream_iterator<std::string>(std::cout, " "));
+	std::cout << std::endl;
+
+	std::cout << boost::join(v, ", ") << std::endl;
+
+	struct is_contains_a
+	{
+		bool operator() (const std::string &x)
+		{
+			return boost::contains(x, "a");
+		}
+	};
+	std::cout << boost::join_if(v, "__", is_contains_a()) << std::endl;
+}
+
 #endif
