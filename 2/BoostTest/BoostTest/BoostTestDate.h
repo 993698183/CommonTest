@@ -46,4 +46,18 @@ void test_date_accessor()
 	long l = dt.julian_day();	// 从儒略日到当天有多少天?
 }
 
+void test_date2string()
+{
+	using namespace boost::gregorian;
+	date dt(2011, 2, 27);
+
+	std::string dstr1 = to_iso_string(dt);
+	std::string dstr2 = to_iso_extended_string(dt);
+	std::string dstr3 = to_simple_string(dt);
+
+	assert(dstr1 == "20110227");
+	assert(dstr2 == "2011-02-27");
+	assert(dstr3 == "2011-Feb-27");
+}
+
 #endif // !BOOST_TEST_DATE
