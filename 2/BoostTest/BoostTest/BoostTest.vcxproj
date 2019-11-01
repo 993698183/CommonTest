@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoostTestAny.h" />
+    <ClInclude Include="BoostTestAsio.h" />
     <ClInclude Include="BoostTestBind.h" />
     <ClInclude Include="BoostTestDate.h" />
     <ClInclude Include="BoostTestFunction.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="BoostTestStringAlgo.h" />
     <ClInclude Include="BoostTestStringAlgoFind.h" />
     <ClInclude Include="BoostTestThread.h" />
+    <ClInclude Include="BoostTestThreadInterrupt.h" />
     <ClInclude Include="BoostTestTokenizer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
