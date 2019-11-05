@@ -71,11 +71,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\boost\boost_1_64_0;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\boost\boost_1_64_0\bin\vc14-x64\lib;D:\boost\boost_1_64_0\bin\vc14\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\opencv\opencv\build\include\opencv2;D:\opencv\opencv\build\include;D:\boost\boost_1_71_0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\opencv\opencv\build\x64\vc15\lib;D:\boost\boost_1_71_0\bin\vc14-x64\lib;D:\boost\boost_1_71_0\bin\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\opencv\opencv\build\include\opencv2;D:\opencv\opencv\build\include;D:\boost\boost_1_71_0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\opencv\opencv\build\x64\vc15\lib;D:\boost\boost_1_71_0\bin\vc14-x64\lib;D:\boost\boost_1_71_0\bin\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -99,7 +101,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\boost\boost_1_64_0\bin\vc14\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\boost\boost_1_71_0\bin\vc14\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world411d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -107,12 +110,14 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\opencv\opencv\build\x64\vc15\lib;D:\boost\boost_1_71_0\bin\vc14-x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -156,18 +161,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoostTestAny.h" />
-    <ClInclude Include="BoostTestAsio.h" />
     <ClInclude Include="BoostTestBind.h" />
     <ClInclude Include="BoostTestDate.h" />
     <ClInclude Include="BoostTestFunction.h" />
-    <ClInclude Include="BoostTestMutexLock.h" />
     <ClInclude Include="BoostTestString.h" />
     <ClInclude Include="BoostTestStringAlgo.h" />
     <ClInclude Include="BoostTestStringAlgoFind.h" />
     <ClInclude Include="BoostTestThread.h" />
-    <ClInclude Include="BoostTestThreadInterrupt.h" />
+    <ClInclude Include="BoostTestThreadPool.h" />
     <ClInclude Include="BoostTestTokenizer.h" />
-    <ClInclude Include="BoostTestXML.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

@@ -12,8 +12,7 @@
 #include "BoostTestStringAlgoFind.h"
 #include "BoostTestDate.h"
 #include "BoostTestThread.h"
-#include "BoostTestMutexLock.h"
-#include "BoostTestXML.h"
+#include "BoostTestThreadPool.h"
 
 int main()
 {
@@ -24,8 +23,6 @@ int main()
 	//test_thread();
 	//test_thread_mutex();
 	//test_bind_fun1();
-	//test_thread_deadlock();
-	//test_thread_recursivelock();
 	getchar();
     return 0;
 }

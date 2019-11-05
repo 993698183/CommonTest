@@ -51,16 +51,7 @@
     <ClInclude Include="BoostTestThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BoostTestMutexLock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BoostTestThreadInterrupt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BoostTestAsio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BoostTestXML.h">
+    <ClInclude Include="BoostTestThreadPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
