@@ -12,7 +12,6 @@
 #include "BoostTestStringAlgoFind.h"
 #include "BoostTestDate.h"
 #include "BoostTestThread.h"
-#include "BoostTestThreadPool.h"
 
 int main()
 {

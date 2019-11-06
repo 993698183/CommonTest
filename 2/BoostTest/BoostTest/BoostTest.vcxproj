@@ -71,8 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\opencv\opencv\build\include\opencv2;D:\opencv\opencv\build\include;D:\boost\boost_1_71_0;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\opencv\opencv\build\x64\vc15\lib;D:\boost\boost_1_71_0\bin\vc14-x64\lib;D:\boost\boost_1_71_0\bin\vc14\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\boost\boost_1_64_0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\boost\boost_1_64_0\bin\vc14-x64\lib;D:\boost\boost_1_64_0\bin\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -101,8 +101,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\boost\boost_1_71_0\bin\vc14\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world411d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\boost\boost_1_64_0\bin\vc14\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -168,7 +168,6 @@
     <ClInclude Include="BoostTestStringAlgo.h" />
     <ClInclude Include="BoostTestStringAlgoFind.h" />
     <ClInclude Include="BoostTestThread.h" />
-    <ClInclude Include="BoostTestThreadPool.h" />
     <ClInclude Include="BoostTestTokenizer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

@@ -51,9 +51,6 @@
     <ClInclude Include="BoostTestThread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BoostTestThreadPool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
