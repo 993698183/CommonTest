@@ -12,6 +12,7 @@
 #include "BoostTestStringAlgoFind.h"
 #include "BoostTestDate.h"
 #include "BoostTestThread.h"
+#include "BoostTestXML.h"
 
 int main()
 {
@@ -22,6 +23,7 @@ int main()
 	//test_thread();
 	//test_thread_mutex();
 	//test_bind_fun1();
+	test_xml();
 	getchar();
     return 0;
 }
