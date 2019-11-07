@@ -11,8 +11,9 @@
 #include "BoostTestStringAlgo.h"
 #include "BoostTestStringAlgoFind.h"
 #include "BoostTestDate.h"
-#include "BoostTestThread.h"
+//#include "BoostTestThread.h"
 #include "BoostTestXML.h"
+#include "BoostTestException.h"
 
 int main()
 {
@@ -24,7 +25,10 @@ int main()
 	//test_thread_mutex();
 	//test_bind_fun1();
 	//test_xml();
-	test_xml2();
+	//test_xml2();
+	//test_error();
+	//test_error2();
+	test_error4();
 	getchar();
     return 0;
 }

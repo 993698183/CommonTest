@@ -163,6 +163,7 @@
     <ClInclude Include="BoostTestAny.h" />
     <ClInclude Include="BoostTestBind.h" />
     <ClInclude Include="BoostTestDate.h" />
+    <ClInclude Include="BoostTestException.h" />
     <ClInclude Include="BoostTestFunction.h" />
     <ClInclude Include="BoostTestString.h" />
     <ClInclude Include="BoostTestStringAlgo.h" />
