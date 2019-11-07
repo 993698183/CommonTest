@@ -42,9 +42,28 @@ void test_xml()
 	try
 	{
 		debug_settting ds;
-		ds.load("d:\\debug_settings.xml");
-		ds.save("d:\\debug_settings_out.xml");
+		ds.load("E:\\1_ZXLCode\\0_GitHub\\CommonTest\\2\\debug_settings.xml");
+		ds.save("E:\\1_ZXLCode\\0_GitHub\\CommonTest\\2\\debug_settings_out.xml");
 		std::cout << "success" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "error" << e.what() << std::endl;
+	}
+}
+
+void test_xml2()
+{
+	try
+	{
+		boost::property_tree::ptree pt;
+		read_xml("E:\\1_ZXLCode\\0_GitHub\\CommonTest\\2\\conf.xml", pt);
+		auto child = pt.get_child("root.students");
+		for (auto i = child.begin(); i != child.end(); ++i)
+		{
+			std::string strname = i->second.get_value<std::string>();
+			std::cout << strname << std::endl;
+		}
 	}
 	catch (std::exception &e)
 	{

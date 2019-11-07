@@ -23,7 +23,8 @@ int main()
 	//test_thread();
 	//test_thread_mutex();
 	//test_bind_fun1();
-	test_xml();
+	//test_xml();
+	test_xml2();
 	getchar();
     return 0;
 }
