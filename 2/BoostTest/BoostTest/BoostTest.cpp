@@ -14,6 +14,8 @@
 //#include "BoostTestThread.h"
 #include "BoostTestXML.h"
 #include "BoostTestException.h"
+#include "BoostTestJson.h"
+#include "BoostTestAsio.h"
 
 int main()
 {
@@ -28,7 +30,9 @@ int main()
 	//test_xml2();
 	//test_error();
 	//test_error2();
-	test_error4();
+	//test_error4();
+	//test_json();
+	test_json2();
 	getchar();
     return 0;
 }

@@ -88,7 +88,10 @@ boost::shared_array<char> allocate(std::size_t size)
 {
 	if (size > 1000)
 	{
-		throw allocation_failed(size);
+		//throw allocation_failed(size);
+		//通过使用BOOST_THROW_EXCEPTION替代throw，如函数名、文件名、行数之类附加信息将自动被添加到异常中。
+		//但这仅仅在编译器支持宏的情况下有效
+		BOOST_THROW_EXCEPTION(allocation_failed(size));
 	}
 	return boost::shared_array<char>(new char[size]);
 }
