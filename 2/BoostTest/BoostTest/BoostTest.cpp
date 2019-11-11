@@ -16,6 +16,7 @@
 #include "BoostTestException.h"
 #include "BoostTestJson.h"
 #include "BoostTestAsio.h"
+#include "BoostTestSharedPtr.h"
 
 int main()
 {
@@ -32,7 +33,9 @@ int main()
 	//test_error2();
 	//test_error4();
 	//test_json();
-	test_json2();
+	//test_json2();
+	//test_1();
+	//test_sharedptr_new();
 	getchar();
     return 0;
 }
