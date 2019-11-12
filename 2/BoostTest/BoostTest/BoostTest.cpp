@@ -17,6 +17,7 @@
 #include "BoostTestJson.h"
 #include "BoostTestAsio.h"
 #include "BoostTestSharedPtr.h"
+#include "classorder/ClassOrderTest.h"
 
 int main()
 {
@@ -36,6 +37,7 @@ int main()
 	//test_json2();
 	//test_1();
 	//test_sharedptr_new();
+	test_class_order();
 	getchar();
     return 0;
 }
