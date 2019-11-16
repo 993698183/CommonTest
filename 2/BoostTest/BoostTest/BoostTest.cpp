@@ -20,6 +20,7 @@
 #include "classorder/ClassOrderTest.h"
 #include "semaphore/SemaphoreTest.h"
 #include "guid/GuidTest.h"
+#include "Cplus11/Cplus.h"
 
 int main()
 {
@@ -40,7 +41,8 @@ int main()
 	//test_1();
 	//test_sharedptr_new();
 	//test_class_order();
-	get_guid();
+	//get_guid();
+	test_Raw_string();
 	getchar();
     return 0;
 }

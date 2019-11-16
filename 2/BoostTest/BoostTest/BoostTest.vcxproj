@@ -175,6 +175,7 @@
     <ClInclude Include="BoostTestTokenizer.h" />
     <ClInclude Include="BoostTestXML.h" />
     <ClInclude Include="classorder\ClassOrderTest.h" />
+    <ClInclude Include="Cplus11\Cplus.h" />
     <ClInclude Include="guid\GuidTest.h" />
     <ClInclude Include="semaphore\SemaphoreTest.h" />
     <ClInclude Include="stdafx.h" />

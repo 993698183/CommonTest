@@ -22,6 +22,9 @@
     <Filter Include="guid">
       <UniqueIdentifier>{1dc22d6d-c09c-457b-8246-b44c280417f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Cplus11">
+      <UniqueIdentifier>{b6ebb28b-ec78-4ebe-9553-b436906e68a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -83,6 +86,9 @@
     </ClInclude>
     <ClInclude Include="guid\GuidTest.h">
       <Filter>guid</Filter>
+    </ClInclude>
+    <ClInclude Include="Cplus11\Cplus.h">
+      <Filter>Cplus11</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
