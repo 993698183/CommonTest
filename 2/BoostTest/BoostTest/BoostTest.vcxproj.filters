@@ -16,6 +16,12 @@
     <Filter Include="classorder">
       <UniqueIdentifier>{9c5df3a6-2529-4480-9344-984db82b1cce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="semaphore">
+      <UniqueIdentifier>{5c693d8e-2672-4cfe-9f1e-c1d5d41158aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="guid">
+      <UniqueIdentifier>{1dc22d6d-c09c-457b-8246-b44c280417f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -71,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="classorder\ClassOrderTest.h">
       <Filter>classorder</Filter>
+    </ClInclude>
+    <ClInclude Include="semaphore\SemaphoreTest.h">
+      <Filter>semaphore</Filter>
+    </ClInclude>
+    <ClInclude Include="guid\GuidTest.h">
+      <Filter>guid</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

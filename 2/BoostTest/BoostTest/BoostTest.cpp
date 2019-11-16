@@ -18,6 +18,8 @@
 #include "BoostTestAsio.h"
 #include "BoostTestSharedPtr.h"
 #include "classorder/ClassOrderTest.h"
+#include "semaphore/SemaphoreTest.h"
+#include "guid/GuidTest.h"
 
 int main()
 {
@@ -37,7 +39,8 @@ int main()
 	//test_json2();
 	//test_1();
 	//test_sharedptr_new();
-	test_class_order();
+	//test_class_order();
+	get_guid();
 	getchar();
     return 0;
 }
