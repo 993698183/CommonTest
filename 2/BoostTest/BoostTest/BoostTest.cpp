@@ -11,7 +11,7 @@
 #include "BoostTestStringAlgo.h"
 #include "BoostTestStringAlgoFind.h"
 #include "BoostTestDate.h"
-//#include "BoostTestThread.h"
+#include "BoostTestThread.h"
 #include "BoostTestXML.h"
 #include "BoostTestException.h"
 #include "BoostTestJson.h"
@@ -21,6 +21,8 @@
 #include "semaphore/SemaphoreTest.h"
 #include "guid/GuidTest.h"
 #include "Cplus11/Cplus.h"
+
+
 
 int main()
 {
@@ -42,7 +44,9 @@ int main()
 	//test_sharedptr_new();
 	//test_class_order();
 	//get_guid();
-	test_Raw_string();
+	//test_Raw_string();
+	//generate_user();
+	test_json3();
 	getchar();
     return 0;
 }

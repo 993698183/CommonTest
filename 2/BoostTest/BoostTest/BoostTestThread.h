@@ -4,46 +4,69 @@
 
 #include <iostream>
 #include <string>
-#include <boost/thread.hpp>
-#include <boost/thread/mutex.hpp>
-#include <boost/bind.hpp>
 
-void wait(int seconds)
+#include <boost/thread/thread_pool.hpp>
+
+void first_task()
 {
-	boost::this_thread::sleep(boost::posix_time::seconds(seconds));
+	std::cout << "first task is running" << std::endl;
 }
 
-void hello()
+void second_task()
 {
-	while (1)
-	{
-		wait(1);
-		std::cout << "hello multi-thread" << std::endl;
-	}
+	std::cout << "second task is running" << std::endl;
 }
 
-void test_thread()
+void task_with_parameter(int value)
 {
-	boost::thread thrd(&hello);
-	thrd.join();
+	std::cout << "task_with_parameter(" << value << ")" << std::endl;
 }
 
-boost::mutex g_io_mutex;
-void count(int id)
+void test_boost_thread_pool()
 {
-	for (int i = 0; i < 10; i++)
-	{
-		boost::mutex::scoped_lock lock(g_io_mutex);
-		std::cout << id << ":" << i << std::endl;
-	}
+	//boost::thread tp(2);
 }
 
-void test_thread_mutex()
-{
-	boost::thread thrd1(boost::bind(&count, 1));
-	boost::thread thrd2(boost::bind(&count, 1));
-	thrd1.join();
-	thrd2.join();
-}
+//#include <boost/thread.hpp>
+//#include <boost/thread/mutex.hpp>
+//#include <boost/bind.hpp>
+
+//void wait(int seconds)
+//{
+//	boost::this_thread::sleep(boost::posix_time::seconds(seconds));
+//}
+//
+//void hello()
+//{
+//	while (1)
+//	{
+//		wait(1);
+//		std::cout << "hello multi-thread" << std::endl;
+//	}
+//}
+//
+//void test_thread()
+//{
+//	boost::thread thrd(&hello);
+//	thrd.join();
+//}
+//
+//boost::mutex g_io_mutex;
+//void count(int id)
+//{
+//	for (int i = 0; i < 10; i++)
+//	{
+//		boost::mutex::scoped_lock lock(g_io_mutex);
+//		std::cout << id << ":" << i << std::endl;
+//	}
+//}
+//
+//void test_thread_mutex()
+//{
+//	boost::thread thrd1(boost::bind(&count, 1));
+//	boost::thread thrd2(boost::bind(&count, 1));
+//	thrd1.join();
+//	thrd2.join();
+//}
 
 #endif

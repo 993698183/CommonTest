@@ -25,6 +25,9 @@
     <Filter Include="Cplus11">
       <UniqueIdentifier>{b6ebb28b-ec78-4ebe-9553-b436906e68a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="boosttime">
+      <UniqueIdentifier>{be0da9f5-0441-4d69-ae71-65169aa3dbac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -89,6 +92,9 @@
     </ClInclude>
     <ClInclude Include="Cplus11\Cplus.h">
       <Filter>Cplus11</Filter>
+    </ClInclude>
+    <ClInclude Include="boosttime\BoostTestTime.h">
+      <Filter>boosttime</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
