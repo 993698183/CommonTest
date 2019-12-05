@@ -11,6 +11,7 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 #include <sstream>
+
 void test_json()
 {
 	std::string s = "{ \"a\": 100, \"b\": [1, 2, 3, 4] }";
@@ -68,23 +69,40 @@ void generate_user()
 	boost::property_tree::ptree items;
 
 	boost::property_tree::ptree item1;
-	item1.put("ID", "1");
-	item1.put("Name", "wang");
-	items.push_back(std::make_pair("1", item1));
-
 	boost::property_tree::ptree item2;
-	item2.put("ID", "2");
-	item2.put("Name", "zhang");
-	items.push_back(std::make_pair("2", item2));
-
 	boost::property_tree::ptree item3;
-	item3.put("ID", "3");
-	item3.put("Name", "li");
-	items.push_back(std::make_pair("3", item3));
+	//item1.add_child("", 1);
+	item1.put("", 1);
+	item2.put("", 2);
+	item3.put("", 3);
+	items.push_back(std::make_pair("", item1));
+	items.push_back(std::make_pair("", item2));
+	items.push_back(std::make_pair("", item3));
 
-	root.put_child("user", items);
-	boost::property_tree::write_json(file_path, root);
+	root.add_child("ID", items);
+	root.put("Name", "wang");
+	std::stringstream ss;
+	boost::property_tree::write_json(ss, root);
+	std::string strContent = ss.str();
+	std::cout << strContent << std::endl;
+	//items.push_back(std::make_pair("1", item1));
+
+	//boost::property_tree::ptree item2;
+	//item2.put("ID", "2");
+	//item2.put("Name", "zhang");
+	//items.push_back(std::make_pair("2", item2));
+
+	//boost::property_tree::ptree item3;
+	//item3.put("ID", "3");
+	//item3.put("Name", "li");
+	//items.push_back(std::make_pair("3", item3));
+
+	//root.put_child("user", items);
+	//boost::property_tree::write_json(file_path, root);
+
 }
+
+
 void read_user()
 {
 	boost::property_tree::ptree root;
@@ -100,6 +118,27 @@ void read_user()
 		string Name = it->second.get<string>("Name");
 		std::cout << key << " " << ID << " " << Name << std::endl;
 	}
+}
+
+//使用辅助函数来迭代数组
+using boost::property_tree::ptree;
+
+template <typename T>
+std::vector<T> as_vector(ptree const& pt, ptree::key_type const& key)
+{
+	std::vector<T> r;
+	for (auto& item : pt.get_child(key))
+		r.push_back(item.second.get_value<T>());
+	return r;
+}
+void test_shuzu()
+{
+	std::stringstream ss("{\"a\": [8, 6, 2], \"b\": [2, 2, 1]}");
+	ptree pt;
+	read_json(ss, pt);
+	for (auto i : as_vector<int>(pt, "a")) std::cout << i << ' ';
+	std::cout << '\n';
+	for (auto i : as_vector<int>(pt, "b")) std::cout << i << ' ';
 }
 
 //"100012": [

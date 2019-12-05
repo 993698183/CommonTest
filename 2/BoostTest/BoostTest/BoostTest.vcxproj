@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -175,6 +175,7 @@
     <ClInclude Include="BoostTestTokenizer.h" />
     <ClInclude Include="BoostTestXML.h" />
     <ClInclude Include="boosttime\BoostTestTime.h" />
+    <ClInclude Include="checkjson\CCheckJson.h" />
     <ClInclude Include="classorder\ClassOrderTest.h" />
     <ClInclude Include="Cplus11\Cplus.h" />
     <ClInclude Include="guid\GuidTest.h" />

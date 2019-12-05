@@ -21,7 +21,7 @@
 #include "semaphore/SemaphoreTest.h"
 #include "guid/GuidTest.h"
 #include "Cplus11/Cplus.h"
-
+#include "checkjson/CCheckJson.h"
 
 
 int main()
@@ -46,7 +46,8 @@ int main()
 	//get_guid();
 	//test_Raw_string();
 	//generate_user();
-	test_json3();
+	//test_json3();
+	generate_user();
 	getchar();
     return 0;
 }

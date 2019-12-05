@@ -28,6 +28,9 @@
     <Filter Include="boosttime">
       <UniqueIdentifier>{be0da9f5-0441-4d69-ae71-65169aa3dbac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="checkjson">
+      <UniqueIdentifier>{58e8a1f0-480f-4841-bd75-f7fa7540a1ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -95,6 +98,9 @@
     </ClInclude>
     <ClInclude Include="boosttime\BoostTestTime.h">
       <Filter>boosttime</Filter>
+    </ClInclude>
+    <ClInclude Include="checkjson\CCheckJson.h">
+      <Filter>checkjson</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
