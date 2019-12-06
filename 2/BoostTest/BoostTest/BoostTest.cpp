@@ -23,7 +23,7 @@
 #include "Cplus11/Cplus.h"
 #include "checkjson/CCheckJson.h"
 #include "stdfunctiontest/stdfunctiontest.h"
-
+#include "jsoncpp/json_test.h"
 int main()
 {
 	//test_function();
@@ -48,7 +48,8 @@ int main()
 	//generate_user();
 	//test_json3();
 	//generate_user();
-	test_std_function();
+	//test_std_function();
+	test_jsoncpp();
 	getchar();
     return 0;
 }

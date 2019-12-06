@@ -71,7 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\boost\boost_1_71_0;$(IncludePath)</IncludePath>
+    <IncludePath>E:\1_ZXLCode\0_GitHub\CommonTest\2\BoostTest\BoostTest\json\include_json;D:\boost\boost_1_71_0;$(IncludePath)</IncludePath>
     <LibraryPath>D:\boost\boost_1_71_0\bin\vc14-x64\lib;D:\boost\boost_1_71_0\bin\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -137,6 +137,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\boost\boost_1_64_0\bin\vc14\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;json.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -179,6 +180,15 @@
     <ClInclude Include="classorder\ClassOrderTest.h" />
     <ClInclude Include="Cplus11\Cplus.h" />
     <ClInclude Include="guid\GuidTest.h" />
+    <ClInclude Include="jsoncpp\include\autolink.h" />
+    <ClInclude Include="jsoncpp\include\config.h" />
+    <ClInclude Include="jsoncpp\include\features.h" />
+    <ClInclude Include="jsoncpp\include\forwards.h" />
+    <ClInclude Include="jsoncpp\include\json.h" />
+    <ClInclude Include="jsoncpp\include\reader.h" />
+    <ClInclude Include="jsoncpp\include\value.h" />
+    <ClInclude Include="jsoncpp\include\writer.h" />
+    <ClInclude Include="jsoncpp\json_test.h" />
     <ClInclude Include="semaphore\SemaphoreTest.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="stdfunctiontest\stdfunctiontest.h" />

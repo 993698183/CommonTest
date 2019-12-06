@@ -34,6 +34,12 @@
     <Filter Include="stdfunctiontest">
       <UniqueIdentifier>{726a73e0-9867-4bf0-9471-f360dfebde81}</UniqueIdentifier>
     </Filter>
+    <Filter Include="jsoncpp">
+      <UniqueIdentifier>{2ecb74a6-cd83-4ad9-a10c-8ce57ff2bbf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jsoncpp\json">
+      <UniqueIdentifier>{657eb517-0be4-4a96-ad00-44b64a033fa3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -107,6 +113,33 @@
     </ClInclude>
     <ClInclude Include="stdfunctiontest\stdfunctiontest.h">
       <Filter>stdfunctiontest</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\include\autolink.h">
+      <Filter>jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\include\config.h">
+      <Filter>jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\include\features.h">
+      <Filter>jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\include\forwards.h">
+      <Filter>jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\include\json.h">
+      <Filter>jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\include\reader.h">
+      <Filter>jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\include\value.h">
+      <Filter>jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\include\writer.h">
+      <Filter>jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp\json_test.h">
+      <Filter>jsoncpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
