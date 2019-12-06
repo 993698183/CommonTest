@@ -22,7 +22,7 @@
 #include "guid/GuidTest.h"
 #include "Cplus11/Cplus.h"
 #include "checkjson/CCheckJson.h"
-
+#include "stdfunctiontest/stdfunctiontest.h"
 
 int main()
 {
@@ -47,7 +47,8 @@ int main()
 	//test_Raw_string();
 	//generate_user();
 	//test_json3();
-	generate_user();
+	//generate_user();
+	test_std_function();
 	getchar();
     return 0;
 }

@@ -31,6 +31,9 @@
     <Filter Include="checkjson">
       <UniqueIdentifier>{58e8a1f0-480f-4841-bd75-f7fa7540a1ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="stdfunctiontest">
+      <UniqueIdentifier>{726a73e0-9867-4bf0-9471-f360dfebde81}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -101,6 +104,9 @@
     </ClInclude>
     <ClInclude Include="checkjson\CCheckJson.h">
       <Filter>checkjson</Filter>
+    </ClInclude>
+    <ClInclude Include="stdfunctiontest\stdfunctiontest.h">
+      <Filter>stdfunctiontest</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
