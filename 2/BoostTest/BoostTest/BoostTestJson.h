@@ -62,44 +62,43 @@ void test_json3()
 	}
 }
 
-const std::string file_path = "./test.txt";
+const std::string file_path = "d:\\test.txt";
 void generate_user()
 {
 	boost::property_tree::ptree root;
 	boost::property_tree::ptree items;
 
 	boost::property_tree::ptree item1;
-	boost::property_tree::ptree item2;
-	boost::property_tree::ptree item3;
+	boost::property_tree::ptree tmp;
+	boost::property_tree::ptree item1_1;
 	//item1.add_child("", 1);
-	item1.put("", 1);
-	item2.put("", 2);
-	item3.put("", 3);
-	items.push_back(std::make_pair("", item1));
-	items.push_back(std::make_pair("", item2));
-	items.push_back(std::make_pair("", item3));
+	item1_1.put("", 1);
+	tmp.push_back(std::make_pair("", item1_1));
+	item1_1.put("", 2);
+	tmp.push_back(std::make_pair("", item1_1));
+	item1_1.put("", 3);
+	tmp.push_back(std::make_pair("", item1_1));
+	
+	item1.add_child("ID", tmp);
+	item1.put("Name", "wang");
+	items.push_back(std::make_pair("1", item1));
 
-	root.add_child("ID", items);
-	root.put("Name", "wang");
-	std::stringstream ss;
-	boost::property_tree::write_json(ss, root);
-	std::string strContent = ss.str();
-	std::cout << strContent << std::endl;
-	//items.push_back(std::make_pair("1", item1));
+	boost::property_tree::ptree item2;
+	item2.put("ID", "2");
+	item2.put("Name", "zhang");
+	items.push_back(std::make_pair("2", item2));
 
-	//boost::property_tree::ptree item2;
-	//item2.put("ID", "2");
-	//item2.put("Name", "zhang");
-	//items.push_back(std::make_pair("2", item2));
+	boost::property_tree::ptree item3;
+	item3.put("ID", "3");
+	item3.put("Name", "li");
+	items.push_back(std::make_pair("3", item3));
 
-	//boost::property_tree::ptree item3;
-	//item3.put("ID", "3");
-	//item3.put("Name", "li");
-	//items.push_back(std::make_pair("3", item3));
-
-	//root.put_child("user", items);
-	//boost::property_tree::write_json(file_path, root);
-
+	root.put_child("user", items);
+	boost::property_tree::write_json(file_path, root);
+	//std::stringstream ss;
+	//boost::property_tree::write_json(ss, root);
+	//std::string strContent = ss.str();
+	//std::cout << strContent << std::endl;
 }
 
 

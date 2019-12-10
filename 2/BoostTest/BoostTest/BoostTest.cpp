@@ -49,7 +49,10 @@ int main()
 	//test_json3();
 	//generate_user();
 	//test_std_function();
-	test_jsoncpp();
+	//test_jsoncpp();
+	//test_jsoncpp2();
+	test_jsoncpp3();
+	//test_jsoncpp4();
 	getchar();
     return 0;
 }
