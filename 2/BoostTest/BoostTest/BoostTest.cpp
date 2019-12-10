@@ -51,8 +51,10 @@ int main()
 	//test_std_function();
 	//test_jsoncpp();
 	//test_jsoncpp2();
-	test_jsoncpp3();
+	//test_jsoncpp3();
 	//test_jsoncpp4();
+	test_json5();
+	test_json6();
 	getchar();
     return 0;
 }

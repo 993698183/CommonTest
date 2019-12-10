@@ -5,6 +5,10 @@
 #pragma comment(lib, "lib/jsond.lib")
 #include <string>
 #include <iostream>
+//总结就是要判断是否含有key，使用isMember成员函数，
+//value是否为null使用isNull成员函数，
+//value是否为空可以用empty() 和 size()成员函数。
+
 void test_jsoncpp()
 {
 	const char* str = "{\"uploadid\": \"UP000000\",\"code\": 100,\"msg\": \"\",\"files\": \"\"}";
@@ -97,5 +101,35 @@ void test_jsoncpp4()
 	std::cout << out << std::endl;
 }
 
+//构造json字符串
+void test_json5()
+{
+	Json::Value root;
+	Json::FastWriter writer;
+	string name = "abcd";
+	root["name"] = name;
+	root["number"] = "2010014357";
+	root["address"] = "xxxx";
+	root["age"] = 100;
+	string data = writer.write(root);  //need #include <fstream>
+	cout << "data:\n" << data << endl;
+}
 
+//构造json数组
+void test_json6()
+{
+	//root节点直接apped，没有节点名称，所以最后生成的都是json数组
+	Json::Value root;
+	Json::FastWriter writer;
+	Json::Value person;
+	person["name"] = "hello world1";
+	person["age"] = 100;
+	root.append(person);
+	person["name"] = "hello world2";
+	person["age"] = 200;
+	root.append(person);
+	string data = writer.write(root);
+	cout << data << endl;
+	cout << root.toStyledString() << endl;
+}
 #endif
