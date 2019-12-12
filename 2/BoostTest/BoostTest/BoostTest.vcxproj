@@ -175,7 +175,6 @@
     <ClInclude Include="BoostTestThread.h" />
     <ClInclude Include="BoostTestTokenizer.h" />
     <ClInclude Include="BoostTestXML.h" />
-    <ClInclude Include="boosttime\BoostTestTime.h" />
     <ClInclude Include="checkjson\CCheckJson.h" />
     <ClInclude Include="classorder\ClassOrderTest.h" />
     <ClInclude Include="Cplus11\Cplus.h" />

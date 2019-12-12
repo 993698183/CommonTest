@@ -132,4 +132,12 @@ void test_json6()
 	cout << data << endl;
 	cout << root.toStyledString() << endl;
 }
+
+//构造json空数组
+void test_json7()
+{
+	Json::Value root;
+	root["FurniturePlaceItemObject"].resize(0);
+	cout << root.toStyledString() << endl;
+}
 #endif

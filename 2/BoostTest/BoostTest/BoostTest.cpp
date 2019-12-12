@@ -53,8 +53,14 @@ int main()
 	//test_jsoncpp2();
 	//test_jsoncpp3();
 	//test_jsoncpp4();
-	test_json5();
-	test_json6();
+	//test_json5();
+	//test_json6();
+	//test_json7();
+	int n = 1;
+	//get_qian_n_day(n);
+	get_YYYYYMMDD_time();
+	get_YYYYMMDDHHMMSS_time();
+	get_time_duration();
 	getchar();
     return 0;
 }

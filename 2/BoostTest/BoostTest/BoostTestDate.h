@@ -350,5 +350,51 @@ void test_ptime2string()
 	std::cout << to_simple_string(td1) << std::endl;
 	std::cout << to_iso_string(td1) << std::endl;
 }
+//获取前n天
+void get_qian_n_day(int n)
+{
+	boost::posix_time::ptime pt(boost::posix_time::second_clock::local_time());
+	boost::gregorian::date d = pt.date();
+	std::cout << d << std::endl;
+	d -= boost::gregorian::days(n);
+	std::cout << d << std::endl;
+}
+//输出YYYYMMDD
+void get_YYYYYMMDD_time()
+{
+	std::string strTime = boost::gregorian::to_iso_string(boost::gregorian::day_clock::local_day());
+	std::cout << strTime.c_str() << std::endl;
+}
+//YYYYMMDD-HH:MM:SS
+void get_YYYYMMDDHHMMSS_time()
+{
+	std::string strTime = boost::posix_time::to_iso_string(\
+		boost::posix_time::second_clock::local_time());
 
+	// 这时候strTime里存放时间的格式是YYYYMMDDTHHMMSS，日期和时间用大写字母T隔开了 
+	int pos = strTime.find('T');
+	strTime.replace(pos, 1, std::string("-"));
+	strTime.replace(pos + 3, 0, std::string(":"));
+	strTime.replace(pos + 6, 0, std::string(":"));
+
+	std::cout << strTime.c_str() << std::endl;
+}
+//#include <boost/thread.hpp> 
+//#define BOOST_DATE_TIME_SOURCE 
+//计算时间间隔
+void get_time_duration()
+{
+	boost::posix_time::ptime time_now, time_now1;
+	boost::posix_time::millisec_posix_time_system_config::time_duration_type time_elapse;
+	// 这里为微秒为单位;这里可以将microsec_clock替换成second_clock以秒为单位; 
+	//time_now = boost::posix_time::microsec_clock::universal_time();
+	//// sleep 100毫秒; 
+	//boost::this_thread::sleep(boost::posix_time::millisec(100));
+	//time_now1 = boost::posix_time::microsec_clock::universal_time();
+	//time_elapse = time_now1 - time_now;
+	//// 类似GetTickCount，只是这边得到的是2个时间的ticket值的差，以微秒为单位; 
+	//int ticks = time_elapse.ticks();
+	//// 得到两个时间间隔的秒数; 
+	//int sec = time_elapse.total_seconds();
+}
 #endif // !BOOST_TEST_DATE
