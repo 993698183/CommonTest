@@ -56,11 +56,17 @@ int main()
 	//test_json5();
 	//test_json6();
 	//test_json7();
-	int n = 1;
+	//int n = 1;
 	//get_qian_n_day(n);
-	get_YYYYYMMDD_time();
-	get_YYYYMMDDHHMMSS_time();
-	get_time_duration();
+	//get_YYYYYMMDD_time();
+	//get_YYYYMMDDHHMMSS_time();
+	//get_time_duration();
+	//test_atomic();
+	//test_lambda();
+	//test_emplace_back();
+	//test_thread();
+	//test_my_thread2();
+	test_mutex();
 	getchar();
     return 0;
 }
