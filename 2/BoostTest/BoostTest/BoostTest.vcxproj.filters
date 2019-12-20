@@ -37,6 +37,9 @@
     <Filter Include="jsoncpp\json">
       <UniqueIdentifier>{657eb517-0be4-4a96-ad00-44b64a033fa3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="http">
+      <UniqueIdentifier>{44dc3118-fdaa-44c3-8dd4-46d9494297ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -134,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="jsoncpp\json_test.h">
       <Filter>jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="http\http.h">
+      <Filter>http</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

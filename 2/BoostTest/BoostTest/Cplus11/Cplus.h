@@ -298,4 +298,54 @@ void test_mutex()
 //递归式互斥量recursive（std::recursive_mutex）
 //允许超时的独占式互斥量non-recursive that allows timeouts on the lock function（std::timed_mutex）
 //允许超时的递归式互斥量recursive mutex that allows timeouts on the lock functions（std::recurive_timed_mutex）
+
+//有先后顺序的线程间同步，条件变量
+//线程间共享数据，会存在一个线程等待另一个线程的情况，它们之间存在先后顺序
+//这个与互斥量不同，互斥量保证只有一个线程访问当前加锁了的代码块，它们之间不存在先后顺序
+#include <condition_variable>
+
+//class Foo1
+//{
+//public:
+//	Foo1()
+//		:flag_(0),
+//		thread1_(std::bind(&Foo1::threadFun1, this)),
+//		thread2_(std::bind(&Foo1::threadFun2, this))
+//		{
+//
+//		}
+//	~Foo1()
+//	{
+//		thread1_.join();
+//		thread2_.join();
+//	}
+//protected:
+//private:
+//	void threadFun1()
+//	{
+//		std::unique_lock<std::mutex> ul(mutex_);
+//		while (0 == flag_)
+//		{
+//			cond_.wait(ul);
+//		}
+//		std::cout << flag_ << std::endl;
+//	}
+//	void threadFun2()
+//	{
+//		//为了测试，等待三秒
+//		std::this_thread::sleep_for((std::chrono::milliseconds(3000)));
+//		std::unique_lock<std::mutex> ul(mutex_);
+//		flag_ = 100;
+//		cond_.notify_one();
+//	}
+//	int flag_;
+//	std::mutex mutex_;
+//	std::condition_variable cond_;
+//	std::thread thread1_;
+//	std::thread thread2_;
+//};
+void test_Foo()
+{
+	//Foo1 f;
+}
 #endif

@@ -24,6 +24,8 @@
 #include "checkjson/CCheckJson.h"
 #include "stdfunctiontest/stdfunctiontest.h"
 #include "jsoncpp/json_test.h"
+#include "http/http.h"
+
 int main()
 {
 	//test_function();
@@ -66,7 +68,8 @@ int main()
 	//test_emplace_back();
 	//test_thread();
 	//test_my_thread2();
-	test_mutex();
+	//test_mutex();
+	//test_Foo();
 	getchar();
     return 0;
 }
