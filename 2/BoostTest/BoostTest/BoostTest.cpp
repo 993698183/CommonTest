@@ -26,50 +26,43 @@
 #include "jsoncpp/json_test.h"
 #include "http/http.h"
 
+//空类的size
+class Car1
+{};
+
+//设定文件修改时间
+int settime(LPCSTR filename)
+{
+	SYSTEMTIME  systime;
+	FILETIME ft, ftUTC;
+	HANDLE hFile;
+
+	systime.wYear = 2000;
+	systime.wMonth = 1;
+	systime.wDay = 1;
+	systime.wDayOfWeek = 1;
+	systime.wSecond = 1;
+	systime.wHour = 1;
+	systime.wMinute = 1;
+	systime.wMilliseconds = 1;
+
+	SystemTimeToFileTime(&systime, &ft);
+	LocalFileTimeToFileTime(&ft, &ftUTC);
+	hFile = CreateFileA(filename, GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE,
+		NULL, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+	if (hFile != INVALID_HANDLE_VALUE)
+	{
+		SetFileTime(hFile, (LPFILETIME)NULL, (LPFILETIME)NULL, &ftUTC);
+	}
+	CloseHandle(hFile);
+
+	return 0;
+}
+#include <boost/filesystem/path.hpp>
 int main()
 {
-	//test_function();
-	//test_string();
-	//test_string_find_string();
-	//test_string_find_token();
-	//test_thread();
-	//test_thread_mutex();
-	//test_bind_fun1();
-	//test_xml();
-	//test_xml2();
-	//test_error();
-	//test_error2();
-	//test_error4();
-	//test_json();
-	//test_json2();
-	//test_1();
-	//test_sharedptr_new();
-	//test_class_order();
-	//get_guid();
-	//test_Raw_string();
-	//generate_user();
-	//test_json3();
-	//generate_user();
-	//test_std_function();
-	//test_jsoncpp();
-	//test_jsoncpp2();
-	//test_jsoncpp3();
-	//test_jsoncpp4();
-	//test_json5();
-	//test_json6();
-	//test_json7();
-	//int n = 1;
-	//get_qian_n_day(n);
-	//get_YYYYYMMDD_time();
-	//get_YYYYMMDDHHMMSS_time();
-	//get_time_duration();
-	//test_atomic();
-	//test_lambda();
-	//test_emplace_back();
-	//test_thread();
-	//test_my_thread2();
-	//test_mutex();
-	//test_Foo();
+	boost::filesystem::path p = "E:\\1_ZXLCode\\导入导出mysql - 副本.txt";
+	settime(p.string().c_str());
 	getchar();
     return 0;
 }

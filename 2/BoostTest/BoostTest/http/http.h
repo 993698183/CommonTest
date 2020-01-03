@@ -1,6 +1,7 @@
 #ifndef _HTTP_TEST_
 #define _HTTP_TEST_
 
+//https://www.cnblogs.com/lidabo/p/6404533.html
 #include <string>
 #include <iostream>
 #include <strstream>
