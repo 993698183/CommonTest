@@ -58,11 +58,18 @@ int settime(LPCSTR filename)
 
 	return 0;
 }
-#include <boost/filesystem/path.hpp>
-int main()
+
+//typeid关键词的使用方法
+void test_typeid()
 {
-	boost::filesystem::path p = "E:\\1_ZXLCode\\导入导出mysql - 副本.txt";
-	settime(p.string().c_str());
+	int i = 0;
+	std::cout << typeid(i).name() << std::endl;
+	std::cout << typeid(i).hash_code() << std::endl;
+}
+//
+int main()
+{	
+
 	getchar();
     return 0;
 }
