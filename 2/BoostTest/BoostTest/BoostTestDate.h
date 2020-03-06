@@ -5,6 +5,56 @@
 #include <string>
 #include <boost/date_time.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/date_time/local_time_adjustor.hpp>
+#include <boost/date_time/c_local_time_adjustor.hpp>
+#include <boost/date_time/local_time/local_time.hpp>
+
+std::wstring FormatTimeW(std::time_t t, const wchar_t *f)
+{
+	using namespace boost::posix_time;
+	using namespace boost::gregorian;
+	ptime now = from_time_t(t);
+	now = boost::date_time::c_local_adjustor<ptime>::utc_to_local(now);
+	std::wstringstream format_date;
+	//格式形如：Sat,22 May 2010 09:49:16
+	//time facet* tfacet = new time_facet("%a,%d %B %Y %H:%M:%S");
+	//另一种格式2012-05-22 09：49：16
+	//time_facet * tfacet = new wtime_facet("%Y-%m-%d %H:%M:%S");
+	wtime_facet * tfacet = new wtime_facet(f);
+	format_date.imbue(std::locale(format_date.getloc(), tfacet));
+	format_date << now;
+	return format_date.str();
+}
+
+std::string FormatTime(std::time_t t, const char *f)
+{
+	using namespace boost::posix_time;
+	using namespace boost::gregorian;
+	ptime now = from_time_t(t);
+	now = boost::date_time::c_local_adjustor<ptime>::utc_to_local(now);
+	std::stringstream format_date;
+	//格式形如：Sat,22 May 2010 09:49:16
+	//time facet* tfacet = new time_facet("%a,%d %B %Y %H:%M:%S");
+	//另一种格式2012-05-22 09：49：16
+	//time_facet * tfacet = new wtime_facet("%Y-%m-%d %H:%M:%S");
+	time_facet * tfacet = new time_facet(f);
+	format_date.imbue(std::locale(format_date.getloc(), tfacet));
+	format_date << now;
+	return format_date.str();
+}
+std::wstring get_module_build_time()
+{
+	std::time_t t;
+	time(&t);
+	std::string str_format = "BuildDate-%Y-%m-%d-%H-%M-%S";
+	std::string str_build_time = FormatTime(t, str_format.c_str());
+	std::cout << "FormatTime=" << str_build_time << std::endl;
+
+	std::wstring wstr_format = L"BuildDate-%Y-%m-%d-%H-%M-%S";
+	std::wstring wstr_build_time = FormatTimeW(t, wstr_format.c_str());
+	//std::cout << "FormatTimeW=" << wstr_build_time << std::endl;
+	return wstr_build_time;
+}
 
 void test_date_accessor()
 {

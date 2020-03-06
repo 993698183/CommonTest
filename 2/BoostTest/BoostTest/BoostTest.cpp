@@ -67,9 +67,37 @@ void test_typeid()
 	std::cout << typeid(i).hash_code() << std::endl;
 }
 //
+
+//测试value_type函数
+class C {
+public:
+	C(int x) 
+	{
+		cout << x << endl;
+	}
+	C()
+	{
+		cout << 10 << endl;
+	}
+
+};
+void test_value_type()
+{
+	std::vector<C> vec;
+	C c1, c2(11);
+	vec.push_back(c1);
+	vec.push_back(c2);
+	std::vector<C>::value_type n1;
+	std::vector<C>::value_type n2(13);
+	vec.push_back(n1);
+	vec.push_back(n2);
+	std::cout << vec.size() << std::endl;
+}
+
 int main()
 {	
-
+	//test_value_type();
+	get_module_build_time();
 	getchar();
     return 0;
 }

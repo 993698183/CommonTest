@@ -13,7 +13,8 @@
 #include <locale>
 #include <boost/lexical_cast.hpp>
 
-template<typename T> std::string to_string(const T& arg)
+template<typename T> 
+std::string to_string(const T& arg)
 {
 	try
 	{
