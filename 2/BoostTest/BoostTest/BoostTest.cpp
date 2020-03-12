@@ -94,10 +94,57 @@ void test_value_type()
 	std::cout << vec.size() << std::endl;
 }
 
+int BinarySearch(vector<int> v, int value, int low, int high) {
+	if (v.size() <= 0) {
+		return -1;
+	}
+	while (low <= high) {
+		int mid = low + (high - low) / 2;
+		if (v[mid] == value) {
+			return mid;
+		}
+		else if (v[mid] > value) {
+			high = mid - 1;
+		}
+		else {
+			low = mid + 1;
+		}
+	}
+
+	return -1;
+}
+void test_binarysearch()
+{
+	std:vector<int> vec;
+	for (int i = 0; i < 100; i++)
+	{
+		vec.push_back(i);
+	}
+	int ret = BinarySearch(vec, 30, 0, 100);
+}
+void Full_Kline(const time_t &new_t, const time_t &old_t)
+{
+	int nSpanSecond = 60;
+	int n1 = new_t - old_t;
+	int nNum = n1 / nSpanSecond;
+	std::cout << old_t << std::endl;
+	for (int i = 1; i < nNum; i++)
+	{
+		time_t tmp_t = old_t + (60 * i);
+		std::cout << tmp_t << std::endl;
+	}
+	std::cout << new_t << std::endl;
+}
+
+void test_kline()
+{
+	time_t new_t = 1583800620;//2020/3/10 8:37:00
+	time_t old_t = 1583800580;//2020/3/10 8:27:00
+	Full_Kline(new_t, old_t);
+}
 int main()
 {	
-	//test_value_type();
-	get_module_build_time();
+
 	getchar();
     return 0;
 }
