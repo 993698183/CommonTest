@@ -19,8 +19,7 @@ public:
 	HistroyInfo() {};
 	~HistroyInfo() {};
 
-
-	friend boost::filesystem::fstream & operator >> (boost::filesystem::fstream &f, HistroyInfo &h)
+	friend boost::filesystem::fstream& operator >> (boost::filesystem::fstream& f, HistroyInfo& h)
 	{
 		char c;
 		f >> h.m_id;
@@ -34,7 +33,7 @@ public:
 		return f;
 	}
 
-	friend boost::filesystem::fstream & operator << (boost::filesystem::fstream & f, const HistroyInfo &h)
+	friend boost::filesystem::fstream& operator << (boost::filesystem::fstream& f, const HistroyInfo& h)
 	{
 		f << h.m_id;
 		f << ",";
@@ -53,7 +52,6 @@ public:
 	std::string name;
 protected:
 private:
-
 };
 //格式话结构体到指定目录
 void test_boostsystem()
@@ -88,7 +86,7 @@ class CPoint
 public:
 	CPoint(int x_, int y_) :x(x_), y(y_) {}
 
-	friend ostream & operator <<(ostream & os, const CPoint & p) {
+	friend ostream& operator <<(ostream& os, const CPoint& p) {
 		return os << "x = " << p.x << " y = " << p.y << endl;
 	}
 
@@ -104,7 +102,7 @@ void test_ostream()
 #include <boost/algorithm/hex.hpp>
 #include <boost/uuid/detail/md5.hpp>
 //获取buf的md5值
-bool GetMd5(std::string &str_md5, const char  * const buffer, size_t buffer_size)
+bool GetMd5(std::string& str_md5, const char* const buffer, size_t buffer_size)
 {
 	if (buffer == nullptr)
 	{
@@ -120,7 +118,7 @@ bool GetMd5(std::string &str_md5, const char  * const buffer, size_t buffer_size
 	return true;
 }
 
-bool GetSHA1(std::string &str_sha1, const char * const buffer, size_t buffer_size)
+bool GetSHA1(std::string& str_sha1, const char* const buffer, size_t buffer_size)
 {
 	//char hash[20];
 	//boost::uuids::detail::sha1 boost_sha1;
@@ -170,12 +168,10 @@ void get_md5_sha()
 	}
 }
 
-
 int main()
 {
 	test_ostream();
 
 	getchar();
-    return 0;
+	return 0;
 }
-
