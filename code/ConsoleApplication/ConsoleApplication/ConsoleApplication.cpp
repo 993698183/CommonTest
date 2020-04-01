@@ -2,11 +2,11 @@
 //
 
 #include <iostream>
-#include <boost/lexical_cast.hpp>
+#include "TestBoost.h"
+#include "TestThread.h"
 int main()
 {
-    int i = boost::lexical_cast<int>("100");
-    std::cout << i << std::endl;
+    test_c11_thread();
     std::cout << "Hello World!\n";
 }
 
