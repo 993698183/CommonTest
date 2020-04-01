@@ -153,7 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestBoost.h" />
+    <ClInclude Include="TestFileMap.h" />
     <ClInclude Include="TestThread.h" />
+    <ClInclude Include="TetsVisualAssist.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
