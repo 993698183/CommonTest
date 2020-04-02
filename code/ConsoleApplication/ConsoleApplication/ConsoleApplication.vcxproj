@@ -152,6 +152,7 @@
     <ClCompile Include="ConsoleApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cplusplus11.h" />
     <ClInclude Include="TestBoost.h" />
     <ClInclude Include="TestFileMap.h" />
     <ClInclude Include="TestThread.h" />
