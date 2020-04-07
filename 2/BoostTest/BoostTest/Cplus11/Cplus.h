@@ -344,6 +344,7 @@ void test_mutex()
 //	std::thread thread1_;
 //	std::thread thread2_;
 //};
+
 void test_Foo()
 {
 	//Foo1 f;

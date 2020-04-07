@@ -6,9 +6,13 @@
 #include "TestThread.h"
 #include "Cplusplus11.h"
 
+
+
 int main()
 {
-    test_Raw_string();
+    //test_Raw_string();
+    test_lambda();
+    std::cout << "Hello world" << std::endl;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
