@@ -40,6 +40,12 @@
     <Filter Include="http">
       <UniqueIdentifier>{44dc3118-fdaa-44c3-8dd4-46d9494297ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FileOperate">
+      <UniqueIdentifier>{63db7be2-a700-424e-a0bf-0c37631e988b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="search">
+      <UniqueIdentifier>{91cd772c-c6f6-425a-a5f6-24dc58b3a9b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -140,6 +146,15 @@
     </ClInclude>
     <ClInclude Include="http\http.h">
       <Filter>http</Filter>
+    </ClInclude>
+    <ClInclude Include="SetFileCreateTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fileoperate\SetFileCreateTime.h">
+      <Filter>FileOperate</Filter>
+    </ClInclude>
+    <ClInclude Include="search\Testsearch.h">
+      <Filter>search</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
