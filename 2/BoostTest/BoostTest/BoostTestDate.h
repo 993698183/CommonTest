@@ -447,4 +447,32 @@ void get_time_duration()
 	//// 得到两个时间间隔的秒数; 
 	//int sec = time_elapse.total_seconds();
 }
+
+//判断当前时间是否在1天的某个时间段内
+bool isTimeScale(int startTimeHour, int startTimeMin, int endTimeHour, int endTimeMin)
+{
+	//将时间都转化为分钟数，利于判断
+	uint16_t startMin = startTimeHour * 60 + startTimeMin;
+	uint16_t endMin = endTimeHour * 60 + endTimeMin;
+	//uint16_t curMin = 当前时间;
+	uint16_t curMin = 0;
+	//不跨天的情况
+	if (startMin < endMin)
+	{
+		if (startMin <= curMin && curMin <= endMin)
+		{
+			return true;
+		}
+	}
+	//跨天的情况
+	else if (startMin > endMin)
+	{
+		if (startMin <= curMin || curMin <= endMin)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
 #endif // !BOOST_TEST_DATE
