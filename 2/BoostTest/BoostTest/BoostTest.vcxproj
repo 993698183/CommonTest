@@ -71,8 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\1_ZXLCode\0_GitHub\CommonTest\2\BoostTest\BoostTest\json\include_json;D:\boost\boost_1_71_0;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\boost\boost_1_71_0\bin\vc14-x64\lib;D:\boost\boost_1_71_0\bin\vc14\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\_work\993698183\CommonTest\2\BoostTest\BoostTest\json\include_json;D:\boost\boost_1_72_0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\boost\boost_1_72_0\bin\vc14-x64\lib;D:\boost\boost_1_72_0\bin\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>

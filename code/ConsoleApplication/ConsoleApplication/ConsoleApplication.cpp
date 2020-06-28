@@ -5,14 +5,19 @@
 #include "TestBoost.h"
 #include "TestThread.h"
 #include "Cplusplus11.h"
-
+#include "TestEvent.h"
 
 
 int main()
 {
     //test_Raw_string();
-    test_lambda();
+    //test_lambda();
+    //test_foreach();
+    //test_boost_lexical_cast();
+    test_event();
+	system("pause");
     std::cout << "Hello world" << std::endl;
+    getchar();
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

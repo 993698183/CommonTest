@@ -20,6 +20,7 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include <unordered_map>
 
 //C++11原始字符串操作
 //原始字符串字面量的定义为：R"xxx(raw string)xxx"
@@ -138,4 +139,44 @@ std::string ANSIToUTF8(const std::string& str)
 	return UnicodeToUTF8(ANSIToUnicode(str));
 }
 
+void test_foreach()
+{
+	std::vector<int> vec = {1, 2, 3, 4};
+	for (int v : vec)//以值得方式访问
+	{
+		std::cout << v << " ";
+		v = 5;//a中存储的数据不会改变
+	}
+	std::cout << std::endl;
+
+	for (int &v : vec)//通过引用的方式访问vec，可以改变vec的值
+	{
+		v += 100;
+	}
+	for (int v : vec)
+	{
+		std::cout << v << " ";
+	}
+	std::cout << std::endl;
+
+	int b[] = { 21, 22, 23, 24 };
+	for (int v : b)//遍历数组，以值得方式访问
+	{
+		std::cout << v << " ";
+	}
+	std::cout << std::endl;
+
+	std::unordered_map<int, int> map = { {1, 3}, {2, 3}, {3, 3} };
+	for (auto v : map)//遍历map，以值的方式访问
+	{
+		std::cout << v.second << v.first << " ";
+	}
+	std::cout << std::endl;
+
+	for (int v : {41, 42, 43})
+	{
+		std::cout << v << " ";
+	}
+	std::cout << std::endl;
+}
 #endif // Cplusplus11_h__
