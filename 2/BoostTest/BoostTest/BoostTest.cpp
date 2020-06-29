@@ -16,7 +16,7 @@
 #include "BoostTestException.h"
 #include "BoostTestJson.h"
 #include "BoostTestAsio.h"
-#include "BoostTestSharedPtr.h"
+#include "BoostTestSmartPtr.h"
 #include "classorder/ClassOrderTest.h"
 #include "semaphore/SemaphoreTest.h"
 #include "guid/GuidTest.h"
@@ -29,7 +29,7 @@
 
 int main()
 {	
-
+	test_stl_smart_ptr();
 	getchar();
     return 0;
 }

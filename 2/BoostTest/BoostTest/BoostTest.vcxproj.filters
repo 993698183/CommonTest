@@ -46,6 +46,9 @@
     <Filter Include="search">
       <UniqueIdentifier>{91cd772c-c6f6-425a-a5f6-24dc58b3a9b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Socket">
+      <UniqueIdentifier>{59623694-19d4-42e3-868f-6e5560c4aff1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -94,9 +97,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BoostTestAsio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BoostTestSharedPtr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="classorder\ClassOrderTest.h">
@@ -155,6 +155,12 @@
     </ClInclude>
     <ClInclude Include="search\Testsearch.h">
       <Filter>search</Filter>
+    </ClInclude>
+    <ClInclude Include="socket\TestSocket.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="BoostTestSmartPtr.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -7,8 +7,8 @@
 
 //C++11原始字符串操作
 //原始字符串字面量的定义为：R"xxx(raw string)xxx"
-//其中，原始字符必须用括号（）括起来，括号的前后可以加其他的字符串，所加的字符串会被忽略，并且加的字符串必须在括号两边同时出现
-
+//其中，原始字符必须用括号（）括起来，括号的前后可以加其他的字符串，
+//所加的字符串会被忽略，并且加的字符串必须在括号两边同时出现
 void test_Raw_string()
 {
 	std::string normal_str = "First line.\nSecond line.\nEnd of Message.\n";
@@ -24,7 +24,7 @@ void test_Raw_string()
                    )" << std::endl;
 }
 
-//C++11的原子操作类型数据
+//C++11的原子操作类型数据，在线程同步中的使用
 #include <boost/thread/thread.hpp>
 #include <atomic> 
 #include <iostream>
@@ -81,7 +81,8 @@ void test_lambda()
 	c.erase(std::remove_if(c.begin(), c.end(), [x](int n) { return n < x; }), c.end());
 
 	std::cout << "c: ";
-	for (auto i : c) {
+	for (auto i : c) 
+	{
 		std::cout << i << ' ';
 	}
 	std::cout << '\n';

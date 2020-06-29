@@ -172,7 +172,7 @@
     <ClInclude Include="BoostTestException.h" />
     <ClInclude Include="BoostTestFunction.h" />
     <ClInclude Include="BoostTestJson.h" />
-    <ClInclude Include="BoostTestSharedPtr.h" />
+    <ClInclude Include="BoostTestSmartPtr.h" />
     <ClInclude Include="BoostTestString.h" />
     <ClInclude Include="BoostTestStringAlgo.h" />
     <ClInclude Include="BoostTestStringAlgoFind.h" />
@@ -197,6 +197,7 @@
     <ClInclude Include="search\Testsearch.h" />
     <ClInclude Include="semaphore\SemaphoreTest.h" />
     <ClInclude Include="SetFileCreateTime.h" />
+    <ClInclude Include="socket\TestSocket.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="stdfunctiontest\stdfunctiontest.h" />
     <ClInclude Include="targetver.h" />
